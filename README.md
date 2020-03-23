@@ -1,2 +1,2 @@
 # Semesteroppgave-Programutvikling
-Semesteroppgave i programutvikling. 
+Semesteroppgave i programutvikling 2020. 
