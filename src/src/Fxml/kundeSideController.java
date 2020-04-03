@@ -33,4 +33,15 @@ public class kundeSideController {
     }
 
 
+    public void Videre1(ActionEvent actionEvent) {
+    }
+
+    public void Hybridcheck(ActionEvent actionEvent) {
+    }
+
+    public void Bensincheck(ActionEvent actionEvent) {
+    }
+
+    public void Elbilcheck(ActionEvent actionEvent) {
+    }
 }
