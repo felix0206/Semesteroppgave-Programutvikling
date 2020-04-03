@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class NySide {
+public class kundeSideController {
 
     @FXML
     private Button Tilbake;

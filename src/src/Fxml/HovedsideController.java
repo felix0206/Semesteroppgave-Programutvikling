@@ -16,13 +16,13 @@ import java.io.IOException;
 public class HovedsideController {
 
     @FXML
-    public Button nySide;
+    public Button Kunde;
 
-    public void nySide(ActionEvent event) throws IOException {
+    public void kundeSide(ActionEvent event) throws IOException {
 
-        Parent nyside = FXMLLoader.load(getClass().getResource("nySide.fxml"));
+        Parent kundeSide = FXMLLoader.load(getClass().getResource("kundeSide.fxml"));
 
-        Scene scene = new Scene(nyside);
+        Scene scene = new Scene(kundeSide);
 
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

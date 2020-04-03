@@ -16,7 +16,8 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="NySide" layoutX="237.0" layoutY="111.0" mnemonicParsing="false" onAction="#nySide" prefHeight="89.0" prefWidth="128.0" text="Ny side" />
+            <Button fx:id="Kunde" layoutX="106.0" layoutY="156.0" mnemonicParsing="false" onAction="#kundeSide" prefHeight="89.0" prefWidth="128.0" text="Kunde" />
+            <Button layoutX="345.0" layoutY="156.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="128.0" text="Admin" />
          </children>
       </AnchorPane>
    </children>
