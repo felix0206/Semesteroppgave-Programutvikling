@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.HovedsideController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <BorderPane prefHeight="400.0" prefWidth="303.0" style="-fx-background-color: lightgrey;" styleClass="linear-grad">
+               <center>
+                  <Button fx:id="Kunde" mnemonicParsing="false" onAction="#kundeSide" prefHeight="55.0" prefWidth="178.0" text="Logg inn som gjest" textFill="#6f0a0a" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Avenir Roman" size="13.0" />
+                     </font>
+                  </Button>
+               </center>
+               <top>
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="261.0" text="Bilnavn" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </top>
+               <bottom>
+                  <AnchorPane prefHeight="185.0" prefWidth="303.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="etternavn" layoutX="24.0" layoutY="95.0" prefHeight="27.0" prefWidth="250.0" promptText="Etternavn" />
+                        <TextField fx:id="fornavn" layoutX="25.0" layoutY="40.0" prefHeight="27.0" prefWidth="250.0" promptText="Fornavn" />
+                        <TextField fx:id="epost" layoutX="25.0" layoutY="144.0" prefHeight="27.0" prefWidth="250.0" promptText="Epostadresse" />
+                     </children>
+                  </AnchorPane>
+               </bottom>
+            </BorderPane>
+            <BorderPane layoutX="302.0" prefHeight="400.0" prefWidth="303.0" style="-fx-background-color: darkgrey;">
+               <center>
+                  <Button fx:id="admin" mnemonicParsing="false" onAction="#adminSide" prefHeight="53.0" prefWidth="172.0" text="Logg inn som Admin" textFill="#6f0a0a" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Avenir Roman" size="13.0" />
+                     </font>
+                  </Button>
+               </center>
+               <bottom>
+                  <AnchorPane prefHeight="144.0" prefWidth="303.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <TextField fx:id="brukernavn" layoutX="28.0" layoutY="7.0" prefHeight="27.0" prefWidth="250.0" promptText="Brukernavn" />
+                        <TextField fx:id="passord" layoutX="29.0" layoutY="62.0" prefHeight="27.0" prefWidth="249.0" promptText="Passord" />
+                     </children>
+                  </AnchorPane>
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
