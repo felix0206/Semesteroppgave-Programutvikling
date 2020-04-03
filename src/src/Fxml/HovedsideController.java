@@ -19,7 +19,7 @@ public class HovedsideController {
     @FXML
     public Button Kunde, admin;
     @FXML
-    public TextField brukernavn, passord;
+    public TextField brukernavn, passord, fornavn, etternavn, epost;
 
 
     public void kundeSide(ActionEvent event) throws IOException {
