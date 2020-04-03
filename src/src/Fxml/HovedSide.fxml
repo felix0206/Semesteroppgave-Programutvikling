@@ -9,15 +9,17 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.HovedsideController">
    <children>
-      <AnchorPane layoutX="-1.0" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="34.0" prefHeight="27.0" prefWidth="261.0" text="Dette er vår startside" textAlignment="CENTER">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="170.0" layoutY="17.0" prefHeight="44.0" prefWidth="261.0" text="Dette er vår startside" textAlignment="CENTER">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="Kunde" layoutX="106.0" layoutY="156.0" mnemonicParsing="false" onAction="#kundeSide" prefHeight="89.0" prefWidth="128.0" text="Kunde" />
-            <Button layoutX="345.0" layoutY="156.0" mnemonicParsing="false" prefHeight="89.0" prefWidth="128.0" text="Admin" />
+            <Button fx:id="Kunde" layoutX="106.0" layoutY="156.0" mnemonicParsing="false" onAction="#kundeSide" prefHeight="44.0" prefWidth="155.0" text="Logg inn som gjest" />
+            <Button fx:id="admin" layoutX="345.0" layoutY="156.0" mnemonicParsing="false" onAction="#adminSide" prefHeight="44.0" prefWidth="155.0" text="Logg inn som Admin" />
+            <TextField fx:id="brukernavn" layoutX="342.0" layoutY="216.0" promptText="Brukernavn" />
+            <TextField fx:id="passord" layoutX="342.0" layoutY="256.0" promptText="Passord" />
          </children>
       </AnchorPane>
    </children>

@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,7 +17,10 @@ import java.io.IOException;
 public class HovedsideController {
 
     @FXML
-    public Button Kunde;
+    public Button Kunde, admin;
+    @FXML
+    public TextField brukernavn, passord;
+
 
     public void kundeSide(ActionEvent event) throws IOException {
 
@@ -31,4 +35,24 @@ public class HovedsideController {
         window.show();
     }
 
+    public void adminSide(ActionEvent event) throws IOException {
+
+        if (brukernavn.getText().equals("admin")  && passord.getText().equals("admin")){
+
+            Parent adminSide = FXMLLoader.load(getClass().getResource("AdminSide.fxml"));
+
+            Scene scene = new Scene(adminSide);
+
+
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            window.setScene(scene);
+            window.show();
+
+        }else{
+            brukernavn.setText("Feil Brukernavn!");
+            passord.setText("Feil Passord");
+        }
+
+    }
 }
