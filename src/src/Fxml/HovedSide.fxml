@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.HovedsideController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane prefHeight="126.0" prefWidth="800.0">
          <children>
             <BorderPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: lightgrey;" styleClass="linear-grad">
                <bottom>
@@ -24,7 +24,7 @@
                <center>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="Kunde" layoutX="117.0" layoutY="279.0" mnemonicParsing="false" onAction="#kundeSide" prefHeight="55.0" prefWidth="178.0" text="Logg inn som gjest" textFill="#530808">
+                        <Button fx:id="Kunde" layoutX="121.0" layoutY="283.0" mnemonicParsing="false" onAction="#kundeSide" prefHeight="50.0" prefWidth="150.0" text="Logg inn som gjest" textFill="#530808">
                            <font>
                               <Font name="Avenir Roman" size="13.0" />
                            </font>
@@ -38,14 +38,14 @@
                   <AnchorPane prefHeight="223.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                      <children>
                         <TextField fx:id="brukernavn" layoutX="75.0" layoutY="7.0" prefHeight="27.0" prefWidth="250.0" promptText="Brukernavn" />
-                        <TextField fx:id="passord" layoutX="76.0" layoutY="61.0" prefHeight="27.0" prefWidth="249.0" promptText="Passord" />
+                        <TextField fx:id="passord" layoutX="76.0" layoutY="61.0" prefHeight="27.0" prefWidth="250.0" promptText="Passord" />
                      </children>
                   </AnchorPane>
                </bottom>
                <center>
                   <AnchorPane prefHeight="404.0" prefWidth="245.0" BorderPane.alignment="CENTER">
                      <children>
-                        <Button fx:id="admin" layoutX="114.0" layoutY="280.0" mnemonicParsing="false" onAction="#adminSide" prefHeight="53.0" prefWidth="172.0" text="Logg inn som Admin" textFill="#530808">
+                        <Button fx:id="admin" layoutX="114.0" layoutY="280.0" mnemonicParsing="false" onAction="#adminSide" prefHeight="50.0" prefWidth="150.0" text="Logg inn som Admin" textFill="#530808">
                            <font>
                               <Font name="Avenir Roman" size="13.0" />
                            </font>
