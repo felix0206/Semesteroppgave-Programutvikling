@@ -45,7 +45,7 @@
                   </Button>
                </center>
                <bottom>
-                  <AnchorPane prefHeight="151.0" prefWidth="297.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="144.0" prefWidth="303.0" BorderPane.alignment="CENTER">
                      <children>
                         <TextField fx:id="brukernavn" layoutX="28.0" layoutY="7.0" prefHeight="27.0" prefWidth="250.0" promptText="Brukernavn" />
                         <TextField fx:id="passord" layoutX="29.0" layoutY="62.0" prefHeight="27.0" prefWidth="249.0" promptText="Passord" />
