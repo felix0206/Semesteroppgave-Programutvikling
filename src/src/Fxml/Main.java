@@ -19,5 +19,5 @@ public class Main extends Application {
 
     }
 
-//kommentar får jeg pusha da
+//kommentar får jeg
 }
