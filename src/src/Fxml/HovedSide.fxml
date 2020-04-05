@@ -11,55 +11,45 @@
    <children>
       <AnchorPane prefHeight="126.0" prefWidth="800.0">
          <children>
-            <BorderPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: lightgrey;" styleClass="linear-grad">
+            <BorderPane layoutX="400.0" style="-fx-background-color: darkgrey;">
                <bottom>
-                  <AnchorPane prefHeight="258.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="271.0" prefWidth="400.0">
                      <children>
-                        <TextField fx:id="etternavn" layoutX="75.0" layoutY="99.0" prefHeight="27.0" prefWidth="250.0" promptText="Etternavn" />
-                        <TextField fx:id="fornavn" layoutX="75.0" layoutY="40.0" prefHeight="27.0" prefWidth="250.0" promptText="Fornavn" />
-                        <TextField fx:id="epost" layoutX="75.0" layoutY="157.0" prefHeight="27.0" prefWidth="250.0" promptText="Epostadresse" />
+                        <TextField fx:id="brukernavn" layoutX="75.0" layoutY="46.0" prefHeight="27.0" prefWidth="250.0" promptText="Brukernavn" />
+                        <TextField fx:id="passord" layoutX="75.0" layoutY="100.0" prefHeight="27.0" prefWidth="250.0" promptText="Passord" />
                      </children>
                   </AnchorPane>
                </bottom>
                <center>
-                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <Button fx:id="Kunde" layoutX="121.0" layoutY="283.0" mnemonicParsing="false" onAction="#kundeSide" prefHeight="50.0" prefWidth="150.0" text="Logg inn som gjest" textFill="#530808">
-                           <font>
-                              <Font name="Avenir Roman" size="13.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </AnchorPane>
-               </center>
-            </BorderPane>
-            <BorderPane layoutX="400.0" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: darkgrey;">
-               <bottom>
-                  <AnchorPane prefHeight="223.0" prefWidth="400.0" BorderPane.alignment="CENTER">
-                     <children>
-                        <TextField fx:id="brukernavn" layoutX="75.0" layoutY="7.0" prefHeight="27.0" prefWidth="250.0" promptText="Brukernavn" />
-                        <TextField fx:id="passord" layoutX="76.0" layoutY="61.0" prefHeight="27.0" prefWidth="250.0" promptText="Passord" />
-                     </children>
-                  </AnchorPane>
-               </bottom>
-               <center>
-                  <AnchorPane prefHeight="404.0" prefWidth="245.0" BorderPane.alignment="CENTER">
+                  <AnchorPane prefHeight="326.0" prefWidth="400.0">
                      <children>
                         <Button fx:id="admin" layoutX="114.0" layoutY="280.0" mnemonicParsing="false" onAction="#adminSide" prefHeight="50.0" prefWidth="150.0" text="Logg inn som Admin" textFill="#530808">
                            <font>
                               <Font name="Avenir Roman" size="13.0" />
                            </font>
                         </Button>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-233.0" prefHeight="140.0" prefWidth="479.0" text="F.A.J-AutoMobiles" textAlignment="CENTER" underline="true">
-                           <font>
-                              <Font name="Apple SD Gothic Neo Thin" size="64.0" />
-                           </font>
-                        </Label>
                      </children>
                   </AnchorPane>
                </center>
             </BorderPane>
+            <AnchorPane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: lightgrey;">
+               <children>
+                  <Button fx:id="Kunde" layoutX="125.0" layoutY="284.0" mnemonicParsing="false" onAction="#kundeSide" prefHeight="50.0" prefWidth="150.0" text="Logg inn som gjest" textFill="#530808">
+                     <font>
+                        <Font name="Avenir Roman" size="13.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="etternavn" layoutX="75.0" layoutY="430.0" prefHeight="27.0" prefWidth="250.0" promptText="Etternavn" />
+                  <TextField fx:id="fornavn" layoutX="75.0" layoutY="373.0" prefHeight="27.0" prefWidth="250.0" promptText="Fornavn" />
+                  <TextField fx:id="epost" layoutX="75.0" layoutY="485.0" prefHeight="27.0" prefWidth="250.0" promptText="Epostadresse" />
+               </children>
+            </AnchorPane>
          </children>
       </AnchorPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="140.0" prefWidth="800.0" text="F.A.J-AutoMobiles" textAlignment="CENTER" underline="true">
+         <font>
+            <Font name="Apple SD Gothic Neo Thin" size="64.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
