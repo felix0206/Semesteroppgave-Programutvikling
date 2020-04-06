@@ -8,8 +8,11 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
+
+
     @Override
     public void start(Stage primaryStage) throws Exception {
+        primaryStage.setTitle("F.A.J");
 
         Parent root = FXMLLoader.load(getClass().getResource("HovedSide.fxml"));
 
