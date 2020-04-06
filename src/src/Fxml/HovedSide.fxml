@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
@@ -65,7 +66,7 @@
                   <DropShadow />
                </effect>
             </AnchorPane>
-            <Label alignment="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="98.0" prefWidth="763.0" style="-fx-background-color: #E6E6D8; -fx-background-radius: 3mm;" text="F.A.J-AutoMobiles" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
+            <Label fx:id="overskrift" alignment="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="98.0" prefWidth="763.0" style="-fx-background-color: #E6E6D8; -fx-background-radius: 3mm;" text="F.A.J-AutoMobiles" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
                <font>
                   <Font name="Apple Braille" size="40.0" />
                </font>

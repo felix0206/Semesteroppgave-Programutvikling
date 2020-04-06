@@ -22,7 +22,7 @@ public class HovedsideController {
     @FXML
     public TextField brukernavn, passord, fornavn, etternavn, epost;
     @FXML
-    public Label FeilmeldingAdmin;
+    public Label FeilmeldingAdmin, overskrift;
 
 
     public void kundeSide(ActionEvent event) throws IOException {
