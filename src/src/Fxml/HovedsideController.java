@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -20,6 +21,8 @@ public class HovedsideController {
     public Button Kunde, admin;
     @FXML
     public TextField brukernavn, passord, fornavn, etternavn, epost;
+    @FXML
+    public Label FeilmeldingAdmin;
 
 
     public void kundeSide(ActionEvent event) throws IOException {
@@ -50,12 +53,9 @@ public class HovedsideController {
             window.show();
 
         }else{
-            brukernavn.setText("Feil Brukernavn!");
-            passord.setText("Feil Passord");
+            FeilmeldingAdmin.setText("Feil brukernavn eller passord!\nHint: admin");
         }
 
     }
-
-
 
 }

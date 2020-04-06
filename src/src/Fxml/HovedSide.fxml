@@ -1,65 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.HovedsideController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E6E6D8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.HovedsideController">
    <children>
-      <AnchorPane prefHeight="126.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane layoutX="5.0" layoutY="5.0" prefHeight="590.0" prefWidth="790.0" style="-fx-background-color: grey;" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
          <children>
-            <BorderPane layoutX="400.0" style="-fx-background-color: lightgrey;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-               <bottom>
-                  <AnchorPane prefHeight="275.0" prefWidth="400.0" style="-fx-background-color: lightblue;">
-                     <children>
-                        <TextField fx:id="brukernavn" layoutX="75.0" layoutY="46.0" prefHeight="27.0" prefWidth="250.0" promptText="Brukernavn" AnchorPane.rightAnchor="75.0" />
-                        <TextField fx:id="passord" layoutX="75.0" layoutY="111.0" prefHeight="27.0" prefWidth="250.0" promptText="Passord" AnchorPane.rightAnchor="75.0" />
-                        <TextField fx:id="fornavn" layoutX="75.0" layoutY="46.0" prefHeight="27.0" prefWidth="250.0" promptText="Fornavn" AnchorPane.leftAnchor="75.0" />
-                        <TextField fx:id="etternavn" layoutX="75.0" layoutY="111.0" prefHeight="27.0" prefWidth="250.0" promptText="Ettenavn" AnchorPane.leftAnchor="75.0" />
-                        <TextField fx:id="epost" layoutX="75.0" layoutY="174.0" prefHeight="27.0" prefWidth="250.0" promptText="Epostadresse" AnchorPane.leftAnchor="75.0" />
-                     </children>
-                  </AnchorPane>
-               </bottom>
-               <center>
-                  <AnchorPane prefHeight="326.0" prefWidth="400.0" style="-fx-background-color: lightblue;">
-                     <children>
-                        <Button fx:id="admin" layoutX="114.0" layoutY="280.0" mnemonicParsing="false" onAction="#adminSide" prefHeight="50.0" prefWidth="150.0" text="Logg inn som Admin" textFill="#530808" AnchorPane.rightAnchor="130.0">
-                           <font>
-                              <Font name="Avenir Roman" size="13.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="Kunde" layoutX="135.0" layoutY="280.0" mnemonicParsing="false" onAction="#kundeSide" prefHeight="50.0" prefWidth="150.0" text="Logg inn som kunde" AnchorPane.leftAnchor="130.0" />
-                     </children>
-                     <effect>
-                        <ColorAdjust />
-                     </effect>
-                  </AnchorPane>
-               </center>
-            </BorderPane>
+            <AnchorPane layoutX="441.0" layoutY="126.0" prefHeight="450.0" prefWidth="375.0" style="-fx-background-color: #E6E6D8; -fx-border-style: black;" AnchorPane.rightAnchor="14.0">
+               <children>
+                  <Label layoutX="166.0" layoutY="14.0" text="Admin" underline="true">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="brukernavn" layoutX="111.0" layoutY="104.0" promptText="brukernavn" AnchorPane.topAnchor="107.0" />
+                  <PasswordField fx:id="passord" layoutX="111.0" layoutY="160.0" promptText="passord" AnchorPane.topAnchor="160.0" />
+                  <Button fx:id="admin" layoutX="111.0" layoutY="263.0" mnemonicParsing="false" onAction="#adminSide" prefHeight="27.0" prefWidth="161.0" style="-fx-background-color: #CDCDB9;" text="Logg inn" AnchorPane.topAnchor="266.0" />
+                  <Label fx:id="FeilmeldingAdmin" layoutX="115.0" layoutY="210.0" prefHeight="50.0" prefWidth="161.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="14.0" layoutY="126.0" prefHeight="450.0" prefWidth="375.0" style="-fx-background-color: #E6E6D8;" AnchorPane.leftAnchor="14.0">
+               <children>
+                  <Label alignment="CENTER" layoutX="29.0" layoutY="14.0" prefHeight="24.0" prefWidth="318.0" text="Gjest" underline="true">
+                     <font>
+                        <Font name="Avenir Roman" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="107.0" layoutY="107.0" promptText="Fornavn" AnchorPane.topAnchor="107.0" />
+                  <TextField layoutX="107.0" layoutY="160.0" promptText="Etternavn" AnchorPane.topAnchor="160.0" />
+                  <TextField layoutX="107.0" layoutY="212.0" promptText="Epostadresse" AnchorPane.topAnchor="213.0" />
+                  <Button fx:id="Kunde" layoutX="107.0" layoutY="266.0" mnemonicParsing="false" onAction="#kundeSide" prefHeight="27.0" prefWidth="161.0" style="-fx-background-color: #CDCDB9;" text="Gå videre" AnchorPane.topAnchor="266.0" />
+               </children>
+            </AnchorPane>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="98.0" prefWidth="763.0" style="-fx-background-color: #E6E6D8;" text="F.A.J-AutoMobiles" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
+               <font>
+                  <Font name="Apple Braille" size="40.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="-1.0" prefHeight="202.0" prefWidth="800.0" style="-fx-background-color: #1311A0;" text="F.A.J-AutoMobiles" textAlignment="CENTER" textFill="WHITE" underline="true" AnchorPane.bottomAnchor="403.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
-         <font>
-            <Font name="Apple SD Gothic Neo Thin" size="64.0" />
-         </font>
-         <effect>
-            <Lighting>
-               <bumpInput>
-                  <BoxBlur height="26.26" width="154.82" />
-               </bumpInput>
-               <light>
-                  <Light.Distant />
-               </light>
-            </Lighting>
-         </effect>
-      </Label>
    </children>
 </AnchorPane>
