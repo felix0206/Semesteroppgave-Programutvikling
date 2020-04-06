@@ -15,7 +15,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         primaryStage.setTitle("F.A.J");
 
-        Parent root = FXMLLoader.load(getClass().getResource("HovedSide.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
 
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);

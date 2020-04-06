@@ -58,4 +58,18 @@ public class HovedsideController {
 
     }
 
+    public void StartSide(ActionEvent event) throws IOException {
+
+        Parent kundeSide = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
+
+        Scene scene = new Scene(kundeSide);
+
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(scene);
+        window.show();
+
+
+    }
 }
