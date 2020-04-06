@@ -77,7 +77,7 @@
             </Label>
             <ImageView fitHeight="43.0" fitWidth="43.0" layoutX="724.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@HomeIcon.png" />
+                  <Image url="@../Bilder/HomeIcon.png" />
                </image>
             </ImageView>
             <Button fx:id="Start" layoutX="725.0" layoutY="42.0" mnemonicParsing="false" onAction="#StartSide" prefHeight="43.0" prefWidth="43.0" style="-fx-background-color: transparent;" />
