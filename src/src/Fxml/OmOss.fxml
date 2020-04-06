@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E6E6D8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.OmOssController">
+   <children>
+      <Label alignment="CENTER" layoutX="24.0" layoutY="181.0" prefHeight="264.0" prefWidth="758.0" text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. &#10;Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, &#10;when an unknown printer took a galley of type and scrambled it to make a type specimen book. &#10;It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially &#10;unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum &#10;passages, and more recently with desktop publishing software like Aldus PageMaker including versions &#10;of Lorem Ipsum." textAlignment="CENTER">
+         <font>
+            <Font name="Avenir Roman" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="327.0" layoutY="55.0" text="Litt om oss:">
+         <font>
+            <Font name="Avenir Oblique" size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="304.0" layoutY="130.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" />
+      <ImageView fitHeight="51.0" fitWidth="55.0" layoutX="722.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/HomeIcon.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="720.0" layoutY="30.0" mnemonicParsing="false" onAction="#StartSide" prefHeight="47.0" prefWidth="57.0" style="-fx-background-color: transparent;" />
+   </children>
+</AnchorPane>

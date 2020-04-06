@@ -15,7 +15,7 @@
          <children>
             <Button fx:id="LoggInn" layoutX="63.0" layoutY="117.0" mnemonicParsing="false" onAction="#LoggInn" prefHeight="50.0" prefWidth="194.0" text="Logg inn" AnchorPane.leftAnchor="63.0" />
             <Button fx:id="instillinger" layoutX="61.0" layoutY="197.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="196.0" text="Instillinger" />
-            <Button fx:id="OmOss" layoutX="61.0" layoutY="275.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="196.0" text="Om oss" />
+            <Button fx:id="OmOss" layoutX="61.0" layoutY="275.0" mnemonicParsing="false" onAction="#OmOss" prefHeight="50.0" prefWidth="196.0" text="Om oss" />
             <AnchorPane prefHeight="600.0" prefWidth="61.0" style="-fx-background-color: #E6E6D1;">
                <effect>
                   <DropShadow />
