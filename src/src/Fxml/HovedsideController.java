@@ -1,7 +1,6 @@
 package Fxml;
 
 import Hjelpeklasser.KundeModell;
-import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,7 +13,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-
 
 
 public class HovedsideController {
@@ -41,6 +39,8 @@ public class HovedsideController {
     }
 
     public void adminSide(ActionEvent event) throws IOException {
+
+
 
         if (brukernavn.getText().equals("admin")  && passord.getText().equals("admin")){
 
