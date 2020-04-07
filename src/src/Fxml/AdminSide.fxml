@@ -21,5 +21,6 @@
         </columns>
       </TableView>
       <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="136.0" text="Button" />
+      <Button fx:id="Tilbake" layoutX="136.0" mnemonicParsing="false" onAction="#Tilbake" prefHeight="39.0" prefWidth="136.0" text="Gå tilbake" />
    </children>
 </AnchorPane>
