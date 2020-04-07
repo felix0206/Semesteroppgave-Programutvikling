@@ -6,20 +6,20 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.kundeSideController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.kundeSideController">
    <children>
-      <AnchorPane layoutY="-1.0" prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane layoutY="-1.0" prefHeight="600.0" prefWidth="800.0">
          <children>
-            <Label alignment="CENTER" layoutX="7.0" layoutY="42.0" prefHeight="48.0" prefWidth="573.0" text="Velg Biltype">
+            <Label alignment="CENTER" layoutX="7.0" layoutY="42.0" prefHeight="48.0" prefWidth="573.0" text="Velg Biltype" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="42.0">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <Button fx:id="Tilbake" layoutX="20.0" layoutY="348.0" mnemonicParsing="false" onAction="#Tilbake" prefHeight="38.0" prefWidth="105.0" text="Gå tilbake" />
-            <Button fx:id="Videre1" layoutX="475.0" layoutY="348.0" mnemonicParsing="false" onAction="#Videre1" prefHeight="38.0" prefWidth="105.0" text="Videre" />
-            <CheckBox fx:id="Hybridcheck" layoutX="44.0" layoutY="182.0" mnemonicParsing="false" onAction="#Hybridcheck" prefHeight="38.0" prefWidth="111.0" text="Hybrid" />
-            <CheckBox fx:id="Bensincheck" layoutX="238.0" layoutY="187.0" mnemonicParsing="false" onAction="#Bensincheck" prefHeight="29.0" prefWidth="111.0" text="Bensin" />
-            <CheckBox fx:id="Elbilcheck" layoutX="447.0" layoutY="182.0" mnemonicParsing="false" onAction="#Elbilcheck" prefHeight="38.0" prefWidth="111.0" text="Elbil" />
+            <Button fx:id="Tilbake" layoutX="20.0" layoutY="348.0" mnemonicParsing="false" onAction="#Tilbake" prefHeight="38.0" prefWidth="105.0" text="Gå tilbake" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
+            <Button fx:id="Videre1" layoutX="475.0" layoutY="348.0" mnemonicParsing="false" onAction="#Videre1" prefHeight="38.0" prefWidth="105.0" text="Videre" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+            <CheckBox fx:id="Hybridcheck" layoutX="42.0" layoutY="224.0" mnemonicParsing="false" onAction="#Hybridcheck" prefHeight="50.0" prefWidth="150.0" text="Hybrid" AnchorPane.leftAnchor="42.0" />
+            <CheckBox fx:id="Bensincheck" layoutX="332.0" layoutY="234.0" mnemonicParsing="false" onAction="#Bensincheck" prefHeight="50.0" prefWidth="150.0" text="Bensin" AnchorPane.rightAnchor="324.0" />
+            <CheckBox fx:id="Elbilcheck" layoutX="616.0" layoutY="245.0" mnemonicParsing="false" onAction="#Elbilcheck" prefHeight="50.0" prefWidth="150.0" text="Elbil" AnchorPane.rightAnchor="64.0" />
          </children>
       </AnchorPane>
    </children>
