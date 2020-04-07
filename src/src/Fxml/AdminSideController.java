@@ -8,32 +8,35 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class AdminSideController {
 
-    @FXML
-    private Button Tilbake;
 
     @FXML
-    private TableColumn Navn, Email, TypeBil, Hestekrefter, Interior, Farge, Felger, Pris;
+    public Button Start;
+
+    @FXML
+    public TableColumn Navn, Email, TypeBil, Hestekrefter, Interior, Farge, Felger, Pris;
 
 
 
-    public void Tilbake(ActionEvent event) throws IOException {
 
-        Parent tilbake = FXMLLoader.load(getClass().getResource("HovedSide.fxml"));
+    public void StartSide(ActionEvent event) throws IOException {
 
-        Scene scene = new Scene(tilbake);
+        Parent kundeSide = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
+
+        Scene scene = new Scene(kundeSide);
 
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(scene);
-
         window.show();
+
 
     }
 }

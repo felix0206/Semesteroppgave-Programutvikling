@@ -59,7 +59,6 @@ public class HovedsideController {
         }
 
     }
-
     public void StartSide(ActionEvent event) throws IOException {
 
         Parent kundeSide = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
@@ -74,4 +73,5 @@ public class HovedsideController {
 
 
     }
+
 }
