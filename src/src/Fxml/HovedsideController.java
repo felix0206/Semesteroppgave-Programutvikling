@@ -1,5 +1,7 @@
 package Fxml;
 
+import Hjelpeklasser.KundeModell;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

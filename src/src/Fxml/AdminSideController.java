@@ -21,6 +21,7 @@ public class AdminSideController {
     private TableColumn Navn, Email, TypeBil, Hestekrefter, Interior, Farge, Felger, Pris;
 
 
+
     public void Tilbake(ActionEvent event) throws IOException {
 
         Parent tilbake = FXMLLoader.load(getClass().getResource("HovedSide.fxml"));
