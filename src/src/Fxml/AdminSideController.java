@@ -1,7 +1,7 @@
 package Fxml;
 
+import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
-import Hjelpeklasser.KundeModell;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -38,6 +38,7 @@ public class AdminSideController implements Initializable {
 
 
     HovedsideController hovedsideController = new HovedsideController();
+    AdminCollection collection = new AdminCollection();
 
     public void StartSide(ActionEvent event) throws IOException {
 
@@ -56,24 +57,18 @@ public class AdminSideController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+        collection.setTable(tabell);
     }
 
 
     public void LeggTil(ActionEvent event) {
 
-   // AdminInnlegging reg =();
+        AdminInnlegging legginn = registreringTable();
 
-       /* TypeBil.setCellValueFactory(new PropertyValueFactory<>("typebil"));
-        Hestekrefter.setCellValueFactory(new PropertyValueFactory<>("hestekrefter"));
-        Interior.setCellValueFactory(new PropertyValueFactory<>("interior"));
-        Farge.setCellValueFactory(new PropertyValueFactory<>("farge"));
-        Felger.setCellValueFactory(new PropertyValueFactory<>("felger"));
-        Pris.setCellValueFactory(new PropertyValueFactory<>("pris"));
-
-        tabell.setItems(getKunde()); */
-
-        reset();
+        if (legginn != null){
+            reset();
+            collection.leggtil(legginn);
+        }
 
     }
 
@@ -88,7 +83,13 @@ public class AdminSideController implements Initializable {
         int prisText = Integer.parseInt(pris.getText());
 
         reg.typebil(typebilText);
-return reg;
+        reg.hestekrefter(hestekrefterText);
+        reg.interior(interiorText);
+        reg.farge(fargeText);
+        reg.felger(felgerText);
+        reg.pris(prisText);
+
+        return reg;
     }
 
     private void reset(){

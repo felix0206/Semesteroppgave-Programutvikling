@@ -12,77 +12,7 @@ public class AdminInnlegging {
     public SimpleIntegerProperty pris;
     public SimpleIntegerProperty hestekrefter;
 
-    public String getTypebil() {
-        return typebil.get();
-    }
 
-    public SimpleStringProperty typebilProperty() {
-        return typebil;
-    }
-
-    public void setTypebil(String typebil) {
-        this.typebil.set(typebil);
-    }
-
-    public String getInterior() {
-        return interior.get();
-    }
-
-    public SimpleStringProperty interiorProperty() {
-        return interior;
-    }
-
-    public void setInterior(String interior) {
-        this.interior.set(interior);
-    }
-
-    public String getFarge() {
-        return farge.get();
-    }
-
-    public SimpleStringProperty fargeProperty() {
-        return farge;
-    }
-
-    public void setFarge(String farge) {
-        this.farge.set(farge);
-    }
-
-    public String getFelger() {
-        return felger.get();
-    }
-
-    public SimpleStringProperty felgerProperty() {
-        return felger;
-    }
-
-    public void setFelger(String felger) {
-        this.felger.set(felger);
-    }
-
-    public int getPris() {
-        return pris.get();
-    }
-
-    public SimpleIntegerProperty prisProperty() {
-        return pris;
-    }
-
-    public void setPris(int pris) {
-        this.pris.set(pris);
-    }
-
-    public int getHestekrefter() {
-        return hestekrefter.get();
-    }
-
-    public SimpleIntegerProperty hestekrefterProperty() {
-        return hestekrefter;
-    }
-
-    public void setHestekrefter(int hestekrefter) {
-        this.hestekrefter.set(hestekrefter);
-    }
 
     public AdminInnlegging(String typebil, int hestekrefter, String interior, String farge, String felger, int pris){
 
@@ -95,6 +25,92 @@ public class AdminInnlegging {
 
     }
 
-    public void typebil(String typebilText) {
+    public String typebil(String bil){
+
+        this.typebil = new SimpleStringProperty(bil);
+
+        return bil;
     }
+    public int hestekrefter(int hestekrefter){
+
+        this.hestekrefter = new SimpleIntegerProperty(hestekrefter);
+
+        return hestekrefter;
+    }
+    public String farge(String farge){
+
+        this.farge = new SimpleStringProperty(farge);
+
+        return farge;
+    }
+    public String interior(String interior){
+
+        this.interior = new SimpleStringProperty(interior);
+
+        return interior;
+    }
+    public String felger(String felger){
+
+        this.felger = new SimpleStringProperty(felger);
+
+        return felger;
+    }
+    public int pris(int pris){
+
+        this.pris = new SimpleIntegerProperty(pris);
+
+        return pris;
+    }
+
+    public String getTypebil() {
+        return typebil.getValue();
+    }
+
+    public void setTypebil(String typebil) {
+        this.typebil.set(typebil);
+
+    }
+
+    public int getHestekrefter() {
+        return hestekrefter.getValue();
+    }
+
+    public void setHestekrefter(int hestekrefter) {
+        this.hestekrefter.set(hestekrefter);
+
+    }
+    public String getInterior() {
+        return interior.getValue();
+    }
+
+    public void setInterior(String interior) {
+        this.typebil.set(interior);
+
+    }
+    public String getFelger() {
+        return felger.getValue();
+    }
+
+    public void setFelger(String felger) {
+        this.typebil.set(felger);
+
+    }
+    public String getFarge() {
+        return farge.getValue();
+    }
+
+    public void setFarge(String farge) {
+        this.typebil.set(farge);
+
+    }
+    public int getPris() {
+        return pris.getValue();
+    }
+
+    public void setPris(String pris) {
+        this.typebil.set(pris);
+
+    }
+
+
 }
