@@ -8,6 +8,13 @@ public class KundeModell{
     public SimpleStringProperty etternavn;
     public SimpleStringProperty epost;
 
+    public KundeModell(String fornavn, String etternavn, String epost){
+
+        this.fornavn = new SimpleStringProperty(fornavn);
+        this.etternavn = new SimpleStringProperty(etternavn);
+        this.epost = new SimpleStringProperty(epost);
+
+    }
 
     public String getFornavn() {
         return fornavn.get();
@@ -43,14 +50,6 @@ public class KundeModell{
 
     public void setEpost(String epost) {
         this.epost.set(epost);
-    }
-
-    public KundeModell(String fornavn, String etternavn, String epost){
-
-        this.fornavn = new SimpleStringProperty(fornavn);
-        this.etternavn = new SimpleStringProperty(etternavn);
-        this.epost = new SimpleStringProperty(epost);
-
     }
 
 }

@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.AdminSideController">
    <children>
-      <TableView fx:id="TableView" layoutY="39.0" prefHeight="327.0" prefWidth="929.0">
+      <TableView fx:id="tabell" layoutY="39.0" prefHeight="327.0" prefWidth="929.0">
         <columns>
             <TableColumn fx:id="Navn" prefWidth="135.0" text="Navn" />
             <TableColumn fx:id="Email" prefWidth="135.0" text="Email" />
@@ -22,13 +22,13 @@
           <TableColumn fx:id="Pris" prefWidth="117.0" text="Pris" />
         </columns>
       </TableView>
-      <TextField layoutY="366.0" prefHeight="39.0" prefWidth="130.0" promptText="Type bil" />
-      <TextField layoutX="130.0" layoutY="366.0" prefHeight="39.0" prefWidth="119.0" promptText="Hestekrefter" />
-      <TextField layoutX="249.0" layoutY="366.0" prefHeight="39.0" prefWidth="136.0" promptText="Interior" />
-      <TextField layoutX="385.0" layoutY="366.0" prefHeight="39.0" prefWidth="112.0" promptText="Farge" />
-      <TextField layoutX="497.0" layoutY="366.0" prefHeight="39.0" prefWidth="136.0" promptText="Felger" />
-      <TextField layoutX="633.0" layoutY="366.0" prefHeight="39.0" prefWidth="136.0" promptText="Pris" />
-      <Button layoutX="769.0" layoutY="366.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="160.0" text="LEGG TIL" />
+      <TextField fx:id="typebil" layoutY="366.0" prefHeight="39.0" prefWidth="130.0" promptText="Type bil" />
+      <TextField fx:id="hestekrefter" layoutX="130.0" layoutY="366.0" prefHeight="39.0" prefWidth="119.0" promptText="Hestekrefter" />
+      <TextField fx:id="interior" layoutX="249.0" layoutY="366.0" prefHeight="39.0" prefWidth="136.0" promptText="Interior" />
+      <TextField fx:id="farge" layoutX="385.0" layoutY="366.0" prefHeight="39.0" prefWidth="112.0" promptText="Farge" />
+      <TextField fx:id="felger" layoutX="497.0" layoutY="366.0" prefHeight="39.0" prefWidth="136.0" promptText="Felger" />
+      <TextField fx:id="pris" layoutX="633.0" layoutY="366.0" prefHeight="39.0" prefWidth="136.0" promptText="Pris" />
+      <Button fx:id="leggtil" layoutX="769.0" layoutY="366.0" mnemonicParsing="false" onAction="#LeggTil" prefHeight="39.0" prefWidth="160.0" text="LEGG TIL" />
       <ImageView fitHeight="39.0" fitWidth="59.0" layoutX="870.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Bilder/HomeIcon.png" />

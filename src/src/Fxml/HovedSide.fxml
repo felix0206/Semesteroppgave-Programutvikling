@@ -46,15 +46,15 @@
                         <Font name="Avenir Roman" size="17.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="107.0" layoutY="107.0" promptText="Fornavn" AnchorPane.topAnchor="107.0">
+                  <TextField fx:id="fornavn" layoutX="107.0" layoutY="107.0" promptText="Fornavn" AnchorPane.topAnchor="107.0">
                      <effect>
                         <DropShadow color="#9d9a9a" />
                      </effect></TextField>
-                  <TextField layoutX="107.0" layoutY="160.0" promptText="Etternavn" AnchorPane.topAnchor="160.0">
+                  <TextField fx:id="etternavn" layoutX="107.0" layoutY="160.0" promptText="Etternavn" AnchorPane.topAnchor="160.0">
                      <effect>
                         <DropShadow color="#9d9a9a" />
                      </effect></TextField>
-                  <TextField layoutX="107.0" layoutY="212.0" promptText="Epostadresse" AnchorPane.topAnchor="213.0">
+                  <TextField fx:id="epost" layoutX="107.0" layoutY="212.0" promptText="Epostadresse" AnchorPane.topAnchor="213.0">
                      <effect>
                         <DropShadow color="#9d9a9a" />
                      </effect></TextField>
