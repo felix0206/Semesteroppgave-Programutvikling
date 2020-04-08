@@ -9,8 +9,8 @@ public class AdminInnlegging {
     public SimpleStringProperty interior;
     public SimpleStringProperty farge;
     public SimpleStringProperty felger;
-    public SimpleStringProperty pris;
-    public SimpleStringProperty hestekrefter;
+    public SimpleIntegerProperty pris;
+    public SimpleIntegerProperty hestekrefter;
 
     public String getTypebil() {
         return typebil.get();
@@ -60,39 +60,41 @@ public class AdminInnlegging {
         this.felger.set(felger);
     }
 
-    public String getPris() {
+    public int getPris() {
         return pris.get();
     }
 
-    public SimpleStringProperty prisProperty() {
+    public SimpleIntegerProperty prisProperty() {
         return pris;
     }
 
-    public void setPris(String pris) {
+    public void setPris(int pris) {
         this.pris.set(pris);
     }
 
-    public String getHestekrefter() {
+    public int getHestekrefter() {
         return hestekrefter.get();
     }
 
-    public SimpleStringProperty hestekrefterProperty() {
+    public SimpleIntegerProperty hestekrefterProperty() {
         return hestekrefter;
     }
 
-    public void setHestekrefter(String hestekrefter) {
+    public void setHestekrefter(int hestekrefter) {
         this.hestekrefter.set(hestekrefter);
     }
 
-    public AdminInnlegging(String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
+    public AdminInnlegging(String typebil, int hestekrefter, String interior, String farge, String felger, int pris){
 
         this.typebil = new SimpleStringProperty(typebil);
         this.interior = new SimpleStringProperty(interior);
         this.farge = new SimpleStringProperty(farge);
         this.felger = new SimpleStringProperty(felger);
-        this.pris = new SimpleStringProperty(pris);
-        this.hestekrefter = new SimpleStringProperty(hestekrefter);
+        this.pris = new SimpleIntegerProperty(pris);
+        this.hestekrefter = new SimpleIntegerProperty(hestekrefter);
 
     }
 
+    public void typebil(String typebilText) {
+    }
 }

@@ -8,18 +8,50 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.AdminSideController">
    <children>
       <TableView fx:id="tabell" layoutY="39.0" prefHeight="327.0" prefWidth="929.0">
         <columns>
-            <TableColumn fx:id="Navn" prefWidth="135.0" text="Navn" />
-            <TableColumn fx:id="Email" prefWidth="135.0" text="Email" />
-          <TableColumn fx:id="TypeBil" prefWidth="104.0" text="Type Bil" />
-            <TableColumn fx:id="Hestekrefter" prefWidth="146.0" text="Hestekrefter" />
-            <TableColumn fx:id="Interior" prefWidth="98.0" text="Interior" />
-            <TableColumn fx:id="Farge" prefWidth="85.0" text="Farge" />
-            <TableColumn fx:id="Felger" prefWidth="108.0" text="Felger" />
-          <TableColumn fx:id="Pris" prefWidth="117.0" text="Pris" />
+            <TableColumn fx:id="Navn" prefWidth="135.0" text="Navn">
+                <cellValueFactory>
+                    <PropertyValueFactory property="navn" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="Email" prefWidth="135.0" text="Email">
+                <cellValueFactory>
+                    <PropertyValueFactory property="email" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="TypeBil" prefWidth="104.0" text="Type Bil">
+                <cellValueFactory>
+                    <PropertyValueFactory property="typebil" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="Hestekrefter" prefWidth="146.0" text="Hestekrefter">
+                <cellValueFactory>
+                    <PropertyValueFactory property="hestekrefter" />
+                </cellValueFactory></TableColumn>
+            <TableColumn fx:id="Interior" prefWidth="98.0" text="Interior">
+                <cellValueFactory>
+                    <PropertyValueFactory property="interior" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="Farge" prefWidth="85.0" text="Farge">
+                <cellValueFactory>
+                    <PropertyValueFactory property="farge" />
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="Felger" prefWidth="108.0" text="Felger">
+                <cellValueFactory>
+                    <PropertyValueFactory property="felger" />
+                </cellValueFactory>
+            </TableColumn>
+          <TableColumn fx:id="Pris" prefWidth="117.0" text="Pris">
+              <cellValueFactory>
+                  <PropertyValueFactory property="pris" />
+              </cellValueFactory>
+          </TableColumn>
         </columns>
       </TableView>
       <TextField fx:id="typebil" layoutY="366.0" prefHeight="39.0" prefWidth="130.0" promptText="Type bil" />

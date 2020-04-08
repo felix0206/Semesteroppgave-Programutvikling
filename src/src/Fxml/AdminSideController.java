@@ -60,27 +60,43 @@ public class AdminSideController implements Initializable {
     }
 
 
-    public ObservableList<AdminInnlegging> getKunde(){
-
-
-        ObservableList<AdminInnlegging> kunde = FXCollections.observableArrayList();
-        kunde.add(new AdminInnlegging(typebil.getText(), hestekrefter.getText(), interior.getText(), farge.getText(),felger.getText(), pris.getText()));
-
-        return kunde;
-
-    }
-
-
     public void LeggTil(ActionEvent event) {
 
-        TypeBil.setCellValueFactory(new PropertyValueFactory<>("typebil"));
+   // AdminInnlegging reg =();
+
+       /* TypeBil.setCellValueFactory(new PropertyValueFactory<>("typebil"));
         Hestekrefter.setCellValueFactory(new PropertyValueFactory<>("hestekrefter"));
         Interior.setCellValueFactory(new PropertyValueFactory<>("interior"));
         Farge.setCellValueFactory(new PropertyValueFactory<>("farge"));
         Felger.setCellValueFactory(new PropertyValueFactory<>("felger"));
         Pris.setCellValueFactory(new PropertyValueFactory<>("pris"));
 
-        tabell.setItems(getKunde());
+        tabell.setItems(getKunde()); */
 
+        reset();
+
+    }
+
+    private AdminInnlegging registreringTable(){
+        AdminInnlegging reg = new AdminInnlegging(null, 0,null,null,null,0);
+
+        String typebilText = typebil.getText();
+        int hestekrefterText = Integer.parseInt(hestekrefter.getText());
+        String interiorText = interior.getText();
+        String fargeText = farge.getText();
+        String felgerText = felger.getText();
+        int prisText = Integer.parseInt(pris.getText());
+
+        reg.typebil(typebilText);
+return reg;
+    }
+
+    private void reset(){
+        typebil.setText("");
+        hestekrefter.setText("");
+        interior.setText("");
+        farge.setText("");
+        felger.setText("");
+        pris.setText("");
     }
 }
