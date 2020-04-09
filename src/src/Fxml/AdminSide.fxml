@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.cell.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
@@ -7,11 +8,11 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.AdminSideController">
+
+<AnchorPane prefHeight="418.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.AdminSideController">
    <children>
-      <TableView fx:id="tabell" layoutY="39.0" prefHeight="327.0" prefWidth="929.0">
+      <TableView fx:id="tabell" layoutY="39.0" prefHeight="280.0" prefWidth="929.0">
         <columns>
             <TableColumn fx:id="Navn" prefWidth="135.0" text="Navn">
                 <cellValueFactory>
@@ -54,18 +55,21 @@
           </TableColumn>
         </columns>
       </TableView>
-      <TextField fx:id="typebil" layoutY="366.0" prefHeight="39.0" prefWidth="130.0" promptText="Type bil" />
-      <TextField fx:id="hestekrefter" layoutX="130.0" layoutY="366.0" prefHeight="39.0" prefWidth="119.0" promptText="Hestekrefter" />
-      <TextField fx:id="interior" layoutX="249.0" layoutY="366.0" prefHeight="39.0" prefWidth="136.0" promptText="Interior" />
-      <TextField fx:id="farge" layoutX="385.0" layoutY="366.0" prefHeight="39.0" prefWidth="112.0" promptText="Farge" />
-      <TextField fx:id="felger" layoutX="497.0" layoutY="366.0" prefHeight="39.0" prefWidth="136.0" promptText="Felger" />
-      <TextField fx:id="pris" layoutX="633.0" layoutY="366.0" prefHeight="39.0" prefWidth="136.0" promptText="Pris" />
-      <Button fx:id="leggtil" layoutX="769.0" layoutY="366.0" mnemonicParsing="false" onAction="#LeggTil" prefHeight="39.0" prefWidth="160.0" text="LEGG TIL" />
+      <TextField fx:id="typebil" layoutX="8.0" layoutY="326.0" prefHeight="40.0" prefWidth="150.0" promptText="Type bil" />
+      <TextField fx:id="hestekrefter" layoutX="178.0" layoutY="326.0" prefHeight="40.0" prefWidth="150.0" promptText="Hestekrefter" />
+      <TextField fx:id="interior" layoutX="8.0" layoutY="372.0" prefHeight="40.0" prefWidth="150.0" promptText="Interior" />
+      <TextField fx:id="farge" layoutX="178.0" layoutY="372.0" prefHeight="40.0" prefWidth="150.0" promptText="Farge" />
+      <TextField fx:id="felger" layoutX="348.0" layoutY="326.0" prefHeight="40.0" prefWidth="150.0" promptText="Felger" />
+      <TextField fx:id="pris" layoutX="348.0" layoutY="372.0" prefHeight="40.0" prefWidth="150.0" promptText="Pris" />
+      <Button fx:id="leggtil" layoutX="519.0" layoutY="326.0" mnemonicParsing="false" onAction="#LeggTil" prefHeight="40.0" prefWidth="115.0" text="LEGG TIL" />
       <ImageView fitHeight="39.0" fitWidth="59.0" layoutX="870.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Bilder/HomeIcon.png" />
          </image>
       </ImageView>
       <Button fx:id="Start" layoutX="864.0" layoutY="-2.0" mnemonicParsing="false" onAction="#StartSide" prefHeight="39.0" prefWidth="65.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="slett" layoutX="662.0" layoutY="326.0" mnemonicParsing="false" onAction="#Slett" prefHeight="40.0" prefWidth="115.0" text="SLETT" />
+      <Button fx:id="clear" layoutX="807.0" layoutY="326.0" mnemonicParsing="false" onAction="#Clear" prefHeight="40.0" prefWidth="115.0" text="CLEAR" />
+      <TextField alignment="CENTER" layoutX="546.0" layoutY="374.0" prefHeight="39.0" prefWidth="347.0" promptText="Filtrer tabell..." />
    </children>
 </AnchorPane>

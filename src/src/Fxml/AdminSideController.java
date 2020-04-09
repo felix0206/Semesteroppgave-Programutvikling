@@ -72,6 +72,14 @@ public class AdminSideController implements Initializable {
 
     }
 
+    public void Slett(ActionEvent event){
+        tabell.getItems().removeAll(tabell.getSelectionModel().getSelectedItems());
+    }
+
+    public void Clear(ActionEvent event){
+        reset();
+    }
+
     private AdminInnlegging registreringTable(){
         AdminInnlegging reg = new AdminInnlegging(null, 0,null,null,null,0);
 
