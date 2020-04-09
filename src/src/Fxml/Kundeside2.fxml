@@ -2,15 +2,26 @@
 
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundeSide2Controller">
    <children>
       <AnchorPane prefHeight="603.0" prefWidth="804.0">
          <children>
-            <Label layoutX="387.0" layoutY="57.0" prefHeight="66.0" prefWidth="237.0" text="Velg Motor" />
-            <ChoiceBox fx:id="Hestekrefterbox" layoutX="235.0" layoutY="264.0" onDragDetected="#initialize" prefHeight="73.0" prefWidth="312.0" />
-            <Label layoutX="14.0" layoutY="264.0" prefHeight="73.0" prefWidth="196.0" text="Hestekrefter" />
+            <Label layoutX="387.0" layoutY="57.0" prefHeight="66.0" prefWidth="237.0" text="Bygg din bil" />
+            <ChoiceBox fx:id="Hestekrefterbox" layoutX="29.0" layoutY="235.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" />
+            <Label layoutX="29.0" layoutY="148.0" prefHeight="66.0" prefWidth="148.0" text="Hestekrefter" />
+            <ChoiceBox fx:id="Fargebox" layoutX="215.0" layoutY="235.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" />
+            <ChoiceBox fx:id="Interiørbox" layoutX="402.0" layoutY="235.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" />
+            <ChoiceBox fx:id="Felgerbox" layoutX="602.0" layoutY="235.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" />
+            <Label layoutX="219.0" layoutY="163.0" prefHeight="36.0" prefWidth="141.0" text="Farge" />
+            <Label layoutX="406.0" layoutY="163.0" prefHeight="36.0" prefWidth="141.0" text="Interiør" />
+            <Label layoutX="602.0" layoutY="167.0" prefHeight="29.0" prefWidth="135.0" text="Felger" />
+            <ImageView fitHeight="137.0" fitWidth="163.0" layoutX="29.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="137.0" fitWidth="154.0" layoutX="219.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="137.0" fitWidth="163.0" layoutX="406.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="137.0" fitWidth="148.0" layoutX="602.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" />
          </children></AnchorPane>
    </children>
 </AnchorPane>
