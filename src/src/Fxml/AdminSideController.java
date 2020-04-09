@@ -4,6 +4,7 @@ import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,8 +35,7 @@ public class AdminSideController implements Initializable {
     private TableView<AdminInnlegging> tabell;
 
     @FXML
-    public TextField typebil, hestekrefter, interior, farge, felger, pris;
-
+    public TextField typebil, hestekrefter, interior, farge, felger, pris, filtrer;
 
     HovedsideController hovedsideController = new HovedsideController();
     AdminCollection collection = new AdminCollection();
@@ -79,6 +79,10 @@ public class AdminSideController implements Initializable {
     public void Clear(ActionEvent event){
         reset();
     }
+
+   /* public void filtrer(){
+        tabell.setItems(collection.filtrer());
+    } */
 
     private AdminInnlegging registreringTable(){
         AdminInnlegging reg = new AdminInnlegging(null, 0,null,null,null,0);
