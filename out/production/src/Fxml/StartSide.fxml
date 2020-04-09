@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E6E6D8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.StartSideController">
+   <children>
+      <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #E6E5D9;">
+         <children>
+            <Button fx:id="LoggInn" layoutX="63.0" layoutY="117.0" mnemonicParsing="false" onAction="#LoggInn" prefHeight="50.0" prefWidth="194.0" text="Logg inn" AnchorPane.leftAnchor="63.0" />
+            <Button fx:id="instillinger" layoutX="61.0" layoutY="197.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="196.0" text="Instillinger" />
+            <Button fx:id="OmOss" layoutX="61.0" layoutY="275.0" mnemonicParsing="false" onAction="#OmOss" prefHeight="50.0" prefWidth="196.0" text="Om oss" />
+            <AnchorPane prefHeight="600.0" prefWidth="61.0" style="-fx-background-color: #E6E6D1;">
+               <effect>
+                  <DropShadow />
+               </effect>
+               <children>
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="10.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Bilder/SettingsIcon.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="11.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Bilder/OmOss.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="11.0" layoutY="123.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Bilder/LoggInn.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+         <effect>
+            <DropShadow />
+         </effect>
+      </AnchorPane>
+      <Label alignment="CENTER" layoutX="272.0" layoutY="19.0" prefHeight="96.0" prefWidth="503.0" text="F.A.J-AutoMobiles">
+         <font>
+            <Font name="Avenir Roman" size="33.0" />
+         </font>
+      </Label>
+      <Separator layoutY="86.0" prefHeight="14.0" prefWidth="800.0" />
+      <ImageView fitHeight="375.0" fitWidth="415.0" layoutX="327.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/IconProg.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
