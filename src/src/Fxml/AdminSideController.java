@@ -73,7 +73,7 @@ public class AdminSideController implements Initializable {
     }
 
     public void Slett(ActionEvent event){
-        tabell.getItems().removeAll(tabell.getSelectionModel().getSelectedItems());
+        tabell.getItems().removeAll(tabell.getSelectionModel().getSelectedItems()); //sletter valgt rad
     }
 
     public void Clear(ActionEvent event){
