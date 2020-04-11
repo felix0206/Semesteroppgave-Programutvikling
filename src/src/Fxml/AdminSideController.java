@@ -107,7 +107,7 @@ public class AdminSideController implements Initializable {
         valgtCelle.setPris(redigeringFullfort.getNewValue().toString());
     }
 
-
+    //legg inn fra textbox
     public void LeggTil(ActionEvent event) {
 
         AdminInnlegging legginn = registreringTable();
@@ -119,10 +119,12 @@ public class AdminSideController implements Initializable {
 
     }
 
+    //slette knapp som fjerner valgt rad i tableview
     public void Slett(ActionEvent event){
         tabell.getItems().removeAll(tabell.getSelectionModel().getSelectedItems()); //sletter valgt rad klikk på rad og så slett
     }
 
+    //reset knapp som fjerner alt skrevet i textboxene
     public void Clear(ActionEvent event){
         reset();
     }
@@ -164,6 +166,7 @@ public class AdminSideController implements Initializable {
         }));
     }
 
+    //registrering av ny bil
     private AdminInnlegging registreringTable(){
         AdminInnlegging reg = new AdminInnlegging(null, null,null,null,null,null);
 
@@ -184,6 +187,7 @@ public class AdminSideController implements Initializable {
         return reg;
     }
 
+    //resetter ale textboxene
     private void reset(){
         typebil.setText("");
         hestekrefter.setText("");
