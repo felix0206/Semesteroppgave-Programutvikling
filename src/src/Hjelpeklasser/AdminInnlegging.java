@@ -9,19 +9,19 @@ public class AdminInnlegging {
     public SimpleStringProperty interior;
     public SimpleStringProperty farge;
     public SimpleStringProperty felger;
-    public SimpleIntegerProperty pris;
-    public SimpleIntegerProperty hestekrefter;
+    public SimpleStringProperty pris;
+    public SimpleStringProperty hestekrefter;
 
 
 
-    public AdminInnlegging(String typebil, int hestekrefter, String interior, String farge, String felger, int pris){
+    public AdminInnlegging(String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
 
         this.typebil = new SimpleStringProperty(typebil);
         this.interior = new SimpleStringProperty(interior);
         this.farge = new SimpleStringProperty(farge);
         this.felger = new SimpleStringProperty(felger);
-        this.pris = new SimpleIntegerProperty(pris);
-        this.hestekrefter = new SimpleIntegerProperty(hestekrefter);
+        this.pris = new SimpleStringProperty(pris);
+        this.hestekrefter = new SimpleStringProperty(hestekrefter);
 
     }
 
@@ -31,9 +31,9 @@ public class AdminInnlegging {
 
         return bil;
     }
-    public int hestekrefter(int hestekrefter){
+    public String hestekrefter(String hestekrefter){
 
-        this.hestekrefter = new SimpleIntegerProperty(hestekrefter);
+        this.hestekrefter = new SimpleStringProperty(hestekrefter);
 
         return hestekrefter;
     }
@@ -55,9 +55,9 @@ public class AdminInnlegging {
 
         return felger;
     }
-    public int pris(int pris){
+    public String pris(String pris){
 
-        this.pris = new SimpleIntegerProperty(pris);
+        this.pris = new SimpleStringProperty(pris);
 
         return pris;
     }
@@ -71,11 +71,11 @@ public class AdminInnlegging {
 
     }
 
-    public int getHestekrefter() {
+    public String getHestekrefter() {
         return hestekrefter.getValue();
     }
 
-    public void setHestekrefter(int hestekrefter) {
+    public void setHestekrefter(String hestekrefter) {
         this.hestekrefter.set(hestekrefter);
 
     }
@@ -103,13 +103,12 @@ public class AdminInnlegging {
         this.typebil.set(farge);
 
     }
-    public int getPris() {
+    public String getPris() {
         return pris.getValue();
     }
 
     public void setPris(String pris) {
         this.typebil.set(pris);
-
     }
 
 

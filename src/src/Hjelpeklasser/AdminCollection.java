@@ -18,6 +18,6 @@ public class AdminCollection {
     }
 
     public void filtrer(){
-        FilteredList<AdminInnlegging> filter = new FilteredList<>(liste);
+        FilteredList<AdminInnlegging> filter = new FilteredList<>(liste, b -> true);
     }
 }

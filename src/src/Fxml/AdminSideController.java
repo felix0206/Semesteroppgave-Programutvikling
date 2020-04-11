@@ -5,6 +5,7 @@ import Hjelpeklasser.AdminInnlegging;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,11 +18,14 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 
 public class AdminSideController implements Initializable {
 
@@ -58,6 +62,49 @@ public class AdminSideController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         collection.setTable(tabell);
+
+        //tableview rediering
+        tabell.setEditable(true);
+        TypeBil.setCellFactory(TextFieldTableCell.forTableColumn());
+        Hestekrefter.setCellFactory(TextFieldTableCell.forTableColumn());
+        Interior.setCellFactory(TextFieldTableCell.forTableColumn());
+        Farge.setCellFactory(TextFieldTableCell.forTableColumn());
+        Felger.setCellFactory(TextFieldTableCell.forTableColumn());
+        Pris.setCellFactory(TextFieldTableCell.forTableColumn());
+
+        collection.leggtil(new AdminInnlegging("el","140","sport", "gul","sport","150000"));
+        collection.leggtil(new AdminInnlegging("Bensin","750","sport", "Rød","sport","850000"));
+    }
+
+    //metodene som forsikrer at cellene blir endret når man klikker enter
+    public void redigerBil(TableColumn.CellEditEvent redigeringFullfort){
+        AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
+        valgtCelle.setTypebil(redigeringFullfort.getNewValue().toString());
+    }
+
+    public void redigerHestekrefter(TableColumn.CellEditEvent redigeringFullfort){
+        AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
+        valgtCelle.setHestekrefter(redigeringFullfort.getNewValue().toString());
+    }
+
+    public void redigerInterior(TableColumn.CellEditEvent redigeringFullfort){
+        AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
+        valgtCelle.setInterior(redigeringFullfort.getNewValue().toString());
+    }
+
+    public void redigerFarge(TableColumn.CellEditEvent redigeringFullfort){
+        AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
+        valgtCelle.setFarge(redigeringFullfort.getNewValue().toString());
+    }
+
+    public void redigerFelger(TableColumn.CellEditEvent redigeringFullfort){
+        AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
+        valgtCelle.setFelger(redigeringFullfort.getNewValue().toString());
+    }
+
+    public void redigerPris(TableColumn.CellEditEvent redigeringFullfort){
+        AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
+        valgtCelle.setPris(redigeringFullfort.getNewValue().toString());
     }
 
 
@@ -80,19 +127,52 @@ public class AdminSideController implements Initializable {
         reset();
     }
 
-   /* public void filtrer(){
-        tabell.setItems(collection.filtrer());
-    } */
+    //filtrering i TextBox
+    public void Filtrering(KeyEvent event){
+        ObservableList<AdminInnlegging> liste = FXCollections.observableArrayList();
+        FilteredList<AdminInnlegging> filter = new FilteredList<>(liste, p -> true);
+
+        filtrer.textProperty().addListener(((observable, oldValue, newValue) -> {
+            filter.setPredicate(AdminInnlegging ->{
+                if(newValue == null || newValue.isEmpty()){
+                    return true;
+                }
+                String input = newValue.toLowerCase();
+                if(AdminInnlegging.getTypebil().toLowerCase().indexOf(input) != -1){
+                    return true;
+                }
+                if(AdminInnlegging.getHestekrefter().toLowerCase().indexOf(input) != -1){
+                    return true;
+                }
+                if(AdminInnlegging.getInterior().toLowerCase().indexOf(input) != -1){
+                    return true;
+                }
+                if(AdminInnlegging.getFarge().toLowerCase().indexOf(input) != -1){
+                    return true;
+                }
+                if(AdminInnlegging.getFelger().toLowerCase().indexOf(input) != -1){
+                    return true;
+                }
+                if(AdminInnlegging.getPris().toLowerCase().indexOf(input) != -1){
+                    return true;
+                }
+                return false;
+            });
+            SortedList<AdminInnlegging> sortering = new SortedList<>(filter);
+            sortering.comparatorProperty().bind(tabell.comparatorProperty());
+            tabell.setItems(sortering);
+        }));
+    }
 
     private AdminInnlegging registreringTable(){
-        AdminInnlegging reg = new AdminInnlegging(null, 0,null,null,null,0);
+        AdminInnlegging reg = new AdminInnlegging(null, null,null,null,null,null);
 
         String typebilText = typebil.getText();
-        int hestekrefterText = Integer.parseInt(hestekrefter.getText());
+        String hestekrefterText = hestekrefter.getText();
         String interiorText = interior.getText();
         String fargeText = farge.getText();
         String felgerText = felger.getText();
-        int prisText = Integer.parseInt(pris.getText());
+        String prisText = pris.getText();
 
         reg.typebil(typebilText);
         reg.hestekrefter(hestekrefterText);
