@@ -1,9 +1,5 @@
 package Fxml;
 
-import Hjelpeklasser.KundeModell;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +9,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -28,7 +23,7 @@ public class HovedsideController {
     @FXML
     public Label FeilmeldingAdmin, overskrift;
 
-
+    //Knapp får å gå til kundeSiden.
     public void kundeSide(ActionEvent event) throws IOException {
 
         Parent kundeSide = FXMLLoader.load(getClass().getResource("kundeSide.fxml"));
@@ -42,8 +37,8 @@ public class HovedsideController {
         window.show();
     }
 
+    //knapp for å gå til adminSiden.
     public void adminSide(ActionEvent event) throws IOException {
-
 
 
         if (brukernavn.getText().equals("admin")  && passord.getText().equals("admin")){
@@ -59,10 +54,13 @@ public class HovedsideController {
             window.show();
 
         }else{
-            FeilmeldingAdmin.setText("Feil brukernavn eller passord!\nHint: admin");
+            FeilmeldingAdmin.setText("Feil brukernavn eller passord!\nHint: admin"); //viser feilmelding om passordet
+                                                                                    // eller brukernavn er feil.
         }
 
     }
+
+    //Hjemknapp som er på alle sider øverst i høyre hjørne.
     public void StartSide(ActionEvent event) throws IOException {
 
         Parent kundeSide = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
