@@ -72,8 +72,8 @@ public class AdminSideController implements Initializable {
         Felger.setCellFactory(TextFieldTableCell.forTableColumn());
         Pris.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        collection.leggtil(new AdminInnlegging("el","140","sport", "gul","sport","150000"));
-        collection.leggtil(new AdminInnlegging("Bensin","750","sport", "Rød","sport","850000"));
+        collection.leggtil(new AdminInnlegging(null,null,"el","140","sport", "gul","sport","150000"));
+        collection.leggtil(new AdminInnlegging(null,null,"Bensin","750","sport", "Rød","sport","850000"));
     }
 
     //metodene som forsikrer at cellene blir endret når man klikker enter
@@ -168,8 +168,10 @@ public class AdminSideController implements Initializable {
 
     //registrering av ny bil
     private AdminInnlegging registreringTable(){
-        AdminInnlegging reg = new AdminInnlegging(null, null,null,null,null,null);
+        AdminInnlegging reg = new AdminInnlegging(null,null, null, null,null,null,null,null);
 
+        //String navnText = navn.getText();
+        //String emailText = email.getText();
         String typebilText = typebil.getText();
         String hestekrefterText = hestekrefter.getText();
         String interiorText = interior.getText();
@@ -177,6 +179,8 @@ public class AdminSideController implements Initializable {
         String felgerText = felger.getText();
         String prisText = pris.getText();
 
+        //reg.navn(navnText);
+        //reg.email(emailText);
         reg.typebil(typebilText);
         reg.hestekrefter(hestekrefterText);
         reg.interior(interiorText);
@@ -187,7 +191,7 @@ public class AdminSideController implements Initializable {
         return reg;
     }
 
-    //resetter ale textboxene
+    //resetter alle textboxene
     private void reset(){
         typebil.setText("");
         hestekrefter.setText("");

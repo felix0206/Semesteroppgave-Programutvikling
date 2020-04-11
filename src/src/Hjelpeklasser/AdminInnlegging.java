@@ -1,10 +1,11 @@
 package Hjelpeklasser;
 
-import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 public class AdminInnlegging {
 
+    public SimpleStringProperty navn;
+    public SimpleStringProperty email;
     public SimpleStringProperty typebil;
     public SimpleStringProperty interior;
     public SimpleStringProperty farge;
@@ -14,8 +15,10 @@ public class AdminInnlegging {
 
 
 
-    public AdminInnlegging(String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
+    public AdminInnlegging(String navn, String email, String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
 
+        this.navn = new SimpleStringProperty(navn);
+        this.navn = new SimpleStringProperty(email);
         this.typebil = new SimpleStringProperty(typebil);
         this.interior = new SimpleStringProperty(interior);
         this.farge = new SimpleStringProperty(farge);
@@ -25,6 +28,18 @@ public class AdminInnlegging {
 
     }
 
+    //TODO: if settninger for å kontrollere riktig input fra admin.
+
+    public String navn(String navn){
+        this.navn = new SimpleStringProperty(navn);
+        return navn;
+    }
+
+    public String email(String email){
+        this.email = new SimpleStringProperty(email);
+
+        return email;
+    }
     public String typebil(String bil){
 
         this.typebil = new SimpleStringProperty(bil);
@@ -60,6 +75,21 @@ public class AdminInnlegging {
         this.pris = new SimpleStringProperty(pris);
 
         return pris;
+    }
+
+    public String getNavn(){
+        return navn.getValue();
+    }
+
+    public void setNavn(String navn){
+        this.navn.set(navn);
+    }
+    public String getEmail(){
+        return email.getValue();
+    }
+
+    public void setEmail(String email){
+        this.email.set(email);
     }
 
     public String getTypebil() {
