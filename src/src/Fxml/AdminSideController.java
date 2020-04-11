@@ -44,6 +44,7 @@ public class AdminSideController implements Initializable {
     HovedsideController hovedsideController = new HovedsideController();
     AdminCollection collection = new AdminCollection();
 
+    //knapp for å komme tilbake til forsiden
     public void StartSide(ActionEvent event) throws IOException {
 
         Parent kundeSide = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
