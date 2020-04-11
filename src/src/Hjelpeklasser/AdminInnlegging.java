@@ -77,7 +77,7 @@ public class AdminInnlegging {
         return pris;
     }
 
-    public String getNavn(){
+   /* public String getNavn(){
         return navn.getValue();
     }
 
@@ -90,7 +90,7 @@ public class AdminInnlegging {
 
     public void setEmail(String email){
         this.email.set(email);
-    }
+    }*/
 
     public String getTypebil() {
         return typebil.getValue();
