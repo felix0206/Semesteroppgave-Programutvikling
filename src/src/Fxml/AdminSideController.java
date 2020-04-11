@@ -58,8 +58,6 @@ public class AdminSideController implements Initializable {
         window.show();
 
 
-
-
     }
 
     @Override
