@@ -15,10 +15,10 @@ public class AdminInnlegging {
 
 
 
-    public AdminInnlegging(String navn, String email, String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
+    public AdminInnlegging( String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
 
-        this.navn = new SimpleStringProperty(navn);
-        this.navn = new SimpleStringProperty(email);
+        //this.navn = new SimpleStringProperty(navn);
+        //this.navn = new SimpleStringProperty(email);
         this.typebil = new SimpleStringProperty(typebil);
         this.interior = new SimpleStringProperty(interior);
         this.farge = new SimpleStringProperty(farge);
