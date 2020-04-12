@@ -142,22 +142,22 @@ public class AdminSideController implements Initializable {
                     return true;
                 }
                 //String input = newValue.toLowerCase();
-                if(adm.getTypebil().contains(newValue)){
+                if(adm.getTypebil().toLowerCase().contains(newValue)){
                     return true;
                 }
-                else if(adm.getHestekrefter().contains(newValue)){
+                else if(adm.getHestekrefter().toLowerCase().contains(newValue)){
                     return true;
                 }
-                else if(adm.getInterior().contains(newValue)){
+                else if(adm.getInterior().toLowerCase().contains(newValue)){
                     return true;
                 }
-                else if(adm.getFarge().contains(newValue)){
+                else if(adm.getFarge().toLowerCase().contains(newValue)){
                     return true;
                 }
-                else if(adm.getFelger().contains(newValue)){
+                else if(adm.getFelger().toLowerCase().contains(newValue)){
                     return true;
                 }
-                else if(adm.getPris().contains(newValue)){
+                else if(adm.getPris().toLowerCase().contains(newValue)){
                     return true;
                 }
                 return false;
