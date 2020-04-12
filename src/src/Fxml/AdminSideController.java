@@ -33,7 +33,7 @@ public class AdminSideController implements Initializable {
     public Button Start;
 
     @FXML
-    public TableColumn Navn, Email, TypeBil, Hestekrefter, Interior, Farge, Felger, Pris;
+    public TableColumn<AdminInnlegging, String> Navn, Email, TypeBil, Hestekrefter, Interior, Farge, Felger, Pris;
 
     @FXML
     private TableView<AdminInnlegging> tabell;
@@ -43,6 +43,7 @@ public class AdminSideController implements Initializable {
 
     HovedsideController hovedsideController = new HovedsideController();
     AdminCollection collection = new AdminCollection();
+    private Object Predicate;
 
     //knapp for å komme tilbake til forsiden
     public void StartSide(ActionEvent event) throws IOException {
@@ -131,32 +132,32 @@ public class AdminSideController implements Initializable {
     }
 
     //filtrering i TextBox
-    public void Filtrering(KeyEvent event){
-        ObservableList<AdminInnlegging> liste = FXCollections.observableArrayList();
-        FilteredList<AdminInnlegging> filter = new FilteredList<>(liste, p -> true);
+    FilteredList<AdminInnlegging> filter = new FilteredList(collection.liste, p -> true);
 
-        filtrer.textProperty().addListener(((observable, oldValue, newValue) -> {
-            filter.setPredicate(AdminInnlegging ->{
-                if(newValue == null || newValue.isEmpty()){
+    public void Filtrering(KeyEvent event){
+
+        filtrer.textProperty().addListener((observable, oldValue, newValue) -> {
+            filter.setPredicate(adm ->{
+                if(newValue.isEmpty() || newValue == null){
                     return true;
                 }
-                String input = newValue.toLowerCase();
-                if(AdminInnlegging.getTypebil().toLowerCase().indexOf(input) != -1){
+                //String input = newValue.toLowerCase();
+                if(adm.getTypebil().contains(newValue)){
                     return true;
                 }
-                if(AdminInnlegging.getHestekrefter().toLowerCase().indexOf(input) != -1){
+                else if(adm.getHestekrefter().contains(newValue)){
                     return true;
                 }
-                if(AdminInnlegging.getInterior().toLowerCase().indexOf(input) != -1){
+                else if(adm.getInterior().contains(newValue)){
                     return true;
                 }
-                if(AdminInnlegging.getFarge().toLowerCase().indexOf(input) != -1){
+                else if(adm.getFarge().contains(newValue)){
                     return true;
                 }
-                if(AdminInnlegging.getFelger().toLowerCase().indexOf(input) != -1){
+                else if(adm.getFelger().contains(newValue)){
                     return true;
                 }
-                if(AdminInnlegging.getPris().toLowerCase().indexOf(input) != -1){
+                else if(adm.getPris().contains(newValue)){
                     return true;
                 }
                 return false;
@@ -164,7 +165,7 @@ public class AdminSideController implements Initializable {
             SortedList<AdminInnlegging> sortering = new SortedList<>(filter);
             sortering.comparatorProperty().bind(tabell.comparatorProperty());
             tabell.setItems(sortering);
-        }));
+        });
     }
 
     //registrering av ny bil

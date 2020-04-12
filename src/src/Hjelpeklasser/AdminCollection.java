@@ -7,7 +7,7 @@ import javafx.scene.control.TableView;
 
 
 public class AdminCollection {
-    private ObservableList<AdminInnlegging> liste = FXCollections.observableArrayList();
+    public ObservableList<AdminInnlegging> liste = FXCollections.observableArrayList();
 
     public void setTable(TableView tv){
         tv.setItems(liste);
