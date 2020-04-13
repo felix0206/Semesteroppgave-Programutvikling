@@ -54,7 +54,7 @@ public class HovedsideController {
             window.show();
 
         }else{
-            FeilmeldingAdmin.setText("Feil brukernavn eller passord!\nHint: admin"); //viser feilmelding om passordet
+            FeilmeldingAdmin.setText("Feil brukernavn eller passord!\nHint: admin, admin"); //viser feilmelding om passordet
                                                                                     // eller brukernavn er feil.
         }
 

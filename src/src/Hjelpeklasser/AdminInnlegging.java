@@ -2,6 +2,8 @@ package Hjelpeklasser;
 
 import javafx.beans.property.SimpleStringProperty;
 
+import javax.swing.*;
+
 public class AdminInnlegging {
 
     public SimpleStringProperty navn;
@@ -13,6 +15,10 @@ public class AdminInnlegging {
     public SimpleStringProperty pris;
     public SimpleStringProperty hestekrefter;
 
+
+    //regex:
+    String numberRegex = "(.)*(\\d)(.)*";  //For å sjekke om navnet inneholder numre.
+    String emailRegex = "\\b[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z0-9.-]+\\b"; //for å teste gyldighet på email.
 
 
     public AdminInnlegging( String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
@@ -28,21 +34,41 @@ public class AdminInnlegging {
 
     }
 
+    //Feilmeldinger
+    Exceptions exceptions = new Exceptions("");
+
     //TODO: if settninger for å kontrollere riktig input fra admin.
 
     public String navn(String navn){
-        this.navn = new SimpleStringProperty(navn);
+
+        if (navn.matches(numberRegex)){
+            JOptionPane.showMessageDialog(null,exceptions.wrongInputException("Navn kan ikke inneholde nummer!"));
+        }else{
+            this.navn = new SimpleStringProperty(navn);
+        }
         return navn;
     }
 
     public String email(String email){
-        this.email = new SimpleStringProperty(email);
 
+        //tester om input er riktig.
+        if (email.matches(emailRegex)){
+            this.email = new SimpleStringProperty(email);
+        }else {
+            System.out.println(exceptions.wrongInputException("Feil i emailadressen!"));
+        }
         return email;
+
     }
     public String typebil(String bil){
 
-        this.typebil = new SimpleStringProperty(bil);
+        //tester om input er riktig.
+        if (bil.toLowerCase().equals("el") || bil.toLowerCase().equals("elbil")
+                || bil.toLowerCase().equals("diesel") || bil.toLowerCase().equals("bensin")){
+            this.typebil = new SimpleStringProperty(bil);
+        }else{
+            System.out.println(exceptions.wrongInputException("ugyldig type bil!"));  //feilmelding
+        }
 
         return bil;
     }
@@ -93,7 +119,7 @@ public class AdminInnlegging {
     }*/
 
     public String getTypebil() {
-        return typebil.getValue();
+        return typebil.getValue().toLowerCase();
     }
 
     public void setTypebil(String typebil) {
@@ -110,7 +136,7 @@ public class AdminInnlegging {
 
     }
     public String getInterior() {
-        return interior.getValue();
+        return interior.getValue().toLowerCase();
     }
 
     public void setInterior(String interior) {
@@ -118,7 +144,7 @@ public class AdminInnlegging {
 
     }
     public String getFelger() {
-        return felger.getValue();
+        return felger.getValue().toLowerCase();
     }
 
     public void setFelger(String felger) {
@@ -126,7 +152,7 @@ public class AdminInnlegging {
 
     }
     public String getFarge() {
-        return farge.getValue();
+        return farge.getValue().toLowerCase();
     }
 
     public void setFarge(String farge) {
