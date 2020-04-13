@@ -21,9 +21,9 @@
             </Label>
             <Button fx:id="Tilbake" layoutX="20.0" layoutY="348.0" mnemonicParsing="false" onAction="#Tilbake" prefHeight="38.0" prefWidth="105.0" text="Gå tilbake" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" />
             <Button fx:id="Videre1" layoutX="475.0" layoutY="348.0" mnemonicParsing="false" onAction="#Videre1" prefHeight="38.0" prefWidth="105.0" text="Videre" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
-            <CheckBox fx:id="Hybridcheck" layoutX="42.0" layoutY="224.0" mnemonicParsing="false" onAction="#Hybridcheck" prefHeight="50.0" prefWidth="150.0" text="Hybrid" AnchorPane.leftAnchor="42.0" />
-            <CheckBox fx:id="Bensincheck" layoutX="332.0" layoutY="234.0" mnemonicParsing="false" onAction="#Bensincheck" prefHeight="50.0" prefWidth="150.0" text="Bensin" AnchorPane.rightAnchor="324.0" />
-            <CheckBox fx:id="Elbilcheck" layoutX="616.0" layoutY="245.0" mnemonicParsing="false" onAction="#Elbilcheck" prefHeight="50.0" prefWidth="150.0" text="Elbil" AnchorPane.rightAnchor="64.0" />
+            <CheckBox fx:id="Hybridcheck" layoutX="42.0" layoutY="224.0" mnemonicParsing="false" onAction="#Hybridcheck" prefHeight="50.0" prefWidth="150.0" text="Hybrid" AnchorPane.leftAnchor="42.0" AnchorPane.topAnchor="224.0" />
+            <CheckBox fx:id="Bensincheck" layoutX="325.0" layoutY="224.0" mnemonicParsing="false" onAction="#Bensincheck" prefHeight="50.0" prefWidth="150.0" text="Bensin" AnchorPane.rightAnchor="325.0" AnchorPane.topAnchor="224.0" />
+            <CheckBox fx:id="Elbilcheck" layoutX="585.0" layoutY="224.0" mnemonicParsing="false" onAction="#Elbilcheck" prefHeight="50.0" prefWidth="150.0" text="Elbil" AnchorPane.rightAnchor="65.0" AnchorPane.topAnchor="224.0" />
             <Separator layoutX="301.0" layoutY="115.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" />
          </children>
       </AnchorPane>
