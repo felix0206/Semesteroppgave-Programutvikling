@@ -1,5 +1,4 @@
 package Fxml;
-import com.sun.javafx.scene.control.skin.ChoiceBoxSkin;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -8,15 +7,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 
 import java.io.IOException;
-import java.util.Observable;
 
 public class KundeSide2Controller {
 
@@ -26,13 +22,18 @@ public class KundeSide2Controller {
     ObservableList Felgerlist= FXCollections.observableArrayList("Velg Felger","18 tommer", "20 tommer" , "24 ");
 
     @FXML
-    private ChoiceBox Hestekrefterbox;
+    public ChoiceBox Hestekrefterbox;
     @FXML
-    private ChoiceBox Fargebox;
+    public ChoiceBox Fargebox;
     @FXML
-    private ChoiceBox Interiørbox;
+    public ChoiceBox Interiørbox;
     @FXML
-    private ChoiceBox Felgerbox;
+    public ChoiceBox Felgerbox;
+    @FXML
+    public Label ValgLabel;
+
+
+   public String hester, interior, farge, felger;
 
 
     @FXML
@@ -66,11 +67,27 @@ public class KundeSide2Controller {
         Felgerbox = felgerbox;
     }
 
+    public void getHestekrefter(){
+        hester = Hestekrefterbox.getValue().toString();
+    }
+    public void getFarge(){
+        farge = Fargebox.getValue().toString();
+    }
+    public void getFelger(){
+        felger = Felgerbox.getValue().toString();
+    }
+    public void getInterior(){
+        interior = Interiørbox.getValue().toString();
+    }
+
+
+
     public void Oppsummering(ActionEvent event) throws IOException {
 
-        Parent kundeSide = FXMLLoader.load(getClass().getResource("KundeSisteSide.fxml"));
 
-        Scene scene = new Scene(kundeSide);
+        Parent kundeSisteSide = FXMLLoader.load(getClass().getResource("KundeSisteSide.fxml"));
+
+        Scene scene = new Scene(kundeSisteSide);
 
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -79,5 +96,19 @@ public class KundeSide2Controller {
         window.show();
 
     }
+
+    //lagrer valgene til brukeren.
+    public void LagreValg(ActionEvent event) {
+
+        getHestekrefter();
+        getFarge();
+        getFelger();
+        getInterior();
+        ValgLabel.setText("Dine valg er lagret.");
+
+        System.out.println(hester + " " + farge + " " + felger + " " + interior);
+    }
+
+
 }
 
