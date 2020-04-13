@@ -2,6 +2,7 @@ package Fxml;
 
 import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
+import Hjelpeklasser.FileSaverTxt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -13,10 +14,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
@@ -41,9 +39,12 @@ public class AdminSideController implements Initializable {
     @FXML
     public TextField typebil, hestekrefter, interior, farge, felger, pris, filtrer;
 
+    @FXML
+    public MenuItem savefile, loadfile;
+
     HovedsideController hovedsideController = new HovedsideController();
     AdminCollection collection = new AdminCollection();
-    private Object Predicate;
+    StringBuilder sb = new StringBuilder();
 
     //knapp for å komme tilbake til forsiden
     public void StartSide(ActionEvent event) throws IOException {
@@ -166,6 +167,27 @@ public class AdminSideController implements Initializable {
             sortering.comparatorProperty().bind(tabell.comparatorProperty());
             tabell.setItems(sortering);
         });
+    }
+
+    //Oppdaterer StringBuilderen for å lagre til fil.
+    public StringBuilder InitData(){
+
+        sb.append("Type bil: " + typebil.getText() + "\n"+"\n" );
+        sb.append("Hestekrefter: " + hestekrefter.getText() + "\n"+"\n" );
+        sb.append("Felger: " + felger.getText() + "\n"+"\n" );
+        sb.append("Farge: " + farge.getText() + "\n"+"\n" );
+        sb.append("Pris: " + pris.getText() + "\n"+"\n" );
+
+        return sb;
+    }
+    //lagrer til fil
+    public void SaveFile(ActionEvent event) throws IOException {
+        FileSaverTxt lagre = new FileSaverTxt();
+        lagre.lesfil(InitData());
+    }
+
+    public void LoadFile(ActionEvent event){
+
     }
 
     //registrering av ny bil

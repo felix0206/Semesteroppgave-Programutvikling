@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.control.cell.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.image.*?>
@@ -71,5 +72,17 @@
       <Button fx:id="slett" layoutX="662.0" layoutY="326.0" mnemonicParsing="false" onAction="#Slett" prefHeight="40.0" prefWidth="115.0" text="SLETT" />
       <Button fx:id="clear" layoutX="807.0" layoutY="326.0" mnemonicParsing="false" onAction="#Clear" prefHeight="40.0" prefWidth="115.0" text="CLEAR" />
       <TextField fx:id="filtrer" alignment="CENTER" layoutX="546.0" layoutY="374.0" onKeyTyped="#Filtrering" prefHeight="39.0" prefWidth="347.0" promptText="Filtrer tabell..." />
+      <MenuBar>
+        <menus>
+          <Menu fx:id="file" mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem fx:id="savefile" mnemonicParsing="false" onAction="#SaveFile" text="Save File" />
+                  <MenuItem fx:id="loadfile" mnemonicParsing="false" onAction="#LoadFile" text="Load File" />
+               </items></Menu>
+        </menus>
+         <effect>
+            <DropShadow />
+         </effect>
+      </MenuBar>
    </children>
 </AnchorPane>

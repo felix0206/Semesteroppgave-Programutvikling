@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundeSide2Controller">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundeSide2Controller">
    <children>
-      <AnchorPane prefHeight="603.0" prefWidth="804.0">
+      <AnchorPane prefHeight="603.0" prefWidth="804.0" style="-fx-background-color: #E6E6D8;">
          <children>
-            <Label layoutX="387.0" layoutY="57.0" prefHeight="66.0" prefWidth="237.0" text="Bygg din bil" />
+            <Label alignment="CENTER" layoutX="387.0" layoutY="14.0" prefHeight="109.0" prefWidth="800.0" text="Bygg din bil" AnchorPane.leftAnchor="0.0">
+               <font>
+                  <Font name="Avenir Roman" size="18.0" />
+               </font></Label>
             <ChoiceBox fx:id="Hestekrefterbox" layoutX="29.0" layoutY="235.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" />
             <Label layoutX="29.0" layoutY="148.0" prefHeight="66.0" prefWidth="148.0" text="Hestekrefter" />
             <ChoiceBox fx:id="Fargebox" layoutX="215.0" layoutY="235.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" />
@@ -22,6 +30,10 @@
             <ImageView fitHeight="137.0" fitWidth="154.0" layoutX="219.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="137.0" fitWidth="163.0" layoutX="406.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="137.0" fitWidth="148.0" layoutX="602.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" />
+            <Button layoutX="597.0" layoutY="487.0" mnemonicParsing="false" onAction="#Oppsummering" prefHeight="50.0" prefWidth="147.0" text="Vis Bilen" />
+            <Separator layoutX="25.0" layoutY="122.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" />
+            <Button layoutX="331.0" layoutY="487.0" mnemonicParsing="false" onAction="#LagreValg" prefHeight="45.0" prefWidth="154.0" text="Lagre valg" />
+            <Label fx:id="ValgLabel" layoutX="332.0" layoutY="388.0" prefHeight="49.0" prefWidth="138.0" />
          </children></AnchorPane>
    </children>
 </AnchorPane>
