@@ -16,6 +16,7 @@ import java.io.IOException;
 
 public class KundeSide2Controller {
 
+    ObservableList TypeBillist= FXCollections.observableArrayList("Velg Type bil","Elbil", "Bensin" , "Diesel" );
     ObservableList Hestekrefterlist= FXCollections.observableArrayList("Velg Hestekrefter","150 hk", "200 hk" , "300 hk" );
     ObservableList Fargerlist= FXCollections.observableArrayList("Velg Farge","Svart", "Hvit" , "Rød", "Bronse" );
     ObservableList Interiørlist= FXCollections.observableArrayList("Velg Interiør","Standar", "Sport" , "Supreme" );
@@ -30,10 +31,12 @@ public class KundeSide2Controller {
     @FXML
     public ChoiceBox Felgerbox;
     @FXML
+    public ChoiceBox TypeBilbox;
+    @FXML
     public Label ValgLabel;
 
 
-   public String hester, interior, farge, felger;
+   public String hester, interior, farge, felger, typebil;
 
 
     @FXML
@@ -50,6 +53,9 @@ public class KundeSide2Controller {
 
         Felgerbox.setValue("Velg Felger");
         Felgerbox.setItems(Felgerlist);
+
+        TypeBilbox.setValue("Velg Type bil");
+        TypeBilbox.setItems(TypeBillist);
 
 
     }
@@ -79,6 +85,9 @@ public class KundeSide2Controller {
     public void getInterior(){
         interior = Interiørbox.getValue().toString();
     }
+    public void getTypeBil(){
+        typebil = TypeBilbox.getValue().toString();
+    }
 
 
 
@@ -91,7 +100,7 @@ public class KundeSide2Controller {
         KundeSisteSideController kundeSisteSideController = loader.getController();
 
         //Overfører data til siste siden.
-        kundeSisteSideController.setValues(hester, farge,interior,felger);
+        kundeSisteSideController.setValues(hester, farge,interior,felger,typebil );
 
         Scene scene = new Scene(root);
 
@@ -109,9 +118,10 @@ public class KundeSide2Controller {
         getFarge();
         getFelger();
         getInterior();
+        getTypeBil();
         ValgLabel.setText("Dine valg er lagret.");
 
-        System.out.println(hester + " " + farge + " " + felger + " " + interior);
+        System.out.println(hester + " " + farge + " " + felger + " " + interior + " " + typebil );
     }
 
 

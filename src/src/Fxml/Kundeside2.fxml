@@ -18,7 +18,7 @@
                <font>
                   <Font name="Avenir Roman" size="18.0" />
                </font></Label>
-            <ChoiceBox fx:id="Hestekrefterbox" layoutX="29.0" layoutY="235.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" />
+            <ChoiceBox fx:id="Hestekrefterbox" layoutX="29.0" layoutY="235.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" AnchorPane.leftAnchor="29.0" />
             <Label layoutX="29.0" layoutY="148.0" prefHeight="66.0" prefWidth="148.0" text="Hestekrefter" />
             <ChoiceBox fx:id="Fargebox" layoutX="215.0" layoutY="235.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" />
             <ChoiceBox fx:id="Interiørbox" layoutX="402.0" layoutY="235.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" />
@@ -34,6 +34,8 @@
             <Separator layoutX="25.0" layoutY="122.0" prefWidth="800.0" AnchorPane.leftAnchor="0.0" />
             <Button layoutX="331.0" layoutY="487.0" mnemonicParsing="false" onAction="#LagreValg" prefHeight="45.0" prefWidth="154.0" text="Lagre valg" />
             <Label fx:id="ValgLabel" layoutX="332.0" layoutY="388.0" prefHeight="49.0" prefWidth="138.0" />
+            <ChoiceBox fx:id="TypeBilbox" layoutX="23.0" layoutY="460.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" AnchorPane.leftAnchor="29.0" />
+            <Label layoutX="28.0" layoutY="428.0" prefHeight="17.0" prefWidth="155.0" text="Type bil" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

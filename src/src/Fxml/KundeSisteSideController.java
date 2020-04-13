@@ -57,12 +57,13 @@ public class KundeSisteSideController implements Initializable {
     }
 
     //Setter verdier fra kundeside2.
-    public void setValues(String hester, String farge, String interior, String felger){
+    public void setValues(String hester, String farge, String interior, String felger, String typebil){
 
         this.hestekrefter.setText(hester);
         this.farge.setText(farge);
         this.interior.setText(interior);
         this.felger.setText(felger);
+        this.typebil.setText(typebil);
 
     }
 
