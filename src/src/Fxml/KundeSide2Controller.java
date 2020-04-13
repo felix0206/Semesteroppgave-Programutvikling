@@ -65,5 +65,19 @@ public class KundeSide2Controller {
     public void setFelgerbox(ChoiceBox felgerbox) {
         Felgerbox = felgerbox;
     }
+
+    public void Oppsummering(ActionEvent event) throws IOException {
+
+        Parent kundeSide = FXMLLoader.load(getClass().getResource("KundeSisteSide.fxml"));
+
+        Scene scene = new Scene(kundeSide);
+
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(scene);
+        window.show();
+
+    }
 }
 
