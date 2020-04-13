@@ -84,11 +84,16 @@ public class KundeSide2Controller {
 
     public void Oppsummering(ActionEvent event) throws IOException {
 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("KundeSisteSide.fxml"));
+        Parent root = loader.load();
 
-        Parent kundeSisteSide = FXMLLoader.load(getClass().getResource("KundeSisteSide.fxml"));
+        //Henter controlleren til siste siden.
+        KundeSisteSideController kundeSisteSideController = loader.getController();
 
-        Scene scene = new Scene(kundeSisteSide);
+        //Overfører data til siste siden.
+        kundeSisteSideController.setValues(hester, farge,interior,felger);
 
+        Scene scene = new Scene(root);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 

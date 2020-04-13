@@ -49,8 +49,6 @@ public class kundeSideController {
 
 
 
-
-
     }
 
     public void Hybridcheck(ActionEvent actionEvent) {

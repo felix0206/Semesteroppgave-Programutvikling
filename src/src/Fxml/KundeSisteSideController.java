@@ -29,7 +29,6 @@ public class KundeSisteSideController implements Initializable {
 
         Scene scene = new Scene(kundeSide);
 
-
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(scene);
@@ -57,7 +56,7 @@ public class KundeSisteSideController implements Initializable {
 
     }
 
-    //Setter verdiene fra brukeren.
+    //Setter verdier fra kundeside2.
     public void setValues(String hester, String farge, String interior, String felger){
 
         this.hestekrefter.setText(hester);
@@ -65,6 +64,11 @@ public class KundeSisteSideController implements Initializable {
         this.interior.setText(interior);
         this.felger.setText(felger);
 
+    }
+
+    //Setter verdier fra kundeside.
+    public void setValuesKunde1(String typebil){
+        this.typebil.setText(typebil);
     }
 
     @Override
