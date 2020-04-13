@@ -26,7 +26,7 @@ public class HovedsideController {
     //Knapp får å gå til kundeSiden.
     public void kundeSide(ActionEvent event) throws IOException {
 
-        Parent kundeSide = FXMLLoader.load(getClass().getResource("kundeSide.fxml"));
+        Parent kundeSide = FXMLLoader.load(getClass().getResource("kundeSide2.fxml"));
 
         Scene scene = new Scene(kundeSide);
 
