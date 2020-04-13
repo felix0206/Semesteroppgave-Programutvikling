@@ -1,5 +1,6 @@
 package Fxml;
 
+import Hjelpeklasser.FileSaverTxt;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,8 @@ public class KundeSisteSideController {
     public Label typebil, hestekrefter, felger, farge, interior, pris;
 
 
+    StringBuilder sb = new StringBuilder();
+
     public void hjemKnapp(ActionEvent event) throws IOException {
 
         Parent kundeSide = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
@@ -28,6 +31,14 @@ public class KundeSisteSideController {
 
         window.setScene(scene);
         window.show();
+
+    }
+
+    //Lagre info om bilen til en txt-fil.
+    public void SaveToFile(ActionEvent event) throws IOException {
+
+        FileSaverTxt lagre = new FileSaverTxt();
+        lagre.lesfil(sb);
 
     }
 }

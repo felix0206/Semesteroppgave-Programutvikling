@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.scene.text.*?>
@@ -8,7 +9,6 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E6E6D8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundeSisteSideController">
    <children>
@@ -96,11 +96,23 @@
          </children>
       </GridPane>
       <AnchorPane layoutX="377.0" layoutY="163.0" prefHeight="385.0" prefWidth="387.0" style="-fx-background-color: black;" />
-      <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="730.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="46.0" fitWidth="49.0" layoutX="739.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Bilder/HomeIcon.png" />
          </image>
       </ImageView>
-      <Button layoutX="728.0" layoutY="23.0" mnemonicParsing="false" onAction="#hjemKnapp" prefHeight="46.0" prefWidth="45.0" style="-fx-background-color: transparent;" />
+      <Button layoutX="742.0" layoutY="17.0" mnemonicParsing="false" onAction="#hjemKnapp" prefHeight="46.0" prefWidth="45.0" style="-fx-background-color: transparent;" />
+      <MenuBar layoutX="20.0" layoutY="9.0" prefHeight="29.0" prefWidth="60.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#SaveToFile" text="Save" />
+            </items>
+          </Menu>
+        </menus>
+         <effect>
+            <DropShadow color="#807c7c" />
+         </effect>
+      </MenuBar>
    </children>
 </AnchorPane>
