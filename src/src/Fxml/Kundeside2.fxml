@@ -30,7 +30,7 @@
             <ImageView fitHeight="137.0" fitWidth="154.0" layoutX="219.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="137.0" fitWidth="163.0" layoutX="406.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" />
             <ImageView fitHeight="137.0" fitWidth="148.0" layoutX="602.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" />
-            <Button layoutX="597.0" layoutY="487.0" mnemonicParsing="false" onAction="#Oppsummering" prefHeight="50.0" prefWidth="147.0" text="Vis Bilen" />
+            <Button fx:id="Oppsummering" layoutX="597.0" layoutY="487.0" mnemonicParsing="false" onAction="#Oppsummering" prefHeight="50.0" prefWidth="147.0" text="Vis Bilen" />
             <Separator layoutX="25.0" layoutY="122.0" prefWidth="1100.0" AnchorPane.leftAnchor="0.0" />
             <Button layoutX="331.0" layoutY="487.0" mnemonicParsing="false" onAction="#LagreValg" prefHeight="45.0" prefWidth="154.0" text="Lagre valg" />
             <Label fx:id="ValgLabel" layoutX="332.0" layoutY="388.0" prefHeight="49.0" prefWidth="138.0" />

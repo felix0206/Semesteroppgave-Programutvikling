@@ -7,6 +7,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -35,12 +36,18 @@ public class KundeSide2Controller {
     @FXML
     public Label ValgLabel;
 
+    @FXML
+    public Button Oppsummering;
+
+
+
 
    public String hester, interior, farge, felger, typebil;
 
 
     @FXML
     private void initialize(){
+        Oppsummering.setVisible(false);
 
         Hestekrefterbox.setValue("Velg Hestekrefter");
         Hestekrefterbox.setItems(Hestekrefterlist);
@@ -113,7 +120,7 @@ public class KundeSide2Controller {
 
     //lagrer valgene til brukeren.
     public void LagreValg(ActionEvent event) {
-
+        Oppsummering.setVisible(true);
         getHestekrefter();
         getFarge();
         getFelger();
