@@ -37,7 +37,7 @@ public class KundeSide2Controller {
     public Label ValgLabel;
 
     @FXML
-    public Button Oppsummering;
+    public Button Oppsummering, LagreValg;
 
 
 
@@ -127,6 +127,8 @@ public class KundeSide2Controller {
         getInterior();
         getTypeBil();
         ValgLabel.setText("Dine valg er lagret.");
+
+        LagreValg.setVisible(false);
 
         System.out.println(hester + " " + farge + " " + felger + " " + interior + " " + typebil );
     }
