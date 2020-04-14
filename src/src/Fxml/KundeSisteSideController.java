@@ -20,6 +20,8 @@ public class KundeSisteSideController implements Initializable {
     @FXML
     public Label typebil, hestekrefter, felger, farge, interior, pris, overskriftlbl;
 
+    String navn;
+
 
     StringBuilder sb = new StringBuilder();
 
@@ -39,6 +41,7 @@ public class KundeSisteSideController implements Initializable {
     //Oppdaterer StringBuilderen for å lagre til fil.
     public StringBuilder InitData(){
 
+        sb.append("Navn: " + navn + "\n"+"\n" );
         sb.append("Type bil: " + typebil.getText() + "\n"+"\n" );
         sb.append("Hestekrefter: " + hestekrefter.getText() + "\n"+"\n" );
         sb.append("Felger: " + felger.getText() + "\n"+"\n" );
@@ -65,6 +68,7 @@ public class KundeSisteSideController implements Initializable {
         this.felger.setText(felger);
         this.typebil.setText(typebil);
         overskriftlbl.setText(navn + " sin bil");
+        this.navn = navn;
 
     }
 
@@ -75,15 +79,6 @@ public class KundeSisteSideController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-    /*   FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("KundeSide2.fxml"));
 
-        KundeSide2Controller controller = loader.getController();
-        hestekrefter.setText(controller.hester);
-
-
-
-       hestekrefter.setText(controller.Hestekrefterbox.getValue().toString()); //setter hestekrefter.
-       farge.setText("heipådei"); //setter farge.*/
     }
 }
