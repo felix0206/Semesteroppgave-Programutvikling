@@ -126,7 +126,7 @@ public class KundeSide2Controller {
         getFelger();
         getInterior();
         getTypeBil();
-        ValgLabel.setText("Dine valg er lagret.");
+        ValgLabel.setText("Dine valg er lagret. \nTrykk på knappen for å\nvise dine valg og totalpris.");
 
         LagreValg.setVisible(false);
 
