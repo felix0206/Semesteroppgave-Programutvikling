@@ -18,6 +18,10 @@ public class PrisKalkulator {
         this.hestekrefter = hestekrefter;
     }
 
+    /**
+     * Forskjellige  metoder for å regne ut prisen for de forskjellige komponentene.
+     * Disse skal kalles på en og en slik at vi får riktig pris.
+     */
     public void typebilPrisKalk() {
         if (typebil.equals("elbil"))
             pristeller += 200000;
@@ -64,6 +68,7 @@ public class PrisKalkulator {
             pristeller+=40000;
     }
 
+    //metode for å returnere prisen som en string.
     public String getPris(){
         String sistePris = Integer.toString(pristeller);
         return sistePris;

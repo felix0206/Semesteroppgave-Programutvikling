@@ -80,6 +80,9 @@ public class KundeSide2Controller {
         Felgerbox = felgerbox;
     }
 
+    /**
+     * Setter de forskjellige Strengene som skal sendes videre til neste side.
+     */
     public void getHestekrefter(){
         hester = Hestekrefterbox.getValue().toString();
     }
@@ -95,6 +98,7 @@ public class KundeSide2Controller {
     public void getTypeBil(){
         typebil = TypeBilbox.getValue().toString();
     }
+    //Metode for å kalle på de forskjellige priskalkulatorene. se hjelpeklasser/prisKalkulator.
     public String getPris(){
         PrisKalkulator prisKalkulator = new PrisKalkulator(typebil.toLowerCase(),farge.toLowerCase()
                                     ,felger.toLowerCase(),interior.toLowerCase(),hester.toLowerCase());
@@ -113,7 +117,7 @@ public class KundeSide2Controller {
         this.navn = navn;
     }
 
-
+    //knapp for å gå til oppsummeringssidenm hvor bilen og dens komponenter blir listet opp.
     public void Oppsummering(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("KundeSisteSide.fxml"));
