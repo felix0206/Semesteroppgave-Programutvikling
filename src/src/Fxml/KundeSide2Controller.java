@@ -1,4 +1,5 @@
 package Fxml;
+import Hjelpeklasser.PrisKalkulator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -94,6 +95,17 @@ public class KundeSide2Controller {
     public void getTypeBil(){
         typebil = TypeBilbox.getValue().toString();
     }
+    public String getPris(){
+        PrisKalkulator prisKalkulator = new PrisKalkulator(typebil.toLowerCase(),farge.toLowerCase()
+                                    ,felger.toLowerCase(),interior.toLowerCase(),hester.toLowerCase());
+        prisKalkulator.typebilPrisKalk();
+        prisKalkulator.fargePrisKalk();
+        prisKalkulator.felgePrisKalk();
+        prisKalkulator.hesterPrisKalk();
+        prisKalkulator.interiorPrisKalk();
+
+        return prisKalkulator.getPris();
+    }
 
 
     //henter info om person fra forrige side.
@@ -111,7 +123,7 @@ public class KundeSide2Controller {
         KundeSisteSideController kundeSisteSideController = loader.getController();
 
         //Overfører data til siste siden.
-        kundeSisteSideController.setValues(hester, farge,interior,felger,typebil,navn);
+        kundeSisteSideController.setValues(hester, farge,interior,felger,typebil,navn,getPris());
 
         Scene scene = new Scene(root);
 

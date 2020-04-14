@@ -22,8 +22,8 @@ public class KundeSisteSideController implements Initializable {
 
     String navn;
 
-
     StringBuilder sb = new StringBuilder();
+
 
     public void hjemKnapp(ActionEvent event) throws IOException {
 
@@ -60,13 +60,14 @@ public class KundeSisteSideController implements Initializable {
     }
 
     //Setter verdier fra kundeside2.
-    public void setValues(String hester, String farge, String interior, String felger, String typebil, String navn){
+    public void setValues(String hester, String farge, String interior, String felger, String typebil, String navn, String pris){
 
-        this.hestekrefter.setText(hester);
-        this.farge.setText(farge);
-        this.interior.setText(interior);
-        this.felger.setText(felger);
-        this.typebil.setText(typebil);
+        this.hestekrefter.setText(hester.toLowerCase());
+        this.farge.setText(farge.toLowerCase());
+        this.interior.setText(interior.toLowerCase());
+        this.felger.setText(felger.toLowerCase());
+        this.typebil.setText(typebil.toLowerCase());
+        this.pris.setText(pris);
         overskriftlbl.setText(navn + " sin bil");
         this.navn = navn;
 

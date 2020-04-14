@@ -1,17 +1,17 @@
 Liste over priser på forskjellige komponenter.
 
 Type bil:
---> Elbil: pris, Bensin: pris, Diesel: pris.
+--> Elbil: 200.000, Bensin: 250.000, Diesel: 300.000.
 
 Hestekrefter:
---> 150hk: pris, 200hk: pris, 300hk: pris.
+--> 150hk: 50.000, 200hk: 100.000, 300hk: 150.000.
 
 Farge:
---> Svart: pris, Hvit: pris , Rød: pris, Bronse: pris.
+--> Svart: 15.000, Hvit: 15.000 , Rød: 15.000, Bronse: 22.000.
 
 Felger:
---> 18": pris, 20": pris, 24": pris.
+--> 18": 12.000, 20": 16.000, 24": 19.000.
 
 Interiør:
---> Standard: pris, Sport: pris, Supreme: pris.
+--> Standard: 10.000, Sport: 25.000, Supreme: 40.000.
 
