@@ -41,8 +41,7 @@ public class KundeSide2Controller {
 
 
 
-
-   public String hester, interior, farge, felger, typebil;
+   public String hester, interior, farge, felger, typebil, navn;
 
 
     @FXML
@@ -97,6 +96,11 @@ public class KundeSide2Controller {
     }
 
 
+    //henter info om person fra forrige side.
+    public void hentPersonInfo(String navn){
+        this.navn = navn;
+    }
+
 
     public void Oppsummering(ActionEvent event) throws IOException {
 
@@ -107,7 +111,7 @@ public class KundeSide2Controller {
         KundeSisteSideController kundeSisteSideController = loader.getController();
 
         //Overfører data til siste siden.
-        kundeSisteSideController.setValues(hester, farge,interior,felger,typebil );
+        kundeSisteSideController.setValues(hester, farge,interior,felger,typebil,navn);
 
         Scene scene = new Scene(root);
 

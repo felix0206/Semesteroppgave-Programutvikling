@@ -18,7 +18,7 @@ import java.util.ResourceBundle;
 public class KundeSisteSideController implements Initializable {
 
     @FXML
-    public Label typebil, hestekrefter, felger, farge, interior, pris;
+    public Label typebil, hestekrefter, felger, farge, interior, pris, overskriftlbl;
 
 
     StringBuilder sb = new StringBuilder();
@@ -57,13 +57,14 @@ public class KundeSisteSideController implements Initializable {
     }
 
     //Setter verdier fra kundeside2.
-    public void setValues(String hester, String farge, String interior, String felger, String typebil){
+    public void setValues(String hester, String farge, String interior, String felger, String typebil, String navn){
 
         this.hestekrefter.setText(hester);
         this.farge.setText(farge);
         this.interior.setText(interior);
         this.felger.setText(felger);
         this.typebil.setText(typebil);
+        overskriftlbl.setText(navn + " sin bil");
 
     }
 

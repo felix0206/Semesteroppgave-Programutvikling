@@ -26,10 +26,16 @@ public class HovedsideController {
     //Knapp får å gå til kundeSiden.
     public void kundeSide(ActionEvent event) throws IOException {
 
-        Parent kundeSide = FXMLLoader.load(getClass().getResource("kundeSide2.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("KundeSide2.fxml"));
+        Parent root = loader.load();
 
-        Scene scene = new Scene(kundeSide);
+        //Henter controlleren til neste side.
+        KundeSide2Controller kundeSide2Controller = loader.getController();
 
+        //Overfører data om navn til neste side.
+        kundeSide2Controller.hentPersonInfo(fornavn.getText() + " " + etternavn.getText());
+
+        Scene scene = new Scene(root);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 

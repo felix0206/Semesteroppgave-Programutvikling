@@ -13,7 +13,7 @@
 <AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #E6E6D8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundeSisteSideController">
    <children>
       <Separator layoutY="121.0" prefHeight="23.0" prefWidth="800.0" style="-fx-background-color: #E6E6D5;" AnchorPane.leftAnchor="0.0" />
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="50.0" prefHeight="61.0" prefWidth="800.0" text="Din bil" AnchorPane.leftAnchor="0.0">
+      <Label fx:id="overskriftlbl" alignment="CENTER" contentDisplay="CENTER" layoutX="47.0" layoutY="50.0" prefHeight="61.0" prefWidth="800.0" text="Din bil" AnchorPane.leftAnchor="0.0">
          <font>
             <Font name="Avenir Roman" size="37.0" />
          </font>
