@@ -181,35 +181,53 @@ public class AdminSideController implements Initializable {
 
     //registrering av ny bil og innlegging i Stringbuilder for lagring til fil
     private AdminInnlegging registreringTable(){
-        AdminInnlegging reg = new AdminInnlegging( null, null,null,null,null,null);
 
-        //String navnText = navn.getText();
-        //String emailText = email.getText();
-        String typebilText = typebil.getText();
-        String hestekrefterText = hestekrefter.getText();
-        String interiorText = interior.getText();
-        String fargeText = farge.getText();
-        String felgerText = felger.getText();
-        String prisText = pris.getText();
+        try {
+            AdminInnlegging reg = new AdminInnlegging(null, null, null, null, null, null);
 
-        //reg.navn(navnText);
-        //reg.email(emailText);
-        reg.typebil(typebilText);
-        reg.hestekrefter(hestekrefterText);
-        reg.interior(interiorText);
-        reg.farge(fargeText);
-        reg.felger(felgerText);
-        reg.pris(prisText);
+            //String navnText = navn.getText();
+            //String emailText = email.getText();
+            String typebilText = typebil.getText();
+            String hestekrefterText = hestekrefter.getText();
+            String interiorText = interior.getText();
+            String fargeText = farge.getText();
+            String felgerText = felger.getText();
+            String prisText = pris.getText();
 
-        //sb.append("Navn: " + navn + "\n"+"\n" );
-        sb.append("Ny Bil: \n"+"Type bil: " +  reg.typebil(typebilText) + "\n");
-        sb.append("Hestekrefter: " + reg.hestekrefter(hestekrefterText) + "\n");
-        sb.append("Interiør: " + reg.interior(interiorText) + "\n");
-        sb.append("Farge: " + reg.farge(fargeText) + "\n");
-        sb.append("Felger: " + reg.felger(felgerText) + "\n");
-        sb.append("Pris: " + reg.pris(prisText) + "\n \n" );
+            //reg.navn(navnText);
+            //reg.email(emailText);
+            reg.typebil(typebilText);
+            reg.hestekrefter(hestekrefterText);
+            reg.interior(interiorText);
+            reg.farge(fargeText);
+            reg.felger(felgerText);
+            reg.pris(prisText);
 
-        return reg;
+            //sb.append("Navn: " + navn + "\n"+"\n" );
+            sb.append("Ny Bil: \n" + "Type bil: " + reg.typebil(typebilText) + "\n");
+            sb.append("Hestekrefter: " + reg.hestekrefter(hestekrefterText) + "\n");
+            sb.append("Interiør: " + reg.interior(interiorText) + "\n");
+            sb.append("Farge: " + reg.farge(fargeText) + "\n");
+            sb.append("Felger: " + reg.felger(felgerText) + "\n");
+            sb.append("Pris: " + reg.pris(prisText) + "\n \n");
+
+            if (reg.getTypebil() == null || reg.getHestekrefter() == null
+                    || reg.getInterior() == null || reg.getFarge() == null || reg.getFelger() == null || reg.getPris() == null)
+            {
+                return null;
+            }
+
+            return reg;
+
+        }catch (IllegalArgumentException e){
+            typebil.setText("<< elbil, bensin, diesel >>");
+            hestekrefter.setText("<< hestekrefter må være heltall >>");
+            interior.setText("<< standard, sport, supreme >>");
+            farge.setText("<< hvit, svart, rød, bronse >>");
+            felger.setText("<< 20, 22, 24 >>");
+            pris.setText("<< ugyldig pris >>");
+            return null;
+        }
     }
 
     //resetter alle textboxene.
