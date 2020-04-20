@@ -169,28 +169,17 @@ public class AdminSideController implements Initializable {
         });
     }
 
-    //Oppdaterer StringBuilderen for å lagre til fil.
-    public StringBuilder InitData(){
-
-        sb.append("Type bil: " + typebil.getText() + "\n"+"\n" );
-        sb.append("Hestekrefter: " + hestekrefter.getText() + "\n"+"\n" );
-        sb.append("Felger: " + felger.getText() + "\n"+"\n" );
-        sb.append("Farge: " + farge.getText() + "\n"+"\n" );
-        sb.append("Pris: " + pris.getText() + "\n"+"\n" );
-
-        return sb;
-    }
     //lagrer til fil
     public void SaveFile(ActionEvent event) throws IOException {
         FileSaverTxt lagre = new FileSaverTxt();
-        lagre.lesfil(InitData());
+        lagre.lesfil(sb);
     }
 
     public void LoadFile(ActionEvent event){
 
     }
 
-    //registrering av ny bil
+    //registrering av ny bil og innlegging i Stringbuilder for lagring til fil
     private AdminInnlegging registreringTable(){
         AdminInnlegging reg = new AdminInnlegging( null, null,null,null,null,null);
 
@@ -211,6 +200,14 @@ public class AdminSideController implements Initializable {
         reg.farge(fargeText);
         reg.felger(felgerText);
         reg.pris(prisText);
+
+        //sb.append("Navn: " + navn + "\n"+"\n" );
+        sb.append("Ny Bil: \n"+"Type bil: " +  reg.typebil(typebilText) + "\n");
+        sb.append("Hestekrefter: " + reg.hestekrefter(hestekrefterText) + "\n");
+        sb.append("Interiør: " + reg.interior(interiorText) + "\n");
+        sb.append("Farge: " + reg.farge(fargeText) + "\n");
+        sb.append("Felger: " + reg.felger(felgerText) + "\n");
+        sb.append("Pris: " + reg.pris(prisText) + "\n \n" );
 
         return reg;
     }
