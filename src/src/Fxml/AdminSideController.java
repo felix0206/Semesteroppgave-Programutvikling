@@ -2,6 +2,7 @@ package Fxml;
 
 import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
+import Hjelpeklasser.Exceptions;
 import Hjelpeklasser.FileSaverTxt;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,6 +26,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.function.Predicate;
 
+
+
 public class AdminSideController implements Initializable {
 
     @FXML
@@ -47,6 +50,7 @@ public class AdminSideController implements Initializable {
     StringBuilder sb = new StringBuilder();
 
     //knapp for å komme tilbake til forsiden
+    @FXML
     public void StartSide(ActionEvent event) throws IOException {
 
         Parent kundeSide = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
@@ -111,6 +115,7 @@ public class AdminSideController implements Initializable {
     }
 
     //legg inn fra textbox
+    @FXML
     public void LeggTil(ActionEvent event) {
 
         AdminInnlegging legginn = registreringTable();
@@ -119,15 +124,17 @@ public class AdminSideController implements Initializable {
             reset();
             collection.leggtil(legginn);
         }
-
+    
     }
 
     //slette knapp som fjerner valgt rad i tableview
+    @FXML
     public void Slett(ActionEvent event){
         tabell.getItems().removeAll(tabell.getSelectionModel().getSelectedItems()); //sletter valgt rad klikk på rad og så slett
     }
 
     //reset knapp som fjerner alt skrevet i textboxene
+    @FXML
     public void Clear(ActionEvent event){
         reset();
     }
@@ -211,23 +218,36 @@ public class AdminSideController implements Initializable {
             sb.append("Felger: " + reg.felger(felgerText) + "\n");
             sb.append("Pris: " + reg.pris(prisText) + "\n \n");
 
-            if (reg.getTypebil() == null || reg.getHestekrefter() == null
-                    || reg.getInterior() == null || reg.getFarge() == null || reg.getFelger() == null || reg.getPris() == null)
+            //Sjekker om tekstfeltene er tomme.
+            if (
+                         reg.getTypebil().isEmpty()|| reg.getHestekrefter().isEmpty() ||
+                         reg.getInterior().isEmpty() || reg.getFarge().isEmpty() ||
+                         reg.getFelger().isEmpty() || reg.getPris().isEmpty())
             {
+
+                riktigeParametere();
+
                 return null;
             }
 
             return reg;
 
-        }catch (IllegalArgumentException e){
-            typebil.setText("<< elbil, bensin, diesel >>");
-            hestekrefter.setText("<< hestekrefter må være heltall >>");
-            interior.setText("<< standard, sport, supreme >>");
-            farge.setText("<< hvit, svart, rød, bronse >>");
-            felger.setText("<< 20, 22, 24 >>");
-            pris.setText("<< ugyldig pris >>");
+        } catch (IllegalArgumentException e){
+
+            riktigeParametere();
+
             return null;
         }
+    }
+
+    //endrer tekstfeltene sånn at admin kan se hvilke parametere som er gyldige.
+    private void riktigeParametere() {
+        typebil.setText("<< elbil, bensin, diesel >>");
+        hestekrefter.setText("<< hestekrefter må være heltall >>");
+        interior.setText("<< standard, sport, supreme >>");
+        farge.setText("<< hvit, svart, rød, bronse >>");
+        felger.setText("<< 20, 22, 24 >>");
+        pris.setText("<< ugyldig pris >>");
     }
 
     //resetter alle textboxene.

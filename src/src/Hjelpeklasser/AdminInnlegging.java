@@ -6,20 +6,22 @@ import javax.swing.*;
 
 public class AdminInnlegging {
 
-    public SimpleStringProperty navn;
-    public SimpleStringProperty email;
-    public SimpleStringProperty typebil;
-    public SimpleStringProperty interior;
-    public SimpleStringProperty farge;
-    public SimpleStringProperty felger;
-    public SimpleStringProperty pris;
-    public SimpleStringProperty hestekrefter;
+    private SimpleStringProperty navn;
+    private SimpleStringProperty email;
+    private SimpleStringProperty typebil;
+    private SimpleStringProperty interior;
+    private SimpleStringProperty farge;
+    private SimpleStringProperty felger;
+    private SimpleStringProperty pris;
+    private SimpleStringProperty hestekrefter;
 
 
     //regex:
     String numberRegex = "(.)*(\\d)(.)*";  //For å sjekke om navnet inneholder numre.
     String emailRegex = "\\b[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z0-9.-]+\\b"; //for å teste gyldighet på email.
 
+    //Feilmeldinger
+    Exceptions exceptions = new Exceptions("");
 
     public AdminInnlegging( String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
 
@@ -34,15 +36,12 @@ public class AdminInnlegging {
 
     }
 
-    //Feilmeldinger
-    Exceptions exceptions = new Exceptions("");
-
     //TODO: if settninger for å kontrollere riktig input fra admin.
 
     public String navn(String navn){
 
         if (navn.matches(numberRegex)){
-            JOptionPane.showMessageDialog(null,exceptions.wrongInputException("Navn kan ikke inneholde nummer!"));
+            exceptions.wrongInputException("Navn kan ikke inneholde nummer!");
         }else{
             this.navn = new SimpleStringProperty(navn);
         }
@@ -55,26 +54,20 @@ public class AdminInnlegging {
         if (email.matches(emailRegex)){
             this.email = new SimpleStringProperty(email);
         }else {
-            System.out.println(exceptions.wrongInputException("Feil i emailadressen!"));
+            exceptions.wrongInputException("Feil i emailadressen!");
         }
         return email;
 
     }
     public String typebil(String bil){
 
-        //tester om input er riktig.
-        if (bil.toLowerCase().equals("el") || bil.toLowerCase().equals("elbil")
-                || bil.toLowerCase().equals("diesel") || bil.toLowerCase().equals("bensin")){
             this.typebil = new SimpleStringProperty(bil);
-        }else{
-            System.out.println(exceptions.wrongInputException("ugyldig type bil!"));  //feilmelding
-        }
 
         return bil;
     }
     public String hestekrefter(String hestekrefter){
 
-        this.hestekrefter = new SimpleStringProperty(hestekrefter);
+            this.hestekrefter = new SimpleStringProperty(hestekrefter);
 
         return hestekrefter;
     }
@@ -119,6 +112,7 @@ public class AdminInnlegging {
     }*/
 
     public String getTypebil() {
+
         return typebil.getValue().toLowerCase();
     }
 

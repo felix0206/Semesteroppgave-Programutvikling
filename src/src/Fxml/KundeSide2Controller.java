@@ -40,8 +40,6 @@ public class KundeSide2Controller {
     @FXML
     public Button Oppsummering, LagreValg;
 
-
-
    public String hester, interior, farge, felger, typebil, navn;
 
 
@@ -63,7 +61,6 @@ public class KundeSide2Controller {
 
         TypeBilbox.setValue("Velg Type bil");
         TypeBilbox.setItems(TypeBillist);
-
 
     }
 

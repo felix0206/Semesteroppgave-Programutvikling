@@ -13,6 +13,7 @@ public class Exceptions extends IllegalArgumentException{
     }
 
     public String wrongInputException(String message){
+
         return message;
     }
 }
