@@ -2,7 +2,8 @@ package Fxml;
 
 import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
-import save_load.FileSaverCsv;
+import Hjelpeklasser.Exceptions;
+import Hjelpeklasser.FileSaverTxt;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -13,13 +14,19 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class AdminSideController implements Initializable {
@@ -63,7 +70,8 @@ public class AdminSideController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         collection.setTable(tabell);
-
+        collection.leggtil(new AdminInnlegging("el","140","sport", "gul","sport","150000"));
+        collection.leggtil(new AdminInnlegging("Bensin","750","sport", "Rød","sport","850000"));
         //tableview rediering
         tabell.setEditable(true);
         TypeBil.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -73,8 +81,19 @@ public class AdminSideController implements Initializable {
         Felger.setCellFactory(TextFieldTableCell.forTableColumn());
         Pris.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        collection.leggtil(new AdminInnlegging("el","140","sport", "gul","sport","150000"));
-        collection.leggtil(new AdminInnlegging("Bensin","750","sport", "Rød","sport","850000"));
+        TypeBil.setCellValueFactory(new PropertyValueFactory<>("typeBil"));
+        Hestekrefter.setCellValueFactory(new PropertyValueFactory<>("hestekrefter"));
+        Interior.setCellValueFactory(new PropertyValueFactory<>("interior"));
+        Farge.setCellValueFactory(new PropertyValueFactory<>("farge"));
+        Felger.setCellValueFactory(new PropertyValueFactory<>("felger"));
+        Pris.setCellValueFactory(new PropertyValueFactory<>("pris"));
+
+        tabell.setItems(collection.liste);
+
+        tabell.getColumns().addAll(
+                TypeBil, Hestekrefter, Interior, Farge, Felger, Pris);
+
+
     }
 
     //metodene som forsikrer at cellene blir endret når man klikker enter
@@ -172,11 +191,17 @@ public class AdminSideController implements Initializable {
 
     //lagrer til fil
     public void SaveFile(ActionEvent event) throws IOException {
-        FileSaverCsv lagre = new FileSaverCsv();
+        FileSaverTxt lagre = new FileSaverTxt();
         lagre.lesfil(sb);
     }
 
     public void LoadFile(ActionEvent event){
+        try{
+            readCSV();
+        }catch (Exceptions exceptions){
+            exceptions.NoSuchFileException("Feil filformat eller delimiter (;)!");
+        }
+
 
     }
 
@@ -252,5 +277,36 @@ public class AdminSideController implements Initializable {
         farge.setText("");
         felger.setText("");
         pris.setText("");
+    }
+
+
+    private void readCSV() {
+
+            String CsvFile = "/Users/felix/Desktop/testfilcsv.csv";
+        String FieldDelimiter = ";";
+
+        BufferedReader br;
+
+        try {
+            br = new BufferedReader(new FileReader(CsvFile));
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] fields = line.split(FieldDelimiter, -1);
+
+                AdminInnlegging adminInnlegging = new AdminInnlegging(fields[0], fields[1], fields[2],
+                        fields[3], fields[4], fields[5]);
+                collection.liste.add(adminInnlegging);
+
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(AdminSideController.class.getName())
+                    .log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(AdminSideController.class.getName())
+                    .log(Level.SEVERE, null, ex);
+        }
+
     }
 }
