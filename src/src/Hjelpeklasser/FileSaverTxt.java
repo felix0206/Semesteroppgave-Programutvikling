@@ -12,7 +12,7 @@ public class FileSaverTxt implements FileSaver {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("FileSaver");
         fileChooser.getExtensionFilters().addAll(
-                new FileChooser.ExtensionFilter("Text Files", "*.txt"));
+                new FileChooser.ExtensionFilter("Comma separated values", "*.csv"));
 
         Stage stage = new Stage();
         stage.setY(250);

@@ -95,6 +95,7 @@ public class KundeSide2Controller {
     public void getTypeBil(){
         typebil = TypeBilbox.getValue().toString();
     }
+
     //Metode for å kalle på de forskjellige priskalkulatorene. se hjelpeklasser/prisKalkulator.
     public String getPris(){
         PrisKalkulator prisKalkulator = new PrisKalkulator(typebil.toLowerCase(),farge.toLowerCase()

@@ -41,12 +41,12 @@ public class KundeSisteSideController implements Initializable {
     //Oppdaterer StringBuilderen for å lagre til fil.
     public StringBuilder InitData(){
 
-        sb.append("Navn: " + navn + "\n"+"\n" );
-        sb.append("Type bil: " + typebil.getText() + "\n"+"\n" );
-        sb.append("Hestekrefter: " + hestekrefter.getText() + "\n"+"\n" );
-        sb.append("Felger: " + felger.getText() + "\n"+"\n" );
-        sb.append("Farge: " + farge.getText() + "\n"+"\n" );
-        sb.append("Pris: " + pris.getText() + "\n"+"\n" );
+        sb.append("Ny bil\n"+"Navn: " + navn + "\n" );
+        sb.append("Type bil: " + typebil.getText() + "\n" );
+        sb.append("Hestekrefter: " + hestekrefter.getText() + "\n" );
+        sb.append("Felger: " + felger.getText() + "\n" );
+        sb.append("Farge: " + farge.getText() + "\n" );
+        sb.append("Pris: " + pris.getText() + "\n" );
 
         return sb;
     }
