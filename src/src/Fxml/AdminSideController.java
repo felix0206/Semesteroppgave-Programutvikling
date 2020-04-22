@@ -2,10 +2,7 @@ package Fxml;
 
 import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
-import Hjelpeklasser.Exceptions;
-import Hjelpeklasser.FileSaverTxt;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import save_load.FileSaverCsv;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -16,7 +13,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
@@ -24,8 +20,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.function.Predicate;
-
 
 
 public class AdminSideController implements Initializable {
@@ -178,7 +172,7 @@ public class AdminSideController implements Initializable {
 
     //lagrer til fil
     public void SaveFile(ActionEvent event) throws IOException {
-        FileSaverTxt lagre = new FileSaverTxt();
+        FileSaverCsv lagre = new FileSaverCsv();
         lagre.lesfil(sb);
     }
 

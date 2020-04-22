@@ -14,7 +14,7 @@
       <AnchorPane layoutX="-1.0" layoutY="-1.0" prefHeight="600.0" prefWidth="250.0" style="-fx-background-color: #E6E5D9;">
          <children>
             <Button fx:id="LoggInn" layoutX="63.0" layoutY="117.0" mnemonicParsing="false" onAction="#LoggInn" prefHeight="50.0" prefWidth="194.0" text="Logg inn" AnchorPane.leftAnchor="63.0" />
-            <Button fx:id="instillinger" layoutX="61.0" layoutY="197.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="196.0" text="Instillinger" />
+            <Button layoutX="61.0" layoutY="197.0" mnemonicParsing="false" onAction="#priserOgInfo" prefHeight="50.0" prefWidth="196.0" text="Priser &amp; info" />
             <Button fx:id="OmOss" layoutX="61.0" layoutY="275.0" mnemonicParsing="false" onAction="#OmOss" prefHeight="50.0" prefWidth="196.0" text="Om oss" />
             <AnchorPane prefHeight="600.0" prefWidth="61.0" style="-fx-background-color: #E6E6D1;">
                <effect>
@@ -23,7 +23,7 @@
                <children>
                   <ImageView fitHeight="39.0" fitWidth="40.0" layoutX="10.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Bilder/SettingsIcon.png" />
+                        <Image url="@../Bilder/priceicon.png" />
                      </image>
                   </ImageView>
                   <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="11.0" layoutY="282.0" pickOnBounds="true" preserveRatio="true">

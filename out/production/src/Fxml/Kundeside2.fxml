@@ -26,16 +26,13 @@
             <Label layoutX="510.0" layoutY="161.0" prefHeight="36.0" prefWidth="141.0" text="Farge" />
             <Label layoutX="697.0" layoutY="161.0" prefHeight="36.0" prefWidth="141.0" text="Interiør" />
             <Label layoutX="893.0" layoutY="165.0" prefHeight="29.0" prefWidth="135.0" text="Felger" />
-            <ImageView fitHeight="137.0" fitWidth="163.0" layoutX="29.0" layoutY="330.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="137.0" fitWidth="154.0" layoutX="219.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="137.0" fitWidth="163.0" layoutX="406.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="137.0" fitWidth="148.0" layoutX="602.0" layoutY="337.0" pickOnBounds="true" preserveRatio="true" />
             <Button fx:id="Oppsummering" layoutX="489.0" layoutY="485.0" mnemonicParsing="false" onAction="#Oppsummering" prefHeight="50.0" prefWidth="160.0" text="Vis Bilen" AnchorPane.leftAnchor="483.0" />
             <Separator layoutX="25.0" layoutY="122.0" prefWidth="1100.0" AnchorPane.leftAnchor="0.0" />
             <Button fx:id="LagreValg" layoutX="483.0" layoutY="489.0" mnemonicParsing="false" onAction="#LagreValg" prefHeight="50.0" prefWidth="160.0" text="Lagre valg" AnchorPane.leftAnchor="483.0" />
-            <Label fx:id="ValgLabel" layoutX="482.0" layoutY="395.0" prefHeight="71.0" prefWidth="182.0" />
+            <Label fx:id="ValgLabel" layoutX="490.0" layoutY="570.0" prefHeight="71.0" prefWidth="182.0" />
             <ChoiceBox fx:id="TypeBilbox" layoutX="119.0" layoutY="233.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" AnchorPane.leftAnchor="119.0" />
             <Label layoutX="127.0" layoutY="171.0" prefHeight="17.0" prefWidth="155.0" text="Type bil" />
+            <Label fx:id="boxIkkeValgt" layoutX="500.0" layoutY="321.0" prefHeight="73.0" prefWidth="154.0" />
          </children></AnchorPane>
    </children>
 </AnchorPane>
