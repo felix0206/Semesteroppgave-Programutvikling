@@ -234,7 +234,7 @@ public class AdminSideController implements Initializable {
         }
     }
 
-    //endrer tekstfeltene sånn at admin kan se hvilke parametere som er gyldige.
+    //endrer tekstfeltene sånn at admin kan se hvilke parametere som er gyldige
     private void riktigeParametere() {
         typebil.setText("<< elbil, bensin, diesel >>");
         hestekrefter.setText("<< hestekrefter må være heltall >>");
