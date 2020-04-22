@@ -3,7 +3,7 @@ package Fxml;
 import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
 import Hjelpeklasser.Exceptions;
-import Hjelpeklasser.FileSaverTxt;
+import save_load.FileSaverCsv;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -81,7 +81,7 @@ public class AdminSideController implements Initializable {
         Felger.setCellFactory(TextFieldTableCell.forTableColumn());
         Pris.setCellFactory(TextFieldTableCell.forTableColumn());
 
-        TypeBil.setCellValueFactory(new PropertyValueFactory<>("typeBil"));
+        TypeBil.setCellValueFactory(new PropertyValueFactory<>("typebil"));
         Hestekrefter.setCellValueFactory(new PropertyValueFactory<>("hestekrefter"));
         Interior.setCellValueFactory(new PropertyValueFactory<>("interior"));
         Farge.setCellValueFactory(new PropertyValueFactory<>("farge"));
@@ -191,7 +191,7 @@ public class AdminSideController implements Initializable {
 
     //lagrer til fil
     public void SaveFile(ActionEvent event) throws IOException {
-        FileSaverTxt lagre = new FileSaverTxt();
+        FileSaverCsv lagre = new FileSaverCsv();
         lagre.lesfil(sb);
     }
 
@@ -282,7 +282,7 @@ public class AdminSideController implements Initializable {
 
     private void readCSV() {
 
-            String CsvFile = "/Users/felix/Desktop/testfilcsv.csv";
+            String CsvFile = "src/src/save_load/testfilcsv.csv";
         String FieldDelimiter = ";";
 
         BufferedReader br;
