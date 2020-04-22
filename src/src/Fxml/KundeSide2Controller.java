@@ -35,7 +35,7 @@ public class KundeSide2Controller {
     @FXML
     public ChoiceBox TypeBilbox;
     @FXML
-    public Label ValgLabel;
+    public Label ValgLabel, boxIkkeValgt;
 
     @FXML
     public Button Oppsummering, LagreValg;
@@ -137,15 +137,28 @@ public class KundeSide2Controller {
 
     //lagrer valgene til brukeren.
     public void LagreValg(ActionEvent event) {
-        Oppsummering.setVisible(true);
-        getHestekrefter();
-        getFarge();
-        getFelger();
-        getInterior();
-        getTypeBil();
-        ValgLabel.setText("Dine valg er lagret. \nTrykk på knappen for å\nvise dine valg og totalpris.");
 
-        LagreValg.setVisible(false);
+        if (TypeBilbox.getValue().equals("Velg Type bil") || Hestekrefterbox.getValue().equals("Velg Hestekrefter") ||
+                Fargebox.getValue().equals("Velg Farge") || Interiørbox.getValue().equals("Velg Interiør") ||
+                Felgerbox.getValue().equals("Velg Felger")){
+
+
+            boxIkkeValgt.setText("Du må velge én av alle \nkomponenter!");
+        }
+
+        else{
+            boxIkkeValgt.setText("");
+            Oppsummering.setVisible(true);
+            getHestekrefter();
+            getFarge();
+            getFelger();
+            getInterior();
+            getTypeBil();
+            ValgLabel.setText("Dine valg er lagret. \nTrykk på knappen for å\nvise dine valg og totalpris.");
+
+            LagreValg.setVisible(false);
+        }
+
 
         System.out.println(hester + " " + farge + " " + felger + " " + interior + " " + typebil );
     }

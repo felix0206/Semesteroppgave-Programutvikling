@@ -81,6 +81,7 @@ public class AdminInnlegging {
 
         this.interior = new SimpleStringProperty(interior);
 
+
         return interior;
     }
     public String felger(String felger){

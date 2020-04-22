@@ -39,4 +39,10 @@ public class StartSideController {
         window.setScene(scene);
         window.show();
     }
+
+    public void priserOgInfo(ActionEvent event) {
+
+
+
+    }
 }
