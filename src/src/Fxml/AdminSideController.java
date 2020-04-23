@@ -19,10 +19,8 @@ import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import javax.swing.*;
+import java.io.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -195,8 +193,12 @@ public class AdminSideController implements Initializable {
 
     //lagrer til fil
     public void SaveFile(ActionEvent event) throws IOException {
-        FileSaverCsv lagre = new FileSaverCsv();
-        lagre.lesfil(sb);
+       /* FileSaverCsv lagre = new FileSaverCsv();
+        lagre.lesfil(sb);*/
+
+        FileWriter fileWriter = new FileWriter("src/src/save_load/testfilcsv.csv",true);
+        fileWriter.write(save(tabell));
+        fileWriter.close();
     }
 
     public void LoadFile(ActionEvent event){
@@ -234,12 +236,12 @@ public class AdminSideController implements Initializable {
             reg.pris(prisText);
 
             //sb.append("Navn: " + navn + "\n"+"\n" );
-            sb.append("Ny Bil: \n" + "Type bil: " + reg.typebil(typebilText) + "\n");
-            sb.append("Hestekrefter: " + reg.hestekrefter(hestekrefterText) + "\n");
-            sb.append("Interiør: " + reg.interior(interiorText) + "\n");
-            sb.append("Farge: " + reg.farge(fargeText) + "\n");
-            sb.append("Felger: " + reg.felger(felgerText) + "\n");
-            sb.append("Pris: " + reg.pris(prisText) + "\n \n");
+            sb.append(reg.typebil(typebilText) + ";");
+            sb.append(reg.hestekrefter(hestekrefterText) + ";");
+            sb.append(reg.interior(interiorText) + ";");
+            sb.append(reg.farge(fargeText) + ";");
+            sb.append(reg.felger(felgerText) + ";");
+            sb.append(reg.pris(prisText) + "\n");
 
             //Sjekker om tekstfeltene er tomme.
             if (
@@ -311,6 +313,22 @@ public class AdminSideController implements Initializable {
             Logger.getLogger(AdminSideController.class.getName())
                     .log(Level.SEVERE, null, ex);
         }
+
+    }
+
+    private String save(TableView tabell){
+        //TODO: i ut+=, så må vi legge inn values fra tableview.
+        //TODO: Hvis vi får til det så har vi fikset lagringen til testfilcsv.csv filen.
+
+        String ut = "";
+        try{
+            ut += "Her skal vi hente info fra tableview og konvertere til string";
+
+        }catch (Exceptions exceptions){
+            exceptions.wrongInputException("noe gikk galt");
+            JOptionPane.showMessageDialog(null, "noe gikk galt");
+        }
+        return ut;
 
     }
 }
