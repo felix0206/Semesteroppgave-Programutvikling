@@ -70,8 +70,12 @@ public class AdminSideController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         collection.setTable(tabell);
-        collection.leggtil(new AdminInnlegging("el","140","sport", "gul","sport","150000"));
-        collection.leggtil(new AdminInnlegging("Bensin","750","sport", "Rød","sport","850000"));
+
+        try {
+            readCSV();
+        }catch (Exceptions exceptions){
+            exceptions.NoSuchFileException("Feil fil eller feil delimiter (;)");
+        }
         //tableview rediering
         tabell.setEditable(true);
         TypeBil.setCellFactory(TextFieldTableCell.forTableColumn());
