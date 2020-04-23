@@ -1,6 +1,6 @@
 package Fxml;
 
-import save_load.FileSaverCsv;
+import Hjelpeklasser.FileSaverTxt;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -54,7 +54,7 @@ public class KundeSisteSideController implements Initializable {
     //Lagre info om bilen til en txt-fil.
     public void SaveToFile(ActionEvent event) throws IOException {
 
-        FileSaverCsv lagre = new FileSaverCsv();
+        FileSaverTxt lagre = new FileSaverTxt();
         lagre.lesfil(InitData());
 
     }

@@ -1,4 +1,4 @@
-package save_load;
+package Hjelpeklasser;
 
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
@@ -6,7 +6,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class FileSaverCsv implements FileSaver {
+public class FileSaverTxt implements FileSaver {
     @Override
     public void lesfil(StringBuilder ny) throws IOException {
         FileChooser fileChooser = new FileChooser();
