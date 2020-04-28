@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 import javax.swing.*;
 import java.io.*;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -46,7 +47,6 @@ public class AdminSideController implements Initializable {
 
     HovedsideController hovedsideController = new HovedsideController();
     AdminCollection collection = new AdminCollection();
-    StringBuilder sb = new StringBuilder();
 
     //knapp for å komme tilbake til forsiden
     @FXML
@@ -193,9 +193,13 @@ public class AdminSideController implements Initializable {
 
     //lagrer til fil
     public void SaveFile(ActionEvent event) throws IOException {
-       /* FileSaverCsv lagre = new FileSaverCsv();
-        lagre.lesfil(sb);*/
-
+        /*
+        * lagrer til fil som vi bruker som data når man starter tableview
+        * dermed slipper superbruker å bekymre seg for filplassering
+        * gjør at om man lagrer og slår av alt, vil filen være lagret slik at når du åpner adminside vil tableview du lagret bli vist,
+         */
+        PrintWriter resettFil = new PrintWriter("src/src/save_load/testfilcsv.csv"); //for å overkjøre det som allerede stod
+        resettFil.close();
         FileWriter fileWriter = new FileWriter("src/src/save_load/testfilcsv.csv",true);
         fileWriter.write(save(tabell));
         fileWriter.close();
@@ -235,13 +239,6 @@ public class AdminSideController implements Initializable {
             reg.felger(felgerText);
             reg.pris(prisText);
 
-            //sb.append("Navn: " + navn + "\n"+"\n" );
-            sb.append(reg.typebil(typebilText) + ";");
-            sb.append(reg.hestekrefter(hestekrefterText) + ";");
-            sb.append(reg.interior(interiorText) + ";");
-            sb.append(reg.farge(fargeText) + ";");
-            sb.append(reg.felger(felgerText) + ";");
-            sb.append(reg.pris(prisText) + "\n");
 
             //Sjekker om tekstfeltene er tomme.
             if (
@@ -303,7 +300,6 @@ public class AdminSideController implements Initializable {
                 AdminInnlegging adminInnlegging = new AdminInnlegging(fields[0], fields[1], fields[2],
                         fields[3], fields[4], fields[5]);
                 collection.liste.add(adminInnlegging);
-
             }
 
         } catch (FileNotFoundException ex) {
@@ -316,14 +312,21 @@ public class AdminSideController implements Initializable {
 
     }
 
-    private String save(TableView tabell){
+    private String save(TableView tabellen){
         //TODO: i ut+=, så må vi legge inn values fra tableview.
         //TODO: Hvis vi får til det så har vi fikset lagringen til testfilcsv.csv filen.
 
+
         String ut = "";
         try{
-            ut += "Her skal vi hente info fra tableview og konvertere til string";
-
+            /*for løkke som henter dirkete fra tableview.
+             *gjør at vi både får lagret input, info som er loada fra fil
+             *eller data som ligger i tableview fra før
+             */
+            for(int i = 0; i < collection.liste.size(); i++){
+                ut += collection.liste.get(i).getTypebil()+";"+collection.liste.get(i).getHestekrefter()+";"+collection.liste.get(i).getInterior()+";"
+                        +collection.liste.get(i).getFarge()+ ";"+collection.liste.get(i).getFelger()+";"+collection.liste.get(i).getPris()+"\n";
+            }
         }catch (Exceptions exceptions){
             exceptions.wrongInputException("noe gikk galt");
             JOptionPane.showMessageDialog(null, "noe gikk galt");

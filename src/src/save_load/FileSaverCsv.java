@@ -1,5 +1,6 @@
 package save_load;
 
+import javafx.collections.ObservableList;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import java.io.File;
@@ -16,6 +17,7 @@ public class FileSaverCsv implements FileSaver {
 
         Stage stage = new Stage();
         stage.setY(250);
+
         stage.setX(200);
 
         File file = fileChooser.showSaveDialog(stage);
