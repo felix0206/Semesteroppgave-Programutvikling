@@ -35,14 +35,15 @@ public class HovedsideController {
         //Tester om input i navn og email er korrekte.
         if (fornavn.getText().matches(numberRegex) || etternavn.getText().matches(numberRegex)
             || fornavn.getText().isEmpty() || etternavn.getText().isEmpty() || !epost.getText().matches(emailRegex)
-                || epost.getText().isEmpty()){
-            exceptions.wrongInputException("Du kan ikke ha nummer i navn");
+            || epost.getText().isEmpty()){
+
             fornavn.setText("");
             etternavn.setText("");
             fornavn.setPromptText("kan ikke ha numre her");
             etternavn.setPromptText("kan ikke ha numre her");
             epost.setText("");
             epost.setPromptText("eksempel: ola@noe.noe");
+            exceptions.wrongInputException("Du kan ikke ha nummer i navn");
             exceptions.wrongInputException("feil i email (ola@noe.noe)");
         }
         //Tester slutt.
@@ -102,7 +103,6 @@ public class HovedsideController {
 
         window.setScene(scene);
         window.show();
-
 
     }
 
