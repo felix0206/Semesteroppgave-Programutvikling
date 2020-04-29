@@ -33,10 +33,14 @@ public class HovedsideController {
 
 
         //Tester om input i navn og email er korrekte.
-        if (fornavn.getText().matches(numberRegex)){
+        if (fornavn.getText().matches(numberRegex) || etternavn.getText().matches(numberRegex)
+            || fornavn.getText().isEmpty() || etternavn.getText().isEmpty()){
             exceptions.wrongInputException("Du kan ikke ha nummer i navn");
+            fornavn.setText("kan ikke ha numre her");
+            etternavn.setText("kan ikke ha numre her");
         }
-        else if (epost.getText().matches(emailRegex)){
+        if (epost.getText().matches(emailRegex) || epost.getText().isEmpty()){
+            epost.setText("eksempel: ola@noe.noe");
             exceptions.wrongInputException("feil i email (ola@noe.noe)");
         }
         //Tester slutt.
