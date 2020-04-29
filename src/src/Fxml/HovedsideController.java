@@ -36,13 +36,6 @@ public class HovedsideController {
         //Overfører data om navn til neste side.
         kundeSide2Controller.hentPersonInfo(fornavn.getText() + " " + etternavn.getText(), epost.getText());
 
-        //Oppretter en filewriter for å skrive til csv-filen
-        //sånn at admin vil få opp den nye bilen med navn og epost i tableview neste gang den åpnes.
-       /* FileWriter fileWriter = new FileWriter("src/src/save_load/testfilcsv.csv",true);
-        fileWriter.write(fornavn.getText() + " " + etternavn.getText() + ";" + epost.getText() + ";");
-        fileWriter.close();*/
-        //lukker filewriteren.
-
         Scene scene = new Scene(root);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();

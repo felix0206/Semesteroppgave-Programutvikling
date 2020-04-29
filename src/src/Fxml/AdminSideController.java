@@ -212,7 +212,7 @@ public class AdminSideController implements Initializable {
         * dermed slipper superbruker å bekymre seg for filplassering
         * gjør at om man lagrer og slår av alt, vil filen være lagret slik at når du åpner adminside vil tableview du lagret bli vist,
          */
-        FileWriter fileWriter = new FileWriter("src/src/save_load/testfilcsv.csv",false);
+        FileWriter fileWriter = new FileWriter("src/src/save_load/kundeDataBase.csv",false);
         fileWriter.write(save(tabell));
         fileWriter.close();
     }
@@ -300,7 +300,7 @@ public class AdminSideController implements Initializable {
 
     private void readCSV() {
 
-        String CsvFile = "src/src/save_load/testfilcsv.csv";
+        String CsvFile = "src/src/save_load/kundeDataBase.csv";
         String FieldDelimiter = ";";
 
         BufferedReader br;
@@ -328,9 +328,6 @@ public class AdminSideController implements Initializable {
     }
 
     private String save(TableView tabellen){
-        //TODO: i ut+=, så må vi legge inn values fra tableview.
-        //TODO: Hvis vi får til det så har vi fikset lagringen til testfilcsv.csv filen.
-
 
         String ut = "";
         try{

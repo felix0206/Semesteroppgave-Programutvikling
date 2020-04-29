@@ -164,13 +164,15 @@ public class KundeSide2Controller {
 
         //Oppretter en filewriter for å skrive til csv-filen
         //sånn at admin vil få opp den nye bilen med navn og epost i tableview neste gang den åpnes.
-        FileWriter fileWriter = new FileWriter("src/src/save_load/testfilcsv.csv", true);
+        FileWriter fileWriter = new FileWriter("src/src/save_load/kundeDataBase.csv", true);
 
-        fileWriter.write(navn + ";" + epost + ";" + typebil + ";" + hester + ";" + interior + ";" + farge +
+        fileWriter.write("\n" + navn + ";" + epost + ";" + typebil + ";" + hester + ";" + interior + ";" + farge +
                         ";" + felger + ";" + getPris());
         fileWriter.close();
         //lukker filewriteren.
 
+
+        //TODO: ta bort denne før vi leverer.
         System.out.println(hester + " " + farge + " " + felger + " " + interior + " " + typebil );
     }
 
