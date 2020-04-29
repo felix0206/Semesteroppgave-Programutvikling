@@ -23,10 +23,10 @@ public class AdminInnlegging {
     //Feilmeldinger
     Exceptions exceptions = new Exceptions("");
 
-    public AdminInnlegging( String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
+    public AdminInnlegging(String navn, String email, String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
 
-        //this.navn = new SimpleStringProperty(navn);
-        //this.navn = new SimpleStringProperty(email);
+        this.navn = new SimpleStringProperty(navn);
+        this.email = new SimpleStringProperty(email);
         this.typebil = new SimpleStringProperty(typebil);
         this.interior = new SimpleStringProperty(interior);
         this.farge = new SimpleStringProperty(farge);
@@ -49,7 +49,6 @@ public class AdminInnlegging {
     }
 
     public String email(String email){
-
         //tester om input er riktig.
         if (email.matches(emailRegex)){
             this.email = new SimpleStringProperty(email);
@@ -97,7 +96,7 @@ public class AdminInnlegging {
         return pris;
     }
 
-   /* public String getNavn(){
+    public String getNavn(){
         return navn.getValue();
     }
 
@@ -110,7 +109,7 @@ public class AdminInnlegging {
 
     public void setEmail(String email){
         this.email.set(email);
-    }*/
+    }
 
     public String getTypebil() {
 

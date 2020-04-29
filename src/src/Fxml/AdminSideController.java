@@ -40,7 +40,7 @@ public class AdminSideController implements Initializable {
     private TableView<AdminInnlegging> tabell;
 
     @FXML
-    public TextField typebil, hestekrefter, interior, farge, felger, pris, filtrer;
+    public TextField navn, email, typebil, hestekrefter, interior, farge, felger, pris, filtrer;
 
     @FXML
     public MenuItem savefile, loadfile;
@@ -76,6 +76,8 @@ public class AdminSideController implements Initializable {
         }
         //tableview rediering
         tabell.setEditable(true);
+        Navn.setCellFactory(TextFieldTableCell.forTableColumn());
+        Email.setCellFactory(TextFieldTableCell.forTableColumn());
         TypeBil.setCellFactory(TextFieldTableCell.forTableColumn());
         Hestekrefter.setCellFactory(TextFieldTableCell.forTableColumn());
         Interior.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -83,6 +85,8 @@ public class AdminSideController implements Initializable {
         Felger.setCellFactory(TextFieldTableCell.forTableColumn());
         Pris.setCellFactory(TextFieldTableCell.forTableColumn());
 
+        Navn.setCellValueFactory(new PropertyValueFactory<>("navn"));
+        Email.setCellValueFactory(new PropertyValueFactory<>("email"));
         TypeBil.setCellValueFactory(new PropertyValueFactory<>("typebil"));
         Hestekrefter.setCellValueFactory(new PropertyValueFactory<>("hestekrefter"));
         Interior.setCellValueFactory(new PropertyValueFactory<>("interior"));
@@ -93,12 +97,22 @@ public class AdminSideController implements Initializable {
         tabell.setItems(collection.liste);
 
         tabell.getColumns().addAll(
-                TypeBil, Hestekrefter, Interior, Farge, Felger, Pris);
+                Navn, Email, TypeBil, Hestekrefter, Interior, Farge, Felger, Pris);
 
 
     }
 
     //metodene som forsikrer at cellene blir endret når man klikker enter
+    public void redigerNavn(TableColumn.CellEditEvent redigeringFullfort){
+        AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
+        valgtCelle.setNavn(redigeringFullfort.getNewValue().toString());
+    }
+
+    public void redigerEmail(TableColumn.CellEditEvent redigeringFullfort){
+        AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
+        valgtCelle.setEmail(redigeringFullfort.getNewValue().toString());
+    }
+
     public void redigerBil(TableColumn.CellEditEvent redigeringFullfort){
         AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
         valgtCelle.setTypebil(redigeringFullfort.getNewValue().toString());
@@ -198,9 +212,7 @@ public class AdminSideController implements Initializable {
         * dermed slipper superbruker å bekymre seg for filplassering
         * gjør at om man lagrer og slår av alt, vil filen være lagret slik at når du åpner adminside vil tableview du lagret bli vist,
          */
-        PrintWriter resettFil = new PrintWriter("src/src/save_load/testfilcsv.csv"); //for å overkjøre det som allerede stod
-        resettFil.close();
-        FileWriter fileWriter = new FileWriter("src/src/save_load/testfilcsv.csv",true);
+        FileWriter fileWriter = new FileWriter("src/src/save_load/testfilcsv.csv",false);
         fileWriter.write(save(tabell));
         fileWriter.close();
     }
@@ -219,10 +231,10 @@ public class AdminSideController implements Initializable {
     private AdminInnlegging registreringTable(){
 
         try {
-            AdminInnlegging reg = new AdminInnlegging(null, null, null, null, null, null);
+            AdminInnlegging reg = new AdminInnlegging(null,null,null, null, null, null, null, null);
 
-            //String navnText = navn.getText();
-            //String emailText = email.getText();
+            String navnText = navn.getText();
+            String emailText = email.getText();
             String typebilText = typebil.getText();
             String hestekrefterText = hestekrefter.getText();
             String interiorText = interior.getText();
@@ -230,15 +242,14 @@ public class AdminSideController implements Initializable {
             String felgerText = felger.getText();
             String prisText = pris.getText();
 
-            //reg.navn(navnText);
-            //reg.email(emailText);
+            reg.navn(navnText);
+            reg.email(emailText);
             reg.typebil(typebilText);
             reg.hestekrefter(hestekrefterText);
             reg.interior(interiorText);
             reg.farge(fargeText);
             reg.felger(felgerText);
             reg.pris(prisText);
-
 
             //Sjekker om tekstfeltene er tomme.
             if (
@@ -264,6 +275,8 @@ public class AdminSideController implements Initializable {
 
     //endrer tekstfeltene sånn at admin kan se hvilke parametere som er gyldige
     private void riktigeParametere() {
+        navn.setText("<< oppgi navn >>");
+        email.setText("<< ugyldig email >>");
         typebil.setText("<< elbil, bensin, diesel >>");
         hestekrefter.setText("<< hestekrefter må være heltall >>");
         interior.setText("<< standard, sport, supreme >>");
@@ -274,6 +287,8 @@ public class AdminSideController implements Initializable {
 
     //resetter alle textboxene.
     private void reset(){
+        navn.setText("");
+        email.setText("");
         typebil.setText("");
         hestekrefter.setText("");
         interior.setText("");
@@ -298,7 +313,7 @@ public class AdminSideController implements Initializable {
                 String[] fields = line.split(FieldDelimiter, -1);
 
                 AdminInnlegging adminInnlegging = new AdminInnlegging(fields[0], fields[1], fields[2],
-                        fields[3], fields[4], fields[5]);
+                        fields[3], fields[4], fields[5], fields[6], fields[7]);
                 collection.liste.add(adminInnlegging);
             }
 
@@ -324,8 +339,10 @@ public class AdminSideController implements Initializable {
              *eller data som ligger i tableview fra før
              */
             for(int i = 0; i < collection.liste.size(); i++){
-                ut += collection.liste.get(i).getTypebil()+";"+collection.liste.get(i).getHestekrefter()+";"+collection.liste.get(i).getInterior()+";"
-                        +collection.liste.get(i).getFarge()+ ";"+collection.liste.get(i).getFelger()+";"+collection.liste.get(i).getPris()+"\n";
+                ut +=    collection.liste.get(i).getNavn()+";"+collection.liste.get(i).getEmail()+";"
+                        +collection.liste.get(i).getTypebil()+";" +collection.liste.get(i).getHestekrefter()
+                        +";"+collection.liste.get(i).getInterior()+";" +collection.liste.get(i).getFarge()
+                        +";"+collection.liste.get(i).getFelger()+";" +collection.liste.get(i).getPris()+"\n";
             }
         }catch (Exceptions exceptions){
             exceptions.wrongInputException("noe gikk galt");
