@@ -1,4 +1,5 @@
 package Fxml;
+import Hjelpeklasser.Exceptions;
 import Hjelpeklasser.PrisKalkulator;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,6 +19,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class KundeSide2Controller {
+    Exceptions exceptions = new Exceptions("");
 
     ObservableList TypeBillist= FXCollections.observableArrayList("Velg Type bil","Elbil", "Bensin" , "Diesel" );
     ObservableList Hestekrefterlist= FXCollections.observableArrayList("Velg Hestekrefter","150", "200" , "300" );
@@ -145,6 +147,7 @@ public class KundeSide2Controller {
                 Fargebox.getValue().equals("Velg Farge") || Interiørbox.getValue().equals("Velg Interiør") ||
                 Felgerbox.getValue().equals("Velg Felger")){
 
+            exceptions.wrongInputException("Feil input!");
 
             boxIkkeValgt.setText("Du må velge én av alle \nkomponenter!");
         }

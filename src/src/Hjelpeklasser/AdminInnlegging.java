@@ -40,12 +40,12 @@ public class AdminInnlegging {
 
     public String navn(String navn){
 
-        if (navn.matches(numberRegex)){
+       if (navn.matches(numberRegex)){
             exceptions.wrongInputException("Navn kan ikke inneholde nummer!");
         }else{
             this.navn = new SimpleStringProperty(navn);
         }
-        return navn;
+       return navn;
     }
 
     public String email(String email){
@@ -59,34 +59,53 @@ public class AdminInnlegging {
 
     }
     public String typebil(String bil){
-
+        //Tester om bil er riktig.
+        if (bil.equals("el") || bil.equals("bensin") || bil.equals("diesel") || bil.equals("elbil"))
             this.typebil = new SimpleStringProperty(bil);
+
+        else{
+            exceptions.wrongInputException("Feil type bil!");
+        }
 
         return bil;
     }
     public String hestekrefter(String hestekrefter){
-
+            if (hestekrefter.equals("150") || hestekrefter.equals("200") || hestekrefter.equals("300"))
             this.hestekrefter = new SimpleStringProperty(hestekrefter);
 
+            else{
+                exceptions.wrongInputException("feil hestekrefter!");
+            }
         return hestekrefter;
     }
     public String farge(String farge){
-
+        if (farge.equals("hvit") || farge.equals("svart") || farge.equals("bronse") || farge.equals("rød"))
         this.farge = new SimpleStringProperty(farge);
 
+        else{
+            exceptions.wrongInputException("feil farge!");
+        }
         return farge;
     }
     public String interior(String interior){
 
+        if (interior.equals("standard") || interior.equals("sport") || interior.equals("supreme"))
         this.interior = new SimpleStringProperty(interior);
 
+        else{
+            exceptions.wrongInputException("feil interior!");
+        }
 
         return interior;
     }
     public String felger(String felger){
 
+        if (felger.equals("18") || felger.equals("20") || felger.equals("24"))
         this.felger = new SimpleStringProperty(felger);
 
+        else{
+            exceptions.wrongInputException("feil felger!");
+        }
         return felger;
     }
     public String pris(String pris){

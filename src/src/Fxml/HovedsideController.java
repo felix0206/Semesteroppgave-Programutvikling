@@ -1,5 +1,6 @@
 package Fxml;
 
+import Hjelpeklasser.Exceptions;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,8 +11,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
-import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -24,24 +23,42 @@ public class HovedsideController {
     @FXML
     public Label FeilmeldingAdmin, overskrift;
 
+    String numberRegex = "(.)*(\\d)(.)*";  //For å sjekke om navnet inneholder numre.
+    String emailRegex = "\\b[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z0-9.-]+\\b"; //for å teste gyldighet på email.
+
+    Exceptions exceptions = new Exceptions("");
+
     //Knapp får å gå til kundeSiden.
     public void kundeSide(ActionEvent event) throws IOException {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("KundeSide2.fxml"));
-        Parent root = loader.load();
 
-        //Henter controlleren til neste side.
-        KundeSide2Controller kundeSide2Controller = loader.getController();
+        //Tester om input i navn og email er korrekte.
+        if (fornavn.getText().matches(numberRegex)){
+            exceptions.wrongInputException("Du kan ikke ha nummer i navn");
+        }
+        else if (epost.getText().matches(emailRegex)){
+            exceptions.wrongInputException("feil i email (ola@noe.noe)");
+        }
+        //Tester slutt.
+        else{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("KundeSide2.fxml"));
+            Parent root = loader.load();
 
-        //Overfører data om navn til neste side.
-        kundeSide2Controller.hentPersonInfo(fornavn.getText() + " " + etternavn.getText(), epost.getText());
+            //Henter controlleren til neste side.
+            KundeSide2Controller kundeSide2Controller = loader.getController();
 
-        Scene scene = new Scene(root);
+            //Overfører data om navn til neste side.
+            kundeSide2Controller.hentPersonInfo(fornavn.getText() + " " + etternavn.getText(), epost.getText());
 
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
 
-        window.setScene(scene);
-        window.show();
+            Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+            window.setScene(scene);
+            window.show();
+        }
+
+
     }
 
     //knapp for å gå til adminSiden.
