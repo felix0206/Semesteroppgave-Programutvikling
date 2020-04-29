@@ -14,15 +14,16 @@ import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class KundeSide2Controller {
 
     ObservableList TypeBillist= FXCollections.observableArrayList("Velg Type bil","Elbil", "Bensin" , "Diesel" );
-    ObservableList Hestekrefterlist= FXCollections.observableArrayList("Velg Hestekrefter","150 hk", "200 hk" , "300 hk" );
+    ObservableList Hestekrefterlist= FXCollections.observableArrayList("Velg Hestekrefter","150", "200" , "300" );
     ObservableList Fargerlist= FXCollections.observableArrayList("Velg Farge","Svart", "Hvit" , "Rød", "Bronse" );
     ObservableList Interiørlist= FXCollections.observableArrayList("Velg Interiør","Standar", "Sport" , "Supreme" );
-    ObservableList Felgerlist= FXCollections.observableArrayList("Velg Felger","18 tommer", "20 tommer" , "24 tommer");
+    ObservableList Felgerlist= FXCollections.observableArrayList("Velg Felger","18", "20" , "24");
 
     @FXML
     public ChoiceBox Hestekrefterbox;
@@ -40,7 +41,7 @@ public class KundeSide2Controller {
     @FXML
     public Button Oppsummering, LagreValg;
 
-   public String hester, interior, farge, felger, typebil, navn;
+   public String hester, interior, farge, felger, typebil, navn, epost;
 
 
     @FXML
@@ -111,8 +112,9 @@ public class KundeSide2Controller {
 
 
     //henter info om person fra forrige side.
-    public void hentPersonInfo(String navn){
+    public void hentPersonInfo(String navn, String epost){
         this.navn = navn;
+        this.epost = epost;
     }
 
     //knapp for å gå til oppsummeringssidenm hvor bilen og dens komponenter blir listet opp.
@@ -137,7 +139,7 @@ public class KundeSide2Controller {
     }
 
     //lagrer valgene til brukeren.
-    public void LagreValg(ActionEvent event) {
+    public void LagreValg(ActionEvent event) throws IOException {
 
         if (TypeBilbox.getValue().equals("Velg Type bil") || Hestekrefterbox.getValue().equals("Velg Hestekrefter") ||
                 Fargebox.getValue().equals("Velg Farge") || Interiørbox.getValue().equals("Velg Interiør") ||
@@ -160,6 +162,14 @@ public class KundeSide2Controller {
             LagreValg.setVisible(false);
         }
 
+        //Oppretter en filewriter for å skrive til csv-filen
+        //sånn at admin vil få opp den nye bilen med navn og epost i tableview neste gang den åpnes.
+        FileWriter fileWriter = new FileWriter("src/src/save_load/testfilcsv.csv", true);
+
+        fileWriter.write(navn + ";" + epost + ";" + typebil + ";" + hester + ";" + interior + ";" + farge +
+                        ";" + felger + ";" + getPris());
+        fileWriter.close();
+        //lukker filewriteren.
 
         System.out.println(hester + " " + farge + " " + felger + " " + interior + " " + typebil );
     }

@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.FileWriter;
 import java.io.IOException;
 
 
@@ -33,7 +34,14 @@ public class HovedsideController {
         KundeSide2Controller kundeSide2Controller = loader.getController();
 
         //Overfører data om navn til neste side.
-        kundeSide2Controller.hentPersonInfo(fornavn.getText() + " " + etternavn.getText());
+        kundeSide2Controller.hentPersonInfo(fornavn.getText() + " " + etternavn.getText(), epost.getText());
+
+        //Oppretter en filewriter for å skrive til csv-filen
+        //sånn at admin vil få opp den nye bilen med navn og epost i tableview neste gang den åpnes.
+       /* FileWriter fileWriter = new FileWriter("src/src/save_load/testfilcsv.csv",true);
+        fileWriter.write(fornavn.getText() + " " + etternavn.getText() + ";" + epost.getText() + ";");
+        fileWriter.close();*/
+        //lukker filewriteren.
 
         Scene scene = new Scene(root);
 
@@ -46,7 +54,7 @@ public class HovedsideController {
     //knapp for å gå til adminSiden.
     public void adminSide(ActionEvent event) throws IOException {
 
-
+        //Sjekker om passord og brukernavn er riktig. Hvis ikke vises det et hint.
         if (brukernavn.getText().equals("admin")  && passord.getText().equals("admin")){
 
             Parent adminSide = FXMLLoader.load(getClass().getResource("AdminSide.fxml"));
@@ -61,7 +69,7 @@ public class HovedsideController {
 
         }else{
             FeilmeldingAdmin.setText("Feil brukernavn eller passord!\nHint: admin, admin"); //viser feilmelding om passordet
-                                                                                    // eller brukernavn er feil.
+                                                                                    // eller brukernavn er feil. + Hint
         }
 
     }
