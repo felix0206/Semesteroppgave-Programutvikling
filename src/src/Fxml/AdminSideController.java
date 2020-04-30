@@ -34,7 +34,10 @@ public class AdminSideController implements Initializable {
     public Button Start;
 
     @FXML
-    public TableColumn<AdminInnlegging, String> Navn, Email, TypeBil, Hestekrefter, Interior, Farge, Felger, Pris;
+    public TableColumn<AdminInnlegging, String> Navn, Email, TypeBil, Interior, Farge;
+
+    @FXML
+    public TableColumn<AdminInnlegging, Integer> Hestekrefter, Felger, Pris;
 
     @FXML
     private TableView<AdminInnlegging> tabell;
@@ -79,11 +82,11 @@ public class AdminSideController implements Initializable {
         Navn.setCellFactory(TextFieldTableCell.forTableColumn());
         Email.setCellFactory(TextFieldTableCell.forTableColumn());
         TypeBil.setCellFactory(TextFieldTableCell.forTableColumn());
-        Hestekrefter.setCellFactory(TextFieldTableCell.forTableColumn());
+       // Hestekrefter.setCellFactory(TextFieldTableCell.forTableColumn());
         Interior.setCellFactory(TextFieldTableCell.forTableColumn());
         Farge.setCellFactory(TextFieldTableCell.forTableColumn());
-        Felger.setCellFactory(TextFieldTableCell.forTableColumn());
-        Pris.setCellFactory(TextFieldTableCell.forTableColumn());
+       // Felger.setCellFactory(TextFieldTableCell.forTableColumn());
+       // Pris.setCellFactory(TextFieldTableCell.forTableColumn());
 
         Navn.setCellValueFactory(new PropertyValueFactory<>("navn"));
         Email.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -120,7 +123,7 @@ public class AdminSideController implements Initializable {
 
     public void redigerHestekrefter(TableColumn.CellEditEvent redigeringFullfort){
         AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
-        valgtCelle.setHestekrefter(redigeringFullfort.getNewValue().toString());
+        valgtCelle.setHestekrefter(Integer.parseInt(redigeringFullfort.getNewValue().toString()));
     }
 
     public void redigerInterior(TableColumn.CellEditEvent redigeringFullfort){
@@ -135,12 +138,12 @@ public class AdminSideController implements Initializable {
 
     public void redigerFelger(TableColumn.CellEditEvent redigeringFullfort){
         AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
-        valgtCelle.setFelger(redigeringFullfort.getNewValue().toString());
+        valgtCelle.setFelger(Integer.parseInt(redigeringFullfort.getNewValue().toString()));
     }
 
     public void redigerPris(TableColumn.CellEditEvent redigeringFullfort){
         AdminInnlegging valgtCelle = tabell.getSelectionModel().getSelectedItem();
-        valgtCelle.setPris(redigeringFullfort.getNewValue().toString());
+        valgtCelle.setPris(Integer.parseInt(redigeringFullfort.getNewValue().toString()));
     }
 
     //legg inn fra textbox
@@ -182,7 +185,7 @@ public class AdminSideController implements Initializable {
                 if(adm.getTypebil().toLowerCase().contains(newValue)){
                     return true;
                 }
-                else if(adm.getHestekrefter().toLowerCase().contains(newValue)){
+                else if(String.valueOf(adm.getHestekrefter()).contains(newValue)){
                     return true;
                 }
                 else if(adm.getInterior().toLowerCase().contains(newValue)){
@@ -191,10 +194,10 @@ public class AdminSideController implements Initializable {
                 else if(adm.getFarge().toLowerCase().contains(newValue)){
                     return true;
                 }
-                else if(adm.getFelger().toLowerCase().contains(newValue)){
+                else if(String.valueOf(adm.getFelger()).contains(newValue)){
                     return true;
                 }
-                else if(adm.getPris().toLowerCase().contains(newValue)){
+                else if(String.valueOf(adm.getPris()).contains(newValue)){
                     return true;
                 }
                 return false;
@@ -231,16 +234,16 @@ public class AdminSideController implements Initializable {
     private AdminInnlegging registreringTable(){
 
         try {
-            AdminInnlegging reg = new AdminInnlegging(null,null,null, null, null, null, null, null);
+            AdminInnlegging reg = new AdminInnlegging(null,null,null, 0, null, null, 0, 0);
 
             String navnText = navn.getText();
             String emailText = email.getText();
             String typebilText = typebil.getText();
-            String hestekrefterText = hestekrefter.getText();
+            int hestekrefterText = Integer.parseInt(hestekrefter.getText());
             String interiorText = interior.getText();
             String fargeText = farge.getText();
-            String felgerText = felger.getText();
-            String prisText = pris.getText();
+            int felgerText = Integer.parseInt(felger.getText());
+            int prisText = Integer.parseInt(pris.getText());
 
             reg.navn(navnText);
             reg.email(emailText);
@@ -253,9 +256,9 @@ public class AdminSideController implements Initializable {
 
             //Sjekker om tekstfeltene er tomme.
             if (
-                    reg.getTypebil().isEmpty()|| reg.getHestekrefter().isEmpty() ||
+                    reg.getTypebil().isEmpty()|| reg.getHestekrefter() == null ||
                             reg.getInterior().isEmpty() || reg.getFarge().isEmpty() ||
-                            reg.getFelger().isEmpty() || reg.getPris().isEmpty())
+                            reg.getFelger() == null || reg.getPris() == null)
             {
 
                 riktigeParametere();
@@ -265,7 +268,7 @@ public class AdminSideController implements Initializable {
 
             return reg;
 
-        } catch (IllegalArgumentException e){
+        } catch (Exception e){
 
             riktigeParametere();
 
@@ -275,14 +278,15 @@ public class AdminSideController implements Initializable {
 
     //endrer tekstfeltene sånn at admin kan se hvilke parametere som er gyldige
     private void riktigeParametere() {
-        navn.setText("<< oppgi navn >>");
-        email.setText("<< ugyldig email >>");
-        typebil.setText("<< elbil, bensin, diesel >>");
-        hestekrefter.setText("<< hestekrefter må være heltall >>");
-        interior.setText("<< standard, sport, supreme >>");
-        farge.setText("<< hvit, svart, rød, bronse >>");
-        felger.setText("<< 20, 22, 24 >>");
-        pris.setText("<< ugyldig pris >>");
+        reset();
+        navn.setPromptText("<< oppgi navn >>");
+        email.setPromptText("<< ugyldig email >>");
+        typebil.setPromptText("<< elbil, bensin, diesel >>");
+        hestekrefter.setPromptText("<< hestekrefter må være heltall >>");
+        interior.setPromptText("<< standard, sport, supreme >>");
+        farge.setPromptText("<< hvit, svart, rød, bronse >>");
+        felger.setPromptText("<< 20, 22, 24 >>");
+        pris.setPromptText("<< ugyldig pris >>");
     }
 
     //resetter alle textboxene.
@@ -313,7 +317,7 @@ public class AdminSideController implements Initializable {
                 String[] fields = line.split(FieldDelimiter, -1);
 
                 AdminInnlegging adminInnlegging = new AdminInnlegging(fields[0], fields[1], fields[2],
-                        fields[3], fields[4], fields[5], fields[6], fields[7]);
+                        Integer.parseInt(fields[3]), fields[4], fields[5], Integer.parseInt(fields[6]), Integer.parseInt(fields[7]));
                 collection.liste.add(adminInnlegging);
             }
 

@@ -13,65 +13,65 @@
 
 <AnchorPane prefHeight="418.0" prefWidth="929.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.AdminSideController">
    <children>
-      <TableView fx:id="tabell" layoutY="39.0" prefHeight="280.0" prefWidth="929.0">
+      <TableView fx:id="tabell" layoutY="39.0" prefHeight="280.0" prefWidth="1078.0">
         <columns>
-            <TableColumn fx:id="Navn" prefWidth="135.0" text="Navn">
+            <TableColumn fx:id="Navn" prefWidth="163.0" text="Navn">
                 <cellValueFactory>
                     <PropertyValueFactory property="navn" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="Email" prefWidth="135.0" text="Email">
+            <TableColumn fx:id="Email" prefWidth="190.0" text="Email">
                 <cellValueFactory>
                     <PropertyValueFactory property="email" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="TypeBil" onEditCommit="#redigerBil" prefWidth="104.0" text="Type Bil">
+            <TableColumn fx:id="TypeBil" onEditCommit="#redigerBil" prefWidth="106.0" text="Type Bil">
                 <cellValueFactory>
                     <PropertyValueFactory property="typebil" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="Hestekrefter" onEditCommit="#redigerHestekrefter" prefWidth="146.0" text="Hestekrefter">
+            <TableColumn fx:id="Hestekrefter" onEditCommit="#redigerHestekrefter" prefWidth="138.0" text="Hestekrefter">
                 <cellValueFactory>
                     <PropertyValueFactory property="hestekrefter" />
                 </cellValueFactory></TableColumn>
-            <TableColumn fx:id="Interior" onEditCommit="#redigerInterior" prefWidth="98.0" text="Interior">
+            <TableColumn fx:id="Interior" onEditCommit="#redigerInterior" prefWidth="119.0" text="Interior">
                 <cellValueFactory>
                     <PropertyValueFactory property="interior" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="Farge" onEditCommit="#redigerFarge" prefWidth="85.0" text="Farge">
+            <TableColumn fx:id="Farge" onEditCommit="#redigerFarge" prefWidth="111.0" text="Farge">
                 <cellValueFactory>
                     <PropertyValueFactory property="farge" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="Felger" onEditCommit="#redigerFelger" prefWidth="108.0" text="Felger">
+            <TableColumn fx:id="Felger" onEditCommit="#redigerFelger" prefWidth="119.0" text="Felger">
                 <cellValueFactory>
                     <PropertyValueFactory property="felger" />
                 </cellValueFactory>
             </TableColumn>
-          <TableColumn fx:id="Pris" onEditCommit="#redigerPris" prefWidth="117.0" text="Pris">
+          <TableColumn fx:id="Pris" onEditCommit="#redigerPris" prefWidth="131.0" text="Pris">
               <cellValueFactory>
                   <PropertyValueFactory property="pris" />
               </cellValueFactory>
           </TableColumn>
         </columns>
       </TableView>
-      <TextField fx:id="typebil" layoutX="8.0" layoutY="326.0" prefHeight="40.0" prefWidth="150.0" promptText="Type bil" />
-      <TextField fx:id="hestekrefter" layoutX="178.0" layoutY="326.0" prefHeight="40.0" prefWidth="150.0" promptText="Hestekrefter" />
-      <TextField fx:id="interior" layoutX="8.0" layoutY="372.0" prefHeight="40.0" prefWidth="150.0" promptText="Interior" />
-      <TextField fx:id="farge" layoutX="178.0" layoutY="372.0" prefHeight="40.0" prefWidth="150.0" promptText="Farge" />
-      <TextField fx:id="felger" layoutX="348.0" layoutY="326.0" prefHeight="40.0" prefWidth="150.0" promptText="Felger" />
-      <TextField fx:id="pris" layoutX="348.0" layoutY="372.0" prefHeight="40.0" prefWidth="150.0" promptText="Pris" />
-      <Button fx:id="leggtil" layoutX="519.0" layoutY="326.0" mnemonicParsing="false" onAction="#LeggTil" prefHeight="40.0" prefWidth="115.0" text="LEGG TIL" />
-      <ImageView fitHeight="39.0" fitWidth="59.0" layoutX="870.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <TextField fx:id="typebil" layoutX="184.0" layoutY="326.0" prefHeight="40.0" prefWidth="150.0" promptText="Type bil" />
+      <TextField fx:id="hestekrefter" layoutX="347.0" layoutY="326.0" prefHeight="40.0" prefWidth="150.0" promptText="Hestekrefter" />
+      <TextField fx:id="interior" layoutX="184.0" layoutY="373.0" prefHeight="40.0" prefWidth="150.0" promptText="Interior" />
+      <TextField fx:id="farge" layoutX="347.0" layoutY="372.0" prefHeight="40.0" prefWidth="150.0" promptText="Farge" />
+      <TextField fx:id="felger" layoutX="511.0" layoutY="326.0" prefHeight="40.0" prefWidth="150.0" promptText="Felger" />
+      <TextField fx:id="pris" layoutX="511.0" layoutY="372.0" prefHeight="40.0" prefWidth="150.0" promptText="Pris" />
+      <Button fx:id="leggtil" layoutX="689.0" layoutY="327.0" mnemonicParsing="false" onAction="#LeggTil" prefHeight="40.0" prefWidth="115.0" text="LEGG TIL" />
+      <ImageView fitHeight="39.0" fitWidth="59.0" layoutX="1012.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../Bilder/HomeIcon.png" />
          </image>
       </ImageView>
-      <Button fx:id="Start" layoutX="864.0" layoutY="-2.0" mnemonicParsing="false" onAction="#StartSide" prefHeight="39.0" prefWidth="65.0" style="-fx-background-color: transparent;" />
-      <Button fx:id="slett" layoutX="662.0" layoutY="326.0" mnemonicParsing="false" onAction="#Slett" prefHeight="40.0" prefWidth="115.0" text="SLETT" />
-      <Button fx:id="clear" layoutX="807.0" layoutY="326.0" mnemonicParsing="false" onAction="#Clear" prefHeight="40.0" prefWidth="115.0" text="CLEAR" />
-      <TextField fx:id="filtrer" alignment="CENTER" layoutX="546.0" layoutY="374.0" onKeyTyped="#Filtrering" prefHeight="39.0" prefWidth="347.0" promptText="Filtrer tabell..." />
+      <Button fx:id="Start" layoutX="999.0" mnemonicParsing="false" onAction="#StartSide" prefHeight="39.0" prefWidth="65.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="slett" layoutX="815.0" layoutY="326.0" mnemonicParsing="false" onAction="#Slett" prefHeight="40.0" prefWidth="115.0" text="SLETT" />
+      <Button fx:id="clear" layoutX="942.0" layoutY="327.0" mnemonicParsing="false" onAction="#Clear" prefHeight="40.0" prefWidth="115.0" text="CLEAR" />
+      <TextField fx:id="filtrer" alignment="CENTER" layoutX="699.0" layoutY="373.0" onKeyTyped="#Filtrering" prefHeight="39.0" prefWidth="347.0" promptText="Filtrer tabell..." />
       <MenuBar>
         <menus>
           <Menu fx:id="file" mnemonicParsing="false" text="File">
@@ -84,5 +84,7 @@
             <DropShadow />
          </effect>
       </MenuBar>
+      <TextField fx:id="navn" layoutX="6.0" layoutY="327.0" prefHeight="39.0" prefWidth="167.0" promptText="Navn" />
+      <TextField fx:id="email" layoutX="6.0" layoutY="373.0" prefHeight="39.0" prefWidth="167.0" promptText="Email" />
    </children>
 </AnchorPane>

@@ -169,8 +169,8 @@ public class KundeSide2Controller {
         //sånn at admin vil få opp den nye bilen med navn og epost i tableview neste gang den åpnes.
         FileWriter fileWriter = new FileWriter("src/src/save_load/kundeDataBase.csv", true);
 
-        fileWriter.write("\n" + navn + ";" + epost + ";" + typebil + ";" + hester + ";" + interior + ";" + farge +
-                        ";" + felger + ";" + getPris());
+        fileWriter.write(navn + ";" + epost + ";" + typebil + ";" + hester + ";" + interior + ";" + farge +
+                        ";" + felger + ";" + getPris()+"\n");
         fileWriter.close();
         //lukker filewriteren.
 

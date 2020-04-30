@@ -1,5 +1,7 @@
 package Hjelpeklasser;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
 import javax.swing.*;
@@ -11,9 +13,9 @@ public class AdminInnlegging {
     private SimpleStringProperty typebil;
     private SimpleStringProperty interior;
     private SimpleStringProperty farge;
-    private SimpleStringProperty felger;
-    private SimpleStringProperty pris;
-    private SimpleStringProperty hestekrefter;
+    private SimpleIntegerProperty felger;
+    private SimpleIntegerProperty pris;
+    private SimpleIntegerProperty hestekrefter;
 
 
     //regex:
@@ -23,16 +25,16 @@ public class AdminInnlegging {
     //Feilmeldinger
     Exceptions exceptions = new Exceptions("");
 
-    public AdminInnlegging(String navn, String email, String typebil, String hestekrefter, String interior, String farge, String felger, String pris){
+    public AdminInnlegging(String navn, String email, String typebil, int hestekrefter, String interior, String farge, int felger, int pris){
 
         this.navn = new SimpleStringProperty(navn);
         this.email = new SimpleStringProperty(email);
         this.typebil = new SimpleStringProperty(typebil);
         this.interior = new SimpleStringProperty(interior);
         this.farge = new SimpleStringProperty(farge);
-        this.felger = new SimpleStringProperty(felger);
-        this.pris = new SimpleStringProperty(pris);
-        this.hestekrefter = new SimpleStringProperty(hestekrefter);
+        this.felger = new SimpleIntegerProperty(felger);
+        this.pris = new SimpleIntegerProperty(pris);
+        this.hestekrefter = new SimpleIntegerProperty(hestekrefter);
 
     }
 
@@ -69,9 +71,9 @@ public class AdminInnlegging {
 
         return bil;
     }
-    public String hestekrefter(String hestekrefter){
-            if (hestekrefter.equals("150") || hestekrefter.equals("200") || hestekrefter.equals("300"))
-            this.hestekrefter = new SimpleStringProperty(hestekrefter);
+    public Integer hestekrefter(int hestekrefter){
+            if (hestekrefter == 150 || hestekrefter == 200 || hestekrefter == 300)
+            this.hestekrefter = new SimpleIntegerProperty(hestekrefter);
 
             else{
                 exceptions.wrongInputException("feil hestekrefter!");
@@ -98,19 +100,19 @@ public class AdminInnlegging {
 
         return interior;
     }
-    public String felger(String felger){
+    public Integer felger(int felger){
 
-        if (felger.equals("18") || felger.equals("20") || felger.equals("24"))
-        this.felger = new SimpleStringProperty(felger);
+        if (felger == 18 || felger == 20 || felger == 24)
+        this.felger = new SimpleIntegerProperty(felger);
 
         else{
             exceptions.wrongInputException("feil felger!");
         }
         return felger;
     }
-    public String pris(String pris){
+    public Integer pris(int pris){
 
-        this.pris = new SimpleStringProperty(pris);
+        this.pris = new SimpleIntegerProperty(pris);
 
         return pris;
     }
@@ -140,11 +142,11 @@ public class AdminInnlegging {
 
     }
 
-    public String getHestekrefter() {
+    public Integer getHestekrefter() {
         return hestekrefter.getValue();
     }
 
-    public void setHestekrefter(String hestekrefter) {
+    public void setHestekrefter(int hestekrefter) {
         this.hestekrefter.set(hestekrefter);
 
     }
@@ -153,15 +155,15 @@ public class AdminInnlegging {
     }
 
     public void setInterior(String interior) {
-        this.typebil.set(interior);
+        this.interior.set(interior);
 
     }
-    public String getFelger() {
-        return felger.getValue().toLowerCase();
+    public Integer getFelger() {
+        return felger.getValue();
     }
 
-    public void setFelger(String felger) {
-        this.typebil.set(felger);
+    public void setFelger(int felger) {
+        this.felger.set(felger);
 
     }
     public String getFarge() {
@@ -169,15 +171,15 @@ public class AdminInnlegging {
     }
 
     public void setFarge(String farge) {
-        this.typebil.set(farge);
+        this.farge.set(farge);
 
     }
-    public String getPris() {
+    public Integer getPris() {
         return pris.getValue();
     }
 
-    public void setPris(String pris) {
-        this.typebil.set(pris);
+    public void setPris(int pris) {
+        this.pris.set(pris);
     }
 
 
