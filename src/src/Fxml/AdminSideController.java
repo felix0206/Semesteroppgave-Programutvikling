@@ -3,6 +3,9 @@ package Fxml;
 import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
 import Hjelpeklasser.Exceptions;
+import javafx.scene.control.cell.*;
+import javafx.util.converter.IntegerStringConverter;
+import javafx.util.converter.NumberStringConverter;
 import save_load.FileSaverCsv;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -14,8 +17,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
@@ -78,15 +79,19 @@ public class AdminSideController implements Initializable {
             exceptions.NoSuchFileException("Feil fil eller feil delimiter (;)");
         }
         //tableview rediering
+        /*
+        *textfieldtablecell gjør at det dukker opp en textbox når man dobbelt klikker
+        * må legge til (new integerstringconverter) for at det skal funke med int verdier
+         */
         tabell.setEditable(true);
         Navn.setCellFactory(TextFieldTableCell.forTableColumn());
         Email.setCellFactory(TextFieldTableCell.forTableColumn());
         TypeBil.setCellFactory(TextFieldTableCell.forTableColumn());
-       // Hestekrefter.setCellFactory(TextFieldTableCell.forTableColumn());
+        Hestekrefter.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
         Interior.setCellFactory(TextFieldTableCell.forTableColumn());
         Farge.setCellFactory(TextFieldTableCell.forTableColumn());
-       // Felger.setCellFactory(TextFieldTableCell.forTableColumn());
-       // Pris.setCellFactory(TextFieldTableCell.forTableColumn());
+        Felger.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+        Pris.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
 
         Navn.setCellValueFactory(new PropertyValueFactory<>("navn"));
         Email.setCellValueFactory(new PropertyValueFactory<>("email"));
