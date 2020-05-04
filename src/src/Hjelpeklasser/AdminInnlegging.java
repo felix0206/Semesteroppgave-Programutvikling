@@ -1,5 +1,6 @@
 package Hjelpeklasser;
 
+import Fxml.AdminSideController;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -38,12 +39,14 @@ public class AdminInnlegging {
 
     }
 
+    AdminSideController controller = new AdminSideController();
     //TODO: if settninger for å kontrollere riktig input fra admin.
 
     public String navn(String navn){
 
        if (navn.matches(numberRegex)){
            exceptions.wrongInputException("Navn kan ikke inneholde nummer!");
+
         }else{
             this.navn = new SimpleStringProperty(navn);
         }
@@ -56,6 +59,7 @@ public class AdminInnlegging {
             this.email = new SimpleStringProperty(email);
         }else {
             exceptions.wrongInputException("Feil i emailadressen!");
+
         }
         return email;
 

@@ -7,7 +7,6 @@ public class Exceptions extends IllegalArgumentException{
         super(message);
     }
 
-
     public String NoSuchFileException(String message){
         System.out.println(message);
         return message;

@@ -292,9 +292,11 @@ public class AdminSideController implements Initializable {
             if (
                    reg.getNavn().isEmpty() || reg.getEmail().isEmpty() || reg.getTypebil().isEmpty()||
                            reg.getHestekrefter() == null || reg.getInterior().isEmpty() || reg.getFarge().isEmpty() ||
-                            reg.getFelger() == null || reg.getPris() == null)
+                            reg.getFelger() == null || reg.getPris() == null || reg.getHestekrefter() == 0 ||
+                            reg.getFelger() == 0)
             {
 
+                riktigeParametere();
 
                 return null;
             }
