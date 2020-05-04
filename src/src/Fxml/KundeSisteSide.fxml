@@ -105,17 +105,5 @@
          </image>
       </ImageView>
       <Button layoutX="742.0" layoutY="17.0" mnemonicParsing="false" onAction="#hjemKnapp" prefHeight="46.0" prefWidth="45.0" style="-fx-background-color: transparent;" />
-      <MenuBar layoutX="20.0" layoutY="9.0" prefHeight="29.0" prefWidth="60.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#SaveToFile" text="Save" />
-            </items>
-          </Menu>
-        </menus>
-         <effect>
-            <DropShadow color="#807c7c" />
-         </effect>
-      </MenuBar>
    </children>
 </AnchorPane>

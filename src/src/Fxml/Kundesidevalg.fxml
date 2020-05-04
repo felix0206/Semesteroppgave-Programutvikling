@@ -23,15 +23,15 @@
                <image>
                   <Image url="@../Bilder/svartbil.png" />
                </image></ImageView>
-            <Button layoutX="60.0" layoutY="455.0" mnemonicParsing="false" onAction="#VelgBilEn" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+            <Button fx:id="lagrebil1" layoutX="52.0" layoutY="455.0" mnemonicParsing="false" onAction="#Lagrebil1" prefHeight="60.0" prefWidth="133.0" text="Velg denne bilen">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="378.0" layoutY="460.0" mnemonicParsing="false" onAction="#VelgBilTo" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+            <Button fx:id="lagrebil2" layoutX="378.0" layoutY="460.0" mnemonicParsing="false" onAction="#Lagrebil2" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="674.0" layoutY="459.0" mnemonicParsing="false" onAction="#VelgBilTre" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+            <Button fx:id="lagrebil3" layoutX="674.0" layoutY="459.0" mnemonicParsing="false" onAction="#Lagrebil3" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
                <font>
                   <Font size="15.0" />
                </font></Button>
@@ -52,6 +52,9 @@
                   <Font size="16.0" />
                </font>
             </Label>
+            <Button fx:id="kjøp1" layoutX="54.0" layoutY="454.0" mnemonicParsing="false" onAction="#VelgBilEn" prefHeight="60.0" prefWidth="133.0" text="Kjøp" />
+            <Button fx:id="kjøp2" layoutX="373.0" layoutY="459.0" mnemonicParsing="false" onAction="#VelgBilTo" prefHeight="60.0" prefWidth="133.0" text="Kjøp" />
+            <Button fx:id="kjøp3" layoutX="673.0" layoutY="457.0" mnemonicParsing="false" onAction="#VelgBilTre" prefHeight="60.0" prefWidth="133.0" text="Kjøp" />
          </children></AnchorPane>
    </children>
 </AnchorPane>

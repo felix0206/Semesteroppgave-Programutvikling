@@ -43,27 +43,6 @@ public class KundeSisteSideController implements Initializable {
 
     }
 
-    //Oppdaterer StringBuilderen for å lagre til fil.
-    public StringBuilder InitData(){
-
-        sb.append("Ny bil\n"+"Navn: " + navn + "\n" );
-        sb.append("Type bil: " + typebil.getText() + "\n" );
-        sb.append("Hestekrefter: " + hestekrefter.getText() + "\n" );
-        sb.append("Felger: " + felger.getText() + "\n" );
-        sb.append("Farge: " + farge.getText() + "\n" );
-        sb.append("Pris: " + pris.getText() + "\n" );
-
-
-        return sb;
-    }
-
-    //Lagre info om bilen til en txt-fil.
-    public void SaveToFile(ActionEvent event) throws IOException {
-
-        FileSaverCsv lagre = new FileSaverCsv();
-        lagre.lesfil(InitData());
-
-    }
 
     //Setter verdier fra kundeside2.
     public void setValues(String hester, String farge, String interior, String felger, String typebil, String navn, String pris){
