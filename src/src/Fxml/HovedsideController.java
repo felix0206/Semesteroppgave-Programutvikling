@@ -51,12 +51,13 @@ public class HovedsideController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Kundeside2.fxml"));
             Parent root = loader.load();
 
-            //Henter controlleren til neste side.
+            //Henter controlleren til kundeside2 for å videreføre data.
             KundeSide2Controller kundeSide2Controller = loader.getController();
 
-            //Overfører data om navn til neste side.
+            //Overfører data om navn til kundeside2. Dette skal senere lagres til fil sånn at admin kan holde oversikt.
             kundeSide2Controller.hentPersonInfo(fornavn.getText() + " " + etternavn.getText(), epost.getText());
 
+            //Loader inn neste side hvor kunden får valg om å velge en ferdig laget bil eller bygge sin egen.
             FXMLLoader loader2 = new FXMLLoader((getClass().getResource("Kundesidevalg.fxml")));
             Parent root2 = loader2.load();
             Scene scene = new Scene(root2);

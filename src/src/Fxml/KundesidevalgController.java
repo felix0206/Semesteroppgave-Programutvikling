@@ -26,4 +26,16 @@ public class KundesidevalgController {
         window.setScene(scene);
         window.show();
     }
+
+    //TODO: Lage ferdige biler som kunden kan velge.
+    //Dette skal bli lagret til fil og skrives ut sånn at kunden ser sin bestilling.
+    //Under er actionevent for de tre forskjellige bilene som er mulig å velge.
+    public void VelgBilEn(ActionEvent event) {
+    }
+
+    public void VelgBilTo(ActionEvent event) {
+    }
+
+    public void VelgBilTre(ActionEvent event) {
+    }
 }
