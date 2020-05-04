@@ -1,22 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundesidevalgController">
+<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundesidevalgController">
    <children>
-      <AnchorPane layoutX="-1.0" layoutY="-4.0" prefHeight="600.0" prefWidth="800.0">
+      <AnchorPane layoutX="-1.0" layoutY="-4.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #E6E6D8;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="62.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="289.0" layoutY="48.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="535.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
-            <Button layoutX="140.0" layoutY="338.0" mnemonicParsing="false" onAction="#VelgBilEn" text="velg" />
-            <Button layoutX="368.0" layoutY="337.0" mnemonicParsing="false" onAction="#VelgBilTo" text="velg" />
-            <Button layoutX="600.0" layoutY="336.0" mnemonicParsing="false" onAction="#VelgBilTre" text="velg" />
-            <Button layoutX="324.0" layoutY="505.0" mnemonicParsing="false" onAction="#LagEgenBil" prefHeight="49.0" prefWidth="153.0" text="Lag din egen bil" />
+            <ImageView fitHeight="265.0" fitWidth="357.0" layoutX="-7.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Bilder/Hvitbil2.png" />
+               </image></ImageView>
+            <ImageView fitHeight="211.0" fitWidth="318.0" layoutX="356.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Bilder/rødbil.png" />
+               </image></ImageView>
+            <ImageView fitHeight="177.0" fitWidth="293.0" layoutX="688.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Bilder/svartbil.png" />
+               </image></ImageView>
+            <Button layoutX="77.0" layoutY="536.0" mnemonicParsing="false" onAction="#VelgBilEn" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button layoutX="445.0" layoutY="537.0" mnemonicParsing="false" onAction="#VelgBilTo" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button layoutX="773.0" layoutY="534.0" mnemonicParsing="false" onAction="#VelgBilTre" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button layoutX="431.0" layoutY="681.0" mnemonicParsing="false" onAction="#LagEgenBil" prefHeight="49.0" prefWidth="153.0" text="Lag din egen bil" />
+            <Separator layoutX="395.0" layoutY="279.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0" />
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="17.0" layoutY="307.0" prefHeight="222.0" prefWidth="286.0" text="Typebil: Bensin&#10;Hestekrefter: 150&#10;Farge: Hvit&#10;Felger: 22&#10;Interior: standard&#10;Pris: 340000&#10;&#10;">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="372.0" layoutY="296.0" prefHeight="222.0" prefWidth="286.0" text="Typebil: Elbil&#10;Hestekrefter: 190&#10;Farge: Rød&#10;Felger: 20&#10;Interior: Supreme&#10;Pris: 380000&#10;">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="708.0" layoutY="297.0" prefHeight="222.0" prefWidth="286.0" text="Typebil: Diesel&#10;Hestekrefter: 254&#10;Farge: Svart&#10;Felger: 24&#10;Interior: Sport&#10;Pris: 420000&#10;">
+               <font>
+                  <Font size="27.0" />
+               </font>
+            </Label>
          </children></AnchorPane>
    </children>
 </AnchorPane>

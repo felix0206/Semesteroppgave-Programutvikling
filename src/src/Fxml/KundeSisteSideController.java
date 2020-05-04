@@ -1,5 +1,7 @@
 package Fxml;
 
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import save_load.FileSaverCsv;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,6 +21,9 @@ public class KundeSisteSideController implements Initializable {
 
     @FXML
     public Label typebil, hestekrefter, felger, farge, interior, pris, overskriftlbl;
+
+    @FXML
+    public ImageView bilde;
 
     String navn;
 

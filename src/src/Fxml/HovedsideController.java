@@ -60,6 +60,12 @@ public class HovedsideController {
             //Loader inn neste side hvor kunden får valg om å velge en ferdig laget bil eller bygge sin egen.
             FXMLLoader loader2 = new FXMLLoader((getClass().getResource("Kundesidevalg.fxml")));
             Parent root2 = loader2.load();
+
+            //Henter controlleren til kundeside2 for å videreføre data.
+            KundesidevalgController kundesidevalgController= loader2.getController();
+
+            //Overfører data om navn til kundeside2. Dette skal senere lagres til fil sånn at admin kan holde oversikt.
+            kundesidevalgController.hentPersonInfo(fornavn.getText() + " " + etternavn.getText(), epost.getText());
             Scene scene = new Scene(root2);
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
