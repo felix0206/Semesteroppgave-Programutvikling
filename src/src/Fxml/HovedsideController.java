@@ -48,7 +48,7 @@ public class HovedsideController {
         }
         //Tester slutt.
         else{
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("KundeSide2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Kundeside2.fxml"));
             Parent root = loader.load();
 
             //Henter controlleren til neste side.
@@ -57,7 +57,9 @@ public class HovedsideController {
             //Overfører data om navn til neste side.
             kundeSide2Controller.hentPersonInfo(fornavn.getText() + " " + etternavn.getText(), epost.getText());
 
-            Scene scene = new Scene(root);
+            FXMLLoader loader2 = new FXMLLoader((getClass().getResource("Kundesidevalg.fxml")));
+            Parent root2 = loader2.load();
+            Scene scene = new Scene(root2);
 
             Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
