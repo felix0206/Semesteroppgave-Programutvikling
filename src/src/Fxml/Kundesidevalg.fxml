@@ -9,7 +9,7 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundesidevalgController">
    <children>
-      <AnchorPane layoutX="-1.0" layoutY="-4.0" prefHeight="615.0" prefWidth="852.0" style="-fx-background-color: #E6E6D8;">
+      <AnchorPane layoutX="-1.0" layoutY="-4.0" prefHeight="615.0" prefWidth="850.0" style="-fx-background-color: #E6E6D8;">
          <children>
             <ImageView fitHeight="146.0" fitWidth="201.0" layoutX="32.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
                <image>
