@@ -5,8 +5,6 @@ import Hjelpeklasser.AdminInnlegging;
 import Hjelpeklasser.Exceptions;
 import javafx.scene.control.cell.*;
 import javafx.util.converter.IntegerStringConverter;
-import javafx.util.converter.NumberStringConverter;
-import save_load.FileSaverCsv;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
@@ -20,13 +18,13 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.*;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
+import static javax.swing.JOptionPane.showMessageDialog;
 
 
 public class AdminSideController implements Initializable {
@@ -48,6 +46,9 @@ public class AdminSideController implements Initializable {
 
     @FXML
     public MenuItem savefile, loadfile;
+
+    @FXML
+            public Label Parameterelbl;
 
     HovedsideController hovedsideController = new HovedsideController();
     AdminCollection collection = new AdminCollection();
@@ -107,6 +108,17 @@ public class AdminSideController implements Initializable {
         tabell.getColumns().addAll(
                 Navn, Email, TypeBil, Hestekrefter, Interior, Farge, Felger, Pris);
 
+        String msg = "RIKTIGE PARAMETERE: \n \n" +
+                "Navn : kan ikke inneholde numre!" + "\n"
+                + "Email : noe@noe.noe" + "\n" +
+                "Typebil: el, elbil, bensin eller diesel \n" +
+                "Hestekrefter: 100 --> 1000 \n" +
+                "Interior: standard, sport eller supreme \n" +
+                "Farge: hvit, svart, rød eller bronse \n" +
+                "Felger: 20 --> 25 \n" +
+                "Pris: hva som helst (bare tall)";
+
+        Parameterelbl.setText(msg);
 
     }
 
@@ -271,7 +283,6 @@ public class AdminSideController implements Initializable {
                             reg.getFelger() == null || reg.getPris() == null)
             {
 
-                riktigeParametere();
 
                 return null;
             }
@@ -358,7 +369,7 @@ public class AdminSideController implements Initializable {
             }
         }catch (Exceptions exceptions){
             exceptions.wrongInputException("noe gikk galt");
-            JOptionPane.showMessageDialog(null, "noe gikk galt");
+            showMessageDialog(null, "noe gikk galt");
         }
         return ut;
 
