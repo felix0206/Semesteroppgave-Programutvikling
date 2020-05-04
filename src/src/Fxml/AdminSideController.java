@@ -164,6 +164,7 @@ public class AdminSideController implements Initializable {
 
     }
 
+
     //slette knapp som fjerner valgt rad i tableview
     @FXML
     public void Slett(ActionEvent event){
