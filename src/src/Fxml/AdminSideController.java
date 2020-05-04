@@ -343,6 +343,7 @@ public class AdminSideController implements Initializable {
     private String save(TableView tabellen){
 
         String ut = "";
+
         try{
             /*for løkke som henter dirkete fra tableview.
              *gjør at vi både får lagret input, info som er loada fra fil
