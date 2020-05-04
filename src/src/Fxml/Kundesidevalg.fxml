@@ -7,49 +7,49 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundesidevalgController">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundesidevalgController">
    <children>
-      <AnchorPane layoutX="-1.0" layoutY="-4.0" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: #E6E6D8;">
+      <AnchorPane layoutX="-1.0" layoutY="-4.0" prefHeight="615.0" prefWidth="852.0" style="-fx-background-color: #E6E6D8;">
          <children>
-            <ImageView fitHeight="265.0" fitWidth="357.0" layoutX="-7.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="146.0" fitWidth="201.0" layoutX="32.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Bilder/Hvitbil2.png" />
                </image></ImageView>
-            <ImageView fitHeight="211.0" fitWidth="318.0" layoutX="356.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="117.0" fitWidth="187.0" layoutX="344.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Bilder/rødbil.png" />
                </image></ImageView>
-            <ImageView fitHeight="177.0" fitWidth="293.0" layoutX="688.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="116.0" fitWidth="173.0" layoutX="663.0" layoutY="102.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../Bilder/svartbil.png" />
                </image></ImageView>
-            <Button layoutX="77.0" layoutY="580.0" mnemonicParsing="false" onAction="#VelgBilEn" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+            <Button layoutX="60.0" layoutY="455.0" mnemonicParsing="false" onAction="#VelgBilEn" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="445.0" layoutY="577.0" mnemonicParsing="false" onAction="#VelgBilTo" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+            <Button layoutX="378.0" layoutY="460.0" mnemonicParsing="false" onAction="#VelgBilTo" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="780.0" layoutY="579.0" mnemonicParsing="false" onAction="#VelgBilTre" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+            <Button layoutX="674.0" layoutY="459.0" mnemonicParsing="false" onAction="#VelgBilTre" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="431.0" layoutY="681.0" mnemonicParsing="false" onAction="#LagEgenBil" prefHeight="49.0" prefWidth="153.0" text="Lag din egen bil" />
+            <Button layoutX="380.0" layoutY="545.0" mnemonicParsing="false" onAction="#LagEgenBil" prefHeight="49.0" prefWidth="153.0" text="Lag din egen bil" />
             <Separator layoutX="395.0" layoutY="279.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0" />
-            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="17.0" layoutY="307.0" prefHeight="261.0" prefWidth="286.0" text="Typebil: Bensin&#10;Hestekrefter: 150&#10;Farge: Hvit&#10;Felger: 22&#10;Interior: standard&#10;Pris: 340000&#10;&#10;">
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="17.0" layoutY="307.0" prefHeight="147.0" prefWidth="206.0" text="Typebil: Bensin&#10;Hestekrefter: 150&#10;Farge: Hvit&#10;Felger: 22&#10;Interior: standard&#10;Pris: 340000&#10;&#10;">
                <font>
-                  <Font size="27.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="372.0" layoutY="296.0" prefHeight="268.0" prefWidth="286.0" text="Typebil: Elbil&#10;Hestekrefter: 190&#10;Farge: Rød&#10;Felger: 20&#10;Interior: Supreme&#10;Pris: 380000&#10;">
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="372.0" layoutY="296.0" prefHeight="159.0" prefWidth="168.0" text="Typebil: Elbil&#10;Hestekrefter: 190&#10;Farge: Rød&#10;Felger: 20&#10;Interior: Supreme&#10;Pris: 380000&#10;">
                <font>
-                  <Font size="27.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
-            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="708.0" layoutY="297.0" prefHeight="275.0" prefWidth="286.0" text="Typebil: Diesel&#10;Hestekrefter: 254&#10;Farge: Svart&#10;Felger: 24&#10;Interior: Sport&#10;Pris: 420000&#10;">
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="614.0" layoutY="294.0" prefHeight="158.0" prefWidth="255.0" text="Typebil: Diesel&#10;Hestekrefter: 254&#10;Farge: Svart&#10;Felger: 24&#10;Interior: Sport&#10;Pris: 420000&#10;">
                <font>
-                  <Font size="27.0" />
+                  <Font size="16.0" />
                </font>
             </Label>
          </children></AnchorPane>
