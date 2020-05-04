@@ -8,8 +8,10 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URL;
@@ -33,6 +35,9 @@ public class KundesidevalgController implements Initializable {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("KundeSide2.fxml"));
         Parent root = loader.load();
+        KundeSide2Controller kundeSide2Controller = loader.getController();
+
+        kundeSide2Controller.hentPersonInfo(navn, epost);
 
         Scene scene = new Scene(root);
 
@@ -85,6 +90,11 @@ public class KundesidevalgController implements Initializable {
         //Overfører data til siste siden.
         kundeSisteSideController.setValues("150", "Hvit","Standard","22","Bensin",navn,"340000");
 
+        //Legger inn bilde av bilen på den siste siden
+        File file = new File("src/src/Bilder/Hvitbil2.png");
+        Image image = new Image(file.toURI().toString());
+        kundeSisteSideController.bilde.setImage(image);
+
         Scene scene = new Scene(root);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -112,6 +122,11 @@ public class KundesidevalgController implements Initializable {
         //Overfører data til siste siden.
         kundeSisteSideController.setValues("190", "Rød","Supreme","20","Elbil",navn,"380000");
 
+        //Legger inn bilde av bilen på den siste siden
+        File file = new File("src/src/Bilder/rødbil.png");
+        Image image = new Image(file.toURI().toString());
+        kundeSisteSideController.bilde.setImage(image);
+
         Scene scene = new Scene(root);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -137,6 +152,11 @@ public class KundesidevalgController implements Initializable {
 
         //Overfører data til siste siden.
         kundeSisteSideController.setValues("254", "Svart","Sport","24","diesel",navn,"420000");
+
+        //Legger inn bilde av bilen på den siste siden
+        File file = new File("src/src/Bilder/svartbil.png");
+        Image image = new Image(file.toURI().toString());
+        kundeSisteSideController.bilde.setImage(image);
 
         Scene scene = new Scene(root);
 

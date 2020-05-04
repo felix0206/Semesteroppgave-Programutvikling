@@ -12,9 +12,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -130,6 +132,31 @@ public class KundeSide2Controller {
 
         //Overfører data til siste siden.
         kundeSisteSideController.setValues(hester, farge,interior,felger,typebil,navn,getPris());
+
+        if (farge.equals("Hvit")){
+            //Legger inn bilde av bilen på den siste siden
+            File file = new File("src/src/Bilder/Hvitbil2.png");
+            Image image = new Image(file.toURI().toString());
+            kundeSisteSideController.bilde.setImage(image);
+        }
+        else if(farge.equals("Svart")){
+            //Legger inn bilde av bilen på den siste siden
+            File file = new File("src/src/Bilder/svartbil.png");
+            Image image = new Image(file.toURI().toString());
+            kundeSisteSideController.bilde.setImage(image);
+        }
+        else if (farge.equals("Rød")){
+            //Legger inn bilde av bilen på den siste siden
+            File file = new File("src/src/Bilder/rødbil.png");
+            Image image = new Image(file.toURI().toString());
+            kundeSisteSideController.bilde.setImage(image);
+        }
+        else if(farge.equals("Bronse")){
+            //Legger inn bilde av bilen på den siste siden
+            File file = new File("src/src/Bilder/bronsebil.png");
+            Image image = new Image(file.toURI().toString());
+            kundeSisteSideController.bilde.setImage(image);
+        }
 
         Scene scene = new Scene(root);
 
