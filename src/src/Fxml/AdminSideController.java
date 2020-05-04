@@ -3,6 +3,7 @@ package Fxml;
 import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
 import Hjelpeklasser.Exceptions;
+import Hjelpeklasser.Reset;
 import javafx.scene.control.cell.*;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.collections.transformation.FilteredList;
@@ -204,7 +205,13 @@ public class AdminSideController implements Initializable {
                     return true;
                 }
                 //String input = newValue.toLowerCase();
-                if(adm.getTypebil().toLowerCase().contains(newValue)){
+                if(adm.getNavn().toLowerCase().contains(newValue)){
+                    return true;
+                }
+                else if(adm.getEmail().toLowerCase().contains(newValue)){
+                    return true;
+                }
+                else if(adm.getTypebil().toLowerCase().contains(newValue)){
                     return true;
                 }
                 else if(String.valueOf(adm.getHestekrefter()).contains(newValue)){
@@ -291,24 +298,11 @@ public class AdminSideController implements Initializable {
 
         } catch (Exception e){
 
-            riktigeParametere();
 
             return null;
         }
     }
 
-    //endrer tekstfeltene sånn at admin kan se hvilke parametere som er gyldige
-    private void riktigeParametere() {
-        reset();
-        navn.setPromptText("<< oppgi navn >>");
-        email.setPromptText("<< ugyldig email >>");
-        typebil.setPromptText("<< elbil, bensin, diesel >>");
-        hestekrefter.setPromptText("<< hestekrefter må være heltall >>");
-        interior.setPromptText("<< standard, sport, supreme >>");
-        farge.setPromptText("<< hvit, svart, rød, bronse >>");
-        felger.setPromptText("<< 20, 22, 24 >>");
-        pris.setPromptText("<< ugyldig pris >>");
-    }
 
     //resetter alle textboxene.
     private void reset(){
