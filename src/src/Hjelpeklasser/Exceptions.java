@@ -9,11 +9,12 @@ public class Exceptions extends IllegalArgumentException{
 
 
     public String NoSuchFileException(String message){
+        System.out.println(message);
         return message;
     }
 
     public String wrongInputException(String message){
-
+        System.out.println(message);
         return message;
     }
 }

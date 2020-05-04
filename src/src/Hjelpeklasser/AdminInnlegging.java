@@ -17,7 +17,6 @@ public class AdminInnlegging {
     private SimpleIntegerProperty pris;
     private SimpleIntegerProperty hestekrefter;
 
-    Reset reset = new Reset();
 
     //regex:
     String numberRegex = "(.)*(\\d)(.)*";  //For å sjekke om navnet inneholder numre.
@@ -44,7 +43,6 @@ public class AdminInnlegging {
     public String navn(String navn){
 
        if (navn.matches(numberRegex)){
-           reset.resetNavn();
            exceptions.wrongInputException("Navn kan ikke inneholde nummer!");
         }else{
             this.navn = new SimpleStringProperty(navn);
@@ -57,7 +55,6 @@ public class AdminInnlegging {
         if (email.matches(emailRegex)){
             this.email = new SimpleStringProperty(email);
         }else {
-            reset.resetEmail();
             exceptions.wrongInputException("Feil i emailadressen!");
         }
         return email;
@@ -69,7 +66,6 @@ public class AdminInnlegging {
             this.typebil = new SimpleStringProperty(bil);
 
         else{
-            reset.resetTypeBil();
             exceptions.wrongInputException("Feil type bil!");
         }
 
@@ -80,7 +76,6 @@ public class AdminInnlegging {
             this.hestekrefter = new SimpleIntegerProperty(hestekrefter);
 
             else{
-                reset.resetHestekrefter();
                 exceptions.wrongInputException("feil hestekrefter!");
             }
         return hestekrefter;
@@ -90,7 +85,6 @@ public class AdminInnlegging {
         this.farge = new SimpleStringProperty(farge);
 
         else{
-            reset.resetFarge();
             exceptions.wrongInputException("feil farge!");
         }
         return farge;
@@ -101,7 +95,6 @@ public class AdminInnlegging {
         this.interior = new SimpleStringProperty(interior);
 
         else{
-            reset.resetInterior();
             exceptions.wrongInputException("feil interior!");
         }
 
@@ -113,7 +106,6 @@ public class AdminInnlegging {
         this.felger = new SimpleIntegerProperty(felger);
 
         else{
-            reset.resetFelger();
             exceptions.wrongInputException("feil felger!");
         }
         return felger;

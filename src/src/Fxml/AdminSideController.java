@@ -3,7 +3,6 @@ package Fxml;
 import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
 import Hjelpeklasser.Exceptions;
-import Hjelpeklasser.Reset;
 import javafx.scene.control.cell.*;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.collections.transformation.FilteredList;
@@ -267,9 +266,9 @@ public class AdminSideController implements Initializable {
 
     //registrering av ny bil og innlegging i Stringbuilder for lagring til fil
     private AdminInnlegging registreringTable(){
+        AdminInnlegging reg = new AdminInnlegging(null,null,null, 0, null, null, 0, 0);
 
         try {
-            AdminInnlegging reg = new AdminInnlegging(null,null,null, 0, null, null, 0, 0);
 
             String navnText = navn.getText();
             String emailText = email.getText();
@@ -291,8 +290,8 @@ public class AdminSideController implements Initializable {
 
             //Sjekker om tekstfeltene er tomme.
             if (
-                    reg.getTypebil().isEmpty()|| reg.getHestekrefter() == null ||
-                            reg.getInterior().isEmpty() || reg.getFarge().isEmpty() ||
+                   reg.getNavn().isEmpty() || reg.getEmail().isEmpty() || reg.getTypebil().isEmpty()||
+                           reg.getHestekrefter() == null || reg.getInterior().isEmpty() || reg.getFarge().isEmpty() ||
                             reg.getFelger() == null || reg.getPris() == null)
             {
 
@@ -303,12 +302,22 @@ public class AdminSideController implements Initializable {
             return reg;
 
         } catch (Exception e){
-
-
+            riktigeParametere();
             return null;
         }
     }
-
+    //endrer tekstfeltene sånn at admin kan se hvilke parametere som er gyldige
+    private void riktigeParametere() {
+        reset();
+        navn.setPromptText("<< ugyldig navn >>");
+        email.setPromptText("<< ugyldig email >>");
+        typebil.setPromptText("<< elbil, bensin, diesel >>");
+        hestekrefter.setPromptText("<< 100-1000 >>");
+        interior.setPromptText("<< standard, sport, supreme >>");
+        farge.setPromptText("<< hvit, svart, rød, bronse >>");
+        felger.setPromptText("<< 20-25 >>");
+        pris.setPromptText("<< ugyldig pris >>");
+    }
 
     //resetter alle textboxene.
     private void reset(){
