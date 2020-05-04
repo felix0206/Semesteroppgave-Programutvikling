@@ -23,31 +23,31 @@
                <image>
                   <Image url="@../Bilder/svartbil.png" />
                </image></ImageView>
-            <Button layoutX="77.0" layoutY="536.0" mnemonicParsing="false" onAction="#VelgBilEn" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+            <Button layoutX="77.0" layoutY="580.0" mnemonicParsing="false" onAction="#VelgBilEn" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="445.0" layoutY="537.0" mnemonicParsing="false" onAction="#VelgBilTo" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+            <Button layoutX="445.0" layoutY="577.0" mnemonicParsing="false" onAction="#VelgBilTo" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="773.0" layoutY="534.0" mnemonicParsing="false" onAction="#VelgBilTre" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
+            <Button layoutX="780.0" layoutY="579.0" mnemonicParsing="false" onAction="#VelgBilTre" prefHeight="54.0" prefWidth="125.0" text="Velg denne bilen">
                <font>
                   <Font size="15.0" />
                </font></Button>
             <Button layoutX="431.0" layoutY="681.0" mnemonicParsing="false" onAction="#LagEgenBil" prefHeight="49.0" prefWidth="153.0" text="Lag din egen bil" />
             <Separator layoutX="395.0" layoutY="279.0" prefWidth="1000.0" AnchorPane.leftAnchor="0.0" />
-            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="17.0" layoutY="307.0" prefHeight="222.0" prefWidth="286.0" text="Typebil: Bensin&#10;Hestekrefter: 150&#10;Farge: Hvit&#10;Felger: 22&#10;Interior: standard&#10;Pris: 340000&#10;&#10;">
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="17.0" layoutY="307.0" prefHeight="261.0" prefWidth="286.0" text="Typebil: Bensin&#10;Hestekrefter: 150&#10;Farge: Hvit&#10;Felger: 22&#10;Interior: standard&#10;Pris: 340000&#10;&#10;">
                <font>
                   <Font size="27.0" />
                </font>
             </Label>
-            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="372.0" layoutY="296.0" prefHeight="222.0" prefWidth="286.0" text="Typebil: Elbil&#10;Hestekrefter: 190&#10;Farge: Rød&#10;Felger: 20&#10;Interior: Supreme&#10;Pris: 380000&#10;">
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="372.0" layoutY="296.0" prefHeight="268.0" prefWidth="286.0" text="Typebil: Elbil&#10;Hestekrefter: 190&#10;Farge: Rød&#10;Felger: 20&#10;Interior: Supreme&#10;Pris: 380000&#10;">
                <font>
                   <Font size="27.0" />
                </font>
             </Label>
-            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="708.0" layoutY="297.0" prefHeight="222.0" prefWidth="286.0" text="Typebil: Diesel&#10;Hestekrefter: 254&#10;Farge: Svart&#10;Felger: 24&#10;Interior: Sport&#10;Pris: 420000&#10;">
+            <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="708.0" layoutY="297.0" prefHeight="275.0" prefWidth="286.0" text="Typebil: Diesel&#10;Hestekrefter: 254&#10;Farge: Svart&#10;Felger: 24&#10;Interior: Sport&#10;Pris: 420000&#10;">
                <font>
                   <Font size="27.0" />
                </font>
