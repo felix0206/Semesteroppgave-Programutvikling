@@ -72,7 +72,7 @@ public class AdminInnlegging {
         return bil;
     }
     public Integer hestekrefter(int hestekrefter){
-            if (hestekrefter == 150 || hestekrefter == 200 || hestekrefter == 300)
+            if (hestekrefter>99 && hestekrefter<1000)
             this.hestekrefter = new SimpleIntegerProperty(hestekrefter);
 
             else{
@@ -102,7 +102,7 @@ public class AdminInnlegging {
     }
     public Integer felger(int felger){
 
-        if (felger == 18 || felger == 20 || felger == 24)
+        if (felger>19 && felger<26)
         this.felger = new SimpleIntegerProperty(felger);
 
         else{

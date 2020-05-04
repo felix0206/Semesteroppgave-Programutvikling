@@ -112,7 +112,7 @@ public class AdminSideController implements Initializable {
                 "Navn : kan ikke inneholde numre!" + "\n"
                 + "Email : noe@noe.noe" + "\n" +
                 "Typebil: el, elbil, bensin eller diesel \n" +
-                "Hestekrefter: 100 --> 1000 \n" +
+                "Hestekrefter: 100 --> 999 \n" +
                 "Interior: standard, sport eller supreme \n" +
                 "Farge: hvit, svart, rød eller bronse \n" +
                 "Felger: 20 --> 25 \n" +
@@ -312,7 +312,7 @@ public class AdminSideController implements Initializable {
         navn.setPromptText("<< ugyldig navn >>");
         email.setPromptText("<< ugyldig email >>");
         typebil.setPromptText("<< elbil, bensin, diesel >>");
-        hestekrefter.setPromptText("<< 100-1000 >>");
+        hestekrefter.setPromptText("<< 100-999 >>");
         interior.setPromptText("<< standard, sport, supreme >>");
         farge.setPromptText("<< hvit, svart, rød, bronse >>");
         felger.setPromptText("<< 20-25 >>");
