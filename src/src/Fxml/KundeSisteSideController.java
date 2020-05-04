@@ -48,6 +48,7 @@ public class KundeSisteSideController implements Initializable {
         sb.append("Farge: " + farge.getText() + "\n" );
         sb.append("Pris: " + pris.getText() + "\n" );
 
+
         return sb;
     }
 

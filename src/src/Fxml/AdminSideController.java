@@ -214,6 +214,12 @@ public class AdminSideController implements Initializable {
                 else if(adm.getTypebil().toLowerCase().contains(newValue)){
                     return true;
                 }
+                if(adm.getNavn().toLowerCase().contains(newValue)){
+                    return true;
+                }
+                else if(adm.getEmail().toLowerCase().contains(newValue)){
+                    return true;
+                }
                 else if(String.valueOf(adm.getHestekrefter()).contains(newValue)){
                     return true;
                 }
@@ -362,8 +368,8 @@ public class AdminSideController implements Initializable {
                         +";"+collection.liste.get(i).getFelger()+";" +collection.liste.get(i).getPris()+"\n";
             }
         }catch (Exceptions exceptions){
-            exceptions.wrongInputException("noe gikk galt");
-            showMessageDialog(null, "noe gikk galt");
+            exceptions.wrongInputException("");
+
         }
         return ut;
 
