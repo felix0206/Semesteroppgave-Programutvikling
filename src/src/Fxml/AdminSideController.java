@@ -167,7 +167,11 @@ public class AdminSideController implements Initializable {
     //slette knapp som fjerner valgt rad i tableview
     @FXML
     public void Slett(ActionEvent event){
-        tabell.getItems().removeAll(tabell.getSelectionModel().getSelectedItems()); //sletter valgt rad klikk på rad og så slett
+        AdminInnlegging valgtElement = tabell.getSelectionModel().getSelectedItem();
+        if(valgtElement != null){
+            collection.liste.remove(valgtElement);    //sletter valgt rad klikk på rad og så slett
+        }
+
     }
 
     //reset knapp som fjerner alt skrevet i textboxene
