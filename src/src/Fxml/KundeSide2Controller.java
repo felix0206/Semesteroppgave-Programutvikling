@@ -41,7 +41,7 @@ public class KundeSide2Controller {
     public Label ValgLabel, boxIkkeValgt;
 
     @FXML
-    public Button Oppsummering, LagreValg;
+    public Button Oppsummering, LagreValg, Tilbake;
 
    public String hester, interior, farge, felger, typebil, navn, epost;
 
@@ -178,7 +178,19 @@ public class KundeSide2Controller {
         //TODO: ta bort denne før vi leverer.
         System.out.println(hester + " " + farge + " " + felger + " " + interior + " " + typebil );
     }
+    public void Tilbake(ActionEvent event) throws IOException {
 
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Kundesidevalg.fxml"));
+        Parent root = loader.load();
+
+        Scene scene = new Scene(root);
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(scene);
+        window.show();
+
+    }
 
 }
 
