@@ -1,5 +1,6 @@
 package Fxml;
 
+import javafx.scene.control.Alert;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
@@ -17,7 +18,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class KundeSisteSideController {
+public class KundeSisteSideController{
 
     @FXML
     public Label typebil, hestekrefter, felger, farge, interior, pris, overskriftlbl;
@@ -62,6 +63,5 @@ public class KundeSisteSideController {
     public void setValuesKunde1(String typebil){
         this.typebil.setText(typebil);
     }
-
 
 }

@@ -72,7 +72,7 @@ public class AdminSideController implements Initializable {
         collection.setTable(tabell);
 
         try {
-            readCSV();
+           // readCSV();
         }catch (Exceptions exceptions){
             exceptions.NoSuchFileException("Feil fil eller feil delimiter (;)");
         }
