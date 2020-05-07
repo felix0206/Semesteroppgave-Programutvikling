@@ -1,7 +1,6 @@
 package Hjelpeklasser;
 
 import Fxml.AdminSideController;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Alert;
@@ -47,7 +46,11 @@ public class AdminInnlegging {
     public String navn(String navn){
 
        if (navn.matches(numberRegex)){
-           JOptionPane.showMessageDialog(panel,"Navn kan ikke inneholde nummer!","WARNING",JOptionPane.WARNING_MESSAGE);
+           Alert alert = new Alert(Alert.AlertType.INFORMATION);
+           alert.setTitle("Warning");
+           alert.setHeaderText("Det ser ut som at det var en feil!");
+           alert.setContentText("Navn er feil! Kan ikke inneholde nummer!");
+           alert.showAndWait();
            exceptions.wrongInputException("Navn kan ikke inneholde nummer!");
 
         }else{
@@ -61,7 +64,11 @@ public class AdminInnlegging {
         if (email.matches(emailRegex)){
             this.email = new SimpleStringProperty(email);
         }else {
-            JOptionPane.showMessageDialog(panel,"Feil i emailadressen!","WARNING",JOptionPane.WARNING_MESSAGE);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Det ser ut som at det var en feil!");
+            alert.setContentText("email er feil!");
+            alert.showAndWait();
             exceptions.wrongInputException("Feil i emailadressen!");
 
         }
@@ -74,7 +81,11 @@ public class AdminInnlegging {
             this.typebil = new SimpleStringProperty(bil);
 
         else{
-            JOptionPane.showMessageDialog(panel,"Feil type bil!","WARNING",JOptionPane.WARNING_MESSAGE);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Det ser ut som at det var en feil!");
+            alert.setContentText("typebil er feil!");
+            alert.showAndWait();
             exceptions.wrongInputException("Feil type bil!");
         }
 
@@ -85,7 +96,11 @@ public class AdminInnlegging {
             this.hestekrefter = new SimpleIntegerProperty(hestekrefter);
 
             else{
-                JOptionPane.showMessageDialog(panel,"feil hestekrefter!","WARNING",JOptionPane.WARNING_MESSAGE);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Warning");
+                alert.setHeaderText("Det ser ut som at det var en feil!");
+                alert.setContentText("hestekrefter er feil!");
+                alert.showAndWait();
                 exceptions.wrongInputException("feil hestekrefter!");
             }
         return hestekrefter;
@@ -95,7 +110,11 @@ public class AdminInnlegging {
         this.farge = new SimpleStringProperty(farge);
 
         else{
-            JOptionPane.showMessageDialog(panel,"feil farge!","WARNING",JOptionPane.WARNING_MESSAGE);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Det ser ut som at det var en feil!");
+            alert.setContentText("Farge er feil!");
+            alert.showAndWait();
             exceptions.wrongInputException("feil farge!");
         }
         return farge;
@@ -106,7 +125,11 @@ public class AdminInnlegging {
         this.interior = new SimpleStringProperty(interior);
 
         else{
-            JOptionPane.showMessageDialog(panel,"feil interior!","WARNING",JOptionPane.WARNING_MESSAGE);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Det ser ut som at det var en feil!");
+            alert.setContentText("interior er feil!");
+            alert.showAndWait();
             exceptions.wrongInputException("feil interior!");
         }
 
@@ -118,7 +141,11 @@ public class AdminInnlegging {
         this.felger = new SimpleIntegerProperty(felger);
 
         else{
-            JOptionPane.showMessageDialog(panel,"feil felger!","WARNING",JOptionPane.WARNING_MESSAGE);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Warning");
+            alert.setHeaderText("Det ser ut som at det var en feil!");
+            alert.setContentText("feilger er feil!");
+            alert.showAndWait();
             exceptions.wrongInputException("feil felger!");
         }
         return felger;
