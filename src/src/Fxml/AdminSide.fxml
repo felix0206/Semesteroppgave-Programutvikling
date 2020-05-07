@@ -15,12 +15,12 @@
    <children>
       <TableView fx:id="tabell" layoutY="39.0" prefHeight="280.0" prefWidth="1078.0">
         <columns>
-            <TableColumn fx:id="Navn" prefWidth="163.0" text="Navn">
+            <TableColumn fx:id="Navn" onEditCommit="#redigerNavn" prefWidth="163.0" text="Navn">
                 <cellValueFactory>
                     <PropertyValueFactory property="navn" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="Email" prefWidth="190.0" text="Email">
+            <TableColumn fx:id="Email" onEditCommit="#redigerEmail" prefWidth="190.0" text="Email">
                 <cellValueFactory>
                     <PropertyValueFactory property="email" />
                 </cellValueFactory>

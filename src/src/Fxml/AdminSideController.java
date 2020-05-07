@@ -360,7 +360,6 @@ public class AdminSideController implements Initializable {
             Logger.getLogger(AdminSideController.class.getName())
                     .log(Level.SEVERE, null, ex);
         }
-
     }
 
     private String save(TableView tabellen){

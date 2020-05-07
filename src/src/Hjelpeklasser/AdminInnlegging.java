@@ -22,7 +22,7 @@ public class AdminInnlegging {
     //regex:
     String numberRegex = "(.)*(\\d)(.)*";  //For å sjekke om navnet inneholder numre.
     String emailRegex = "\\b[a-zA-Z0-9.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z0-9.-]+\\b"; //for å teste gyldighet på email.
-
+    AdminSideController adminSideController = new AdminSideController();
     //Feilmeldinger
     Exceptions exceptions = new Exceptions("");
 

@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundeSide2Controller">
+<AnchorPane prefHeight="550.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.KundeSide2Controller">
    <children>
-      <AnchorPane prefHeight="700.0" prefWidth="1100.0" style="-fx-background-color: #E6E6D8;">
+      <AnchorPane prefHeight="550.0" prefWidth="1100.0" style="-fx-background-color: #E6E6D8;">
          <children>
             <Label alignment="CENTER" layoutX="387.0" layoutY="14.0" prefHeight="109.0" prefWidth="1100.0" text="Bygg din bil" AnchorPane.leftAnchor="0.0">
                <font>
@@ -26,13 +27,14 @@
             <Label layoutX="510.0" layoutY="161.0" prefHeight="36.0" prefWidth="141.0" text="Farge" />
             <Label layoutX="697.0" layoutY="161.0" prefHeight="36.0" prefWidth="141.0" text="Interiør" />
             <Label layoutX="893.0" layoutY="165.0" prefHeight="29.0" prefWidth="135.0" text="Felger" />
-            <Button fx:id="Oppsummering" layoutX="489.0" layoutY="485.0" mnemonicParsing="false" onAction="#Oppsummering" prefHeight="50.0" prefWidth="160.0" text="Vis Bilen" AnchorPane.leftAnchor="483.0" />
+            <Button fx:id="Oppsummering" layoutX="495.0" layoutY="404.0" mnemonicParsing="false" onAction="#Oppsummering" prefHeight="50.0" prefWidth="160.0" text="Vis Bilen" AnchorPane.leftAnchor="495.0" />
             <Separator layoutX="25.0" layoutY="122.0" prefWidth="1100.0" AnchorPane.leftAnchor="0.0" />
-            <Button fx:id="LagreValg" layoutX="483.0" layoutY="489.0" mnemonicParsing="false" onAction="#LagreValg" prefHeight="50.0" prefWidth="160.0" text="Lagre valg" AnchorPane.leftAnchor="483.0" />
-            <Label fx:id="ValgLabel" layoutX="490.0" layoutY="570.0" prefHeight="71.0" prefWidth="182.0" />
+            <Button fx:id="LagreValg" layoutX="496.0" layoutY="403.0" mnemonicParsing="false" onAction="#LagreValg" prefHeight="50.0" prefWidth="160.0" text="Lagre valg" AnchorPane.leftAnchor="496.0" />
+            <Label fx:id="ValgLabel" layoutX="488.0" layoutY="468.0" prefHeight="71.0" prefWidth="182.0" />
             <ChoiceBox fx:id="TypeBilbox" layoutX="119.0" layoutY="233.0" onDragDetected="#initialize" prefHeight="60.0" prefWidth="148.0" AnchorPane.leftAnchor="119.0" />
             <Label layoutX="127.0" layoutY="171.0" prefHeight="17.0" prefWidth="155.0" text="Type bil" />
             <Label fx:id="boxIkkeValgt" layoutX="500.0" layoutY="321.0" prefHeight="73.0" prefWidth="154.0" />
+            <Button fx:id="Tilbake" layoutX="23.0" layoutY="27.0" mnemonicParsing="false" onAction="#Tilbake" prefHeight="42.0" prefWidth="96.0" text="Tilbake" />
          </children></AnchorPane>
    </children>
 </AnchorPane>
