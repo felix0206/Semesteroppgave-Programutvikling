@@ -296,7 +296,7 @@ public class AdminSideController implements Initializable {
                             reg.getFelger() == 0)
             {
 
-                riktigeParametere();
+               // riktigeParametere();
 
                 return null;
             }
@@ -304,12 +304,12 @@ public class AdminSideController implements Initializable {
             return reg;
 
         } catch (Exception e){
-            riktigeParametere();
+            //riktigeParametere();
             return null;
         }
     }
     //endrer tekstfeltene sånn at admin kan se hvilke parametere som er gyldige
-    private void riktigeParametere() {
+   /* private void riktigeParametere() {
         reset();
         navn.setPromptText("<< ugyldig navn >>");
         email.setPromptText("<< ugyldig email >>");
@@ -319,7 +319,7 @@ public class AdminSideController implements Initializable {
         farge.setPromptText("<< hvit, svart, rød, bronse >>");
         felger.setPromptText("<< 20-25 >>");
         pris.setPromptText("<< ugyldig pris >>");
-    }
+    } */
 
     //resetter alle textboxene.
     private void reset(){
