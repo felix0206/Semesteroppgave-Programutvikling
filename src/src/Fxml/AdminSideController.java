@@ -24,9 +24,6 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static javax.swing.JOptionPane.showMessageDialog;
-
-
 public class AdminSideController implements Initializable {
 
     @FXML
@@ -254,8 +251,14 @@ public class AdminSideController implements Initializable {
         fileWriter.close();
     }
 
-    public void LoadFile(ActionEvent event){
+    public void LoadFile(ActionEvent event) throws InterruptedException {
         try{
+            Alert loading = new Alert(Alert.AlertType.INFORMATION);
+            loading.setTitle("Loading");
+            loading.setContentText("Loading file... \n press ok");
+            loading.showAndWait();
+            Thread.sleep(3000);
+            loading.close();
             readCSV();
         }catch (Exceptions exceptions){
             exceptions.NoSuchFileException("Feil filformat eller delimiter (;)!");
