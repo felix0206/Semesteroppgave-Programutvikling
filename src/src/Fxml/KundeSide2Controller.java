@@ -210,9 +210,6 @@ public class KundeSide2Controller {
         }
 
 
-
-
-
         //TODO: ta bort denne før vi leverer.
         System.out.println(hester + " " + farge + " " + felger + " " + interior + " " + typebil );
     }

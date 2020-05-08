@@ -3,6 +3,7 @@ package Fxml;
 import Hjelpeklasser.AdminCollection;
 import Hjelpeklasser.AdminInnlegging;
 import Hjelpeklasser.Exceptions;
+import Hjelpeklasser.Tråd;
 import javafx.scene.control.cell.*;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.collections.transformation.FilteredList;
@@ -20,6 +21,10 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -252,16 +257,13 @@ public class AdminSideController implements Initializable {
     }
 
     public void LoadFile(ActionEvent event) throws InterruptedException {
+
         try{
-            Alert loading = new Alert(Alert.AlertType.INFORMATION);
-            loading.setTitle("Loading");
-            loading.setContentText("Loading file... \n press ok");
-            loading.showAndWait();
-            Thread.sleep(3000);
-            loading.close();
             readCSV();
         }catch (Exceptions exceptions){
             exceptions.NoSuchFileException("Feil filformat eller delimiter (;)!");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
 
@@ -333,18 +335,20 @@ public class AdminSideController implements Initializable {
     }
 
 
-    private void readCSV() {
+    private void readCSV() throws Exception {
 
-        String CsvFile = "src/src/save_load/kundeDataBase.csv";
         String FieldDelimiter = ";";
 
         BufferedReader br;
 
         try {
-            br = new BufferedReader(new FileReader(CsvFile));
+
+            Tråd tråd = new Tråd("src/src/save_load/eksempelDataForSensor.csv") ;
+
+            br = new BufferedReader(tråd.call());
 
             String line;
-            while ((line = br.readLine()) != null) {
+            while ( (line = br.readLine()) != null) {
                 String[] fields = line.split(FieldDelimiter, -1);
 
                 AdminInnlegging adminInnlegging = new AdminInnlegging(fields[0], fields[1], fields[2],
@@ -383,4 +387,23 @@ public class AdminSideController implements Initializable {
         return ut;
 
     }
-}
+
+    //metode for at admin skal kunne lagre til binær fil.
+    public void binarySave() {
+
+        String text = save(tabell);
+
+        Path path = Paths.get("docbinary.txt");
+        byte[] bytes = text.getBytes();
+
+        try {
+            Files.write(path, bytes);
+            System.out.println("Successfully written data to the file");
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    }
+
+

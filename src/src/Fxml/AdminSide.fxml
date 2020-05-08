@@ -78,6 +78,7 @@
                <items>
                   <MenuItem fx:id="savefile" mnemonicParsing="false" onAction="#SaveFile" text="Save File" />
                   <MenuItem fx:id="loadfile" mnemonicParsing="false" onAction="#LoadFile" text="Load File" />
+                  <MenuItem fx:id="binarybtn" mnemonicParsing="false" onAction="#binarySave" text="save file (binary)" />
                </items></Menu>
         </menus>
          <effect>

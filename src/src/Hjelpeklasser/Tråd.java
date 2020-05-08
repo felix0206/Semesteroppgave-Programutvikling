@@ -1,12 +1,14 @@
 package Hjelpeklasser;
 
 import javafx.concurrent.Task;
+import javafx.scene.control.Alert;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Scanner;
 
-public class Tråd extends Task<String>{
+public class Tråd extends Task<FileReader>{
 
     final private String path;
 
@@ -15,29 +17,28 @@ public class Tråd extends Task<String>{
     }
 
     @Override
-    public String call() throws Exception {
+    public FileReader call() throws InterruptedException {
 
-        String utTekst = "";
-
+        FileReader fileReader = null;
         try {
-            Thread.sleep(3000); //emulerer en "stor" jobb på 3 sekunder...
-        } catch (InterruptedException e) {
+            fileReader = new FileReader(path);
+                Thread.sleep(3000); //emulerer en "stor" jobb på 3 sekunder...
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information");
+                alert.setContentText("File loaded!");
+                alert.show();
 
         }
-
-        try {
-            File file = new File(path);
-            Scanner scanner = new Scanner(file);
-            while (scanner.hasNext()) {
-                utTekst = scanner.nextLine();
-            }
-            scanner.close();
-
-        } catch(FileNotFoundException e){
-            throw new FileNotFoundException("Filen ble ikke funnet!");
+        //catcher hvis filen ikke blir funnet. Da kommer det en feilmelding opp.
+        catch (FileNotFoundException e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setContentText("Error when trying to load file!");
+            alert.show();
+            e.printStackTrace();
         }
 
-        return utTekst;
+        return fileReader;
 
     }
 }
