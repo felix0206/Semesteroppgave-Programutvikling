@@ -77,10 +77,11 @@ public class AdminSideController implements Initializable {
         collection.setTable(tabell);
 
         try {
-           // readCSV();
+            //TODO: legg inn prefix kunder for admin.
         }catch (Exceptions exceptions){
             exceptions.NoSuchFileException("Feil fil eller feil delimiter (;)");
         }
+
         //tableview rediering
         /*
         *textfieldtablecell gjør at det dukker opp en textbox når man dobbelt klikker
@@ -247,7 +248,7 @@ public class AdminSideController implements Initializable {
     //lagrer til fil
     public void SaveFile(ActionEvent event) throws IOException {
         /*
-        * lagrer til fil som vi bruker som data når man starter tableview
+        * lagrer til fil, med prefix path.
         * dermed slipper superbruker å bekymre seg for filplassering
         * gjør at om man lagrer og slår av alt, vil filen være lagret slik at når du åpner adminside vil tableview du lagret bli vist,
          */
@@ -404,6 +405,35 @@ public class AdminSideController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    public void loadLastSave() throws InterruptedException {
+        String FieldDelimiter = ";";
+
+        BufferedReader br;
+
+        try {
+
+            Tråd tråd = new Tråd("src/src/save_load/kundeDataBase.csv") ;
+
+            br = new BufferedReader(tråd.call());
+
+            String line;
+            while ( (line = br.readLine()) != null) {
+                String[] fields = line.split(FieldDelimiter, -1);
+
+                AdminInnlegging adminInnlegging = new AdminInnlegging(fields[0], fields[1], fields[2],
+                        Integer.parseInt(fields[3]), fields[4], fields[5], Integer.parseInt(fields[6]), Integer.parseInt(fields[7]));
+                collection.liste.add(adminInnlegging);
+            }
+
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(AdminSideController.class.getName())
+                    .log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(AdminSideController.class.getName())
+                    .log(Level.SEVERE, null, ex);
+        }
     }
 
 
+}
