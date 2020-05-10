@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.PriserOgInfoController">
+<AnchorPane prefHeight="550.0" prefWidth="650.0" style="-fx-background-color: #E6E6D8;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.PriserOgInfoController">
    <children>
-      <AnchorPane layoutX="313.0" layoutY="184.0" prefHeight="600.0" prefWidth="800.0" />
+      <Label alignment="CENTER" layoutX="3.0" prefHeight="550.0" prefWidth="650.0" text="Liste over priser på forskjellige komponenter. &#10; &#10; Type bil:&#10; Elbil: 200.000kr Bensin: 250.000kr Diesel: 300.000kr &#10;&#10; Hestekrefter:&#10; 150hk: 50.000kr 200hk: 100.000kr 300hk: 150.000kr &#10;&#10; Farge:&#10; Svart: 15.000kr Hvit: 15.000kr Rød: 15.000kr Bronse: 22.000kr &#10;&#10; Felger:&#10; 18: 12.000, 20: 16.000, 24: 19.000. &#10;&#10; Interiør:&#10; Standard: 10.000, Sport: 25.000, Supreme: 40.000.       " textAlignment="CENTER">
+         <font>
+            <Font name="Avenir Roman" size="16.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="47.0" fitWidth="57.0" layoutX="578.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Bilder/HomeIcon.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="568.0" mnemonicParsing="false" onAction="#StartSide" prefHeight="47.0" prefWidth="57.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>

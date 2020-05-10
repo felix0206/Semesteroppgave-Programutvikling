@@ -40,9 +40,17 @@ public class StartSideController {
         window.show();
     }
 
-    public void priserOgInfo(ActionEvent event) {
+    public void priserOgInfo(ActionEvent event) throws IOException{
+
+        Parent kundeSide = FXMLLoader.load(getClass().getResource("priserOgInfo.fxml"));
+
+        Scene scene = new Scene(kundeSide);
 
 
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(scene);
+        window.show();
 
     }
 }
