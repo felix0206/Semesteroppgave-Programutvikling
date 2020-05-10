@@ -5,6 +5,7 @@ import Hjelpeklasser.AdminInnlegging;
 import Hjelpeklasser.Exceptions;
 import Hjelpeklasser.Tråd;
 import javafx.scene.control.cell.*;
+import javafx.stage.FileChooser;
 import javafx.util.converter.IntegerStringConverter;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -252,6 +253,15 @@ public class AdminSideController implements Initializable {
         * dermed slipper superbruker å bekymre seg for filplassering
         * gjør at om man lagrer og slår av alt, vil filen være lagret slik at når du åpner adminside vil tableview du lagret bli vist,
          */
+        try {
+            Thread.sleep(2000);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Information");
+            alert.setContentText("File Saved!");
+            alert.show();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         FileWriter fileWriter = new FileWriter("src/src/save_load/kundeDataBase.csv",false);
         fileWriter.write(save(tabell));
         fileWriter.close();
@@ -390,22 +400,29 @@ public class AdminSideController implements Initializable {
     }
 
     //metode for at admin skal kunne lagre til binær fil.
-    public void binarySave() {
+    public void binarySave() throws IOException {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Velg destinasjon");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Text Files", "*.txt"));
 
         String text = save(tabell);
+        String utStreng = getBytes(text);
+        Stage stage = new Stage();
+        stage.setY(250);
+        stage.setX(200);
 
-        Path path = Paths.get("docbinary.txt");
-        byte[] bytes = text.getBytes();
+        File file = fileChooser.showSaveDialog(stage);
+        File nyFile = new File(file.getAbsolutePath());
 
-        try {
-            Files.write(path, bytes);
-            System.out.println("Successfully written data to the file");
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        FileOutputStream fil = new FileOutputStream(nyFile);
+        fil.write(utStreng.getBytes());
+        System.out.println(utStreng);
+
     }
 
+    //metode for at admin skal kunne laste opp siste lagrede fil. Altså det siste som ble lagret fra tableview.
     public void loadLastSave() throws InterruptedException {
         String FieldDelimiter = ";";
 
@@ -433,6 +450,31 @@ public class AdminSideController implements Initializable {
             Logger.getLogger(AdminSideController.class.getName())
                     .log(Level.SEVERE, null, ex);
         }
+    }
+
+    //hjelpemetoder for å lagre til binær fil.
+    static String getBytes(String input){
+        String resultat = "";
+        byte[] stringBytes = input.getBytes();
+        resultat = byteArrayTilBinaryFil(stringBytes);
+
+        return resultat;
+    }
+
+    static String byteArrayTilBinaryFil(byte[] array){
+        StringBuilder resultat = new StringBuilder();
+
+        for(byte b : array){
+            resultat.append(byteToString(b)).append(" ");
+        }
+        return resultat.toString();
+    }
+
+    static String byteToString(byte b){
+        return String.format(
+                "%8s",
+                Integer.toBinaryString(Byte.toUnsignedInt(b)).replace(" ", "0")
+        );
     }
 
 
