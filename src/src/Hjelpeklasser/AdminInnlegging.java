@@ -4,10 +4,7 @@ import Fxml.AdminSideController;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-
 import javax.swing.*;
-import java.util.Optional;
 
 public class AdminInnlegging {
 

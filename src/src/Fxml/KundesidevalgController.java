@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 
 public class KundesidevalgController implements Initializable {
 
-    public KundesidevalgController() throws IOException {
+    public KundesidevalgController(){
     }
 
     @FXML
@@ -52,17 +52,17 @@ public class KundesidevalgController implements Initializable {
     /*
     her har vi dobbelt opp med knapper for å forsikre om at kunden virkelig vil kjøpe bilen han/hun trykker på.
      */
-    public void Lagrebil1() throws IOException {
+    public void Lagrebil1(){
         lagrebil1.setVisible(false);
         kjøp1.setVisible(true);
 
     }
-    public void Lagrebil2() throws IOException {
+    public void Lagrebil2(){
         lagrebil2.setVisible(false);
         kjøp2.setVisible(true);
 
     }
-    public void Lagrebil3() throws IOException {
+    public void Lagrebil3(){
         lagrebil3.setVisible(false);
         kjøp3.setVisible(true);
 

@@ -3,10 +3,8 @@ package Hjelpeklasser;
 import javafx.concurrent.Task;
 import javafx.scene.control.Alert;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.Scanner;
 
 public class Tråd extends Task<FileReader>{
 

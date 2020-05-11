@@ -2,9 +2,6 @@ package Hjelpeklasser;
 
 public class Exceptions extends IllegalArgumentException{
 
-
-
-
     public Exceptions(String message) {
         super(message);
     }

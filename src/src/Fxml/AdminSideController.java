@@ -22,10 +22,6 @@ import javafx.stage.Stage;
 
 import java.io.*;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -51,9 +47,8 @@ public class AdminSideController implements Initializable {
     public MenuItem savefile, loadfile;
 
     @FXML
-            public Label Parameterelbl;
+    public Label Parameterelbl;
 
-    HovedsideController hovedsideController = new HovedsideController();
     AdminCollection collection = new AdminCollection();
 
     //knapp for å komme tilbake til forsiden
