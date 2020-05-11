@@ -6,7 +6,8 @@ import javafx.collections.transformation.FilteredList;
 import javafx.scene.control.TableView;
 
 
-public class AdminCollection {
+
+public class AdminCollection  {
     public ObservableList<AdminInnlegging> liste = FXCollections.observableArrayList();
 
     public void setTable(TableView tv){

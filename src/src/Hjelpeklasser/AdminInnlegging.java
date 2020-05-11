@@ -43,7 +43,9 @@ public class AdminInnlegging {
     }
 
     AdminSideController controller = new AdminSideController();
-    //TODO: if settninger for å kontrollere riktig input fra admin.
+
+
+    // Tester riktig input fra admin.
 
     public String navn(String navn){
 
@@ -94,6 +96,7 @@ public class AdminInnlegging {
         return bil;
     }
     public Integer hestekrefter(int hestekrefter){
+        // tester om hestekrefter er riktig
             if (hestekrefter>99 && hestekrefter<1000)
             this.hestekrefter = new SimpleIntegerProperty(hestekrefter);
 
@@ -108,6 +111,7 @@ public class AdminInnlegging {
         return hestekrefter;
     }
     public String farge(String farge){
+        // tester farge input
         if (farge.equals("hvit") || farge.equals("svart") || farge.equals("bronse") || farge.equals("rød"))
         this.farge = new SimpleStringProperty(farge);
 
@@ -121,7 +125,9 @@ public class AdminInnlegging {
         }
         return farge;
     }
-    public String interior(String interior){
+    public String interior(String interior) {
+
+        // tester interiør input
 
         if (interior.equals("standard") || interior.equals("sport") || interior.equals("supreme"))
         this.interior = new SimpleStringProperty(interior);
@@ -139,6 +145,8 @@ public class AdminInnlegging {
     }
     public Integer felger(int felger){
 
+        // sjekker felger input
+
         if (felger>19 && felger<26)
         this.felger = new SimpleIntegerProperty(felger);
 
@@ -153,11 +161,14 @@ public class AdminInnlegging {
         return felger;
     }
     public Integer pris(int pris){
+        // tester pris input
 
         this.pris = new SimpleIntegerProperty(pris);
 
         return pris;
     }
+
+    // get-set metoder for
 
     public String getNavn(){
         return navn.getValue();
