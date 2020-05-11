@@ -26,7 +26,7 @@ public class KundesidevalgController implements Initializable {
     }
 
     @FXML
-    public Button kjøp1, lagrebil1, lagrebil2, kjøp2, lagrebil3, kjøp3;
+    public Button kjøp1, lagrebil1, lagrebil2, kjøp2, lagrebil3, kjøp3, hjemm;
 
     public String navn, epost;
     //henter info om person fra forrige side.
@@ -50,7 +50,7 @@ public class KundesidevalgController implements Initializable {
         window.show();
     }
 
-    //TODO: Lage ferdige biler som kunden kan velge.
+
     //Dette skal bli lagret til fil og skrives ut sånn at kunden ser sin bestilling.
     //Under er actionevent for de tre forskjellige bilene som er mulig å velge.
 
@@ -202,5 +202,18 @@ public class KundesidevalgController implements Initializable {
         kjøp1.setVisible(false);
         kjøp2.setVisible(false);
         kjøp3.setVisible(false);
+    }
+
+    public void Home(ActionEvent event) throws IOException {
+
+        Parent kundeSide = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
+
+        Scene scene = new Scene(kundeSide);
+
+
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        window.setScene(scene);
+        window.show();
     }
 }
