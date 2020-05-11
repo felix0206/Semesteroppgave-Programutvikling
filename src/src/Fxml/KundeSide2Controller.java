@@ -42,7 +42,7 @@ public class KundeSide2Controller {
     public Label ValgLabel, boxIkkeValgt;
 
     @FXML
-    public Button Oppsummering, LagreValg, Tilbake;
+    public Button Oppsummering, LagreValg;
 
    public String hester, interior, farge, felger, typebil, navn, epost;
 
@@ -214,20 +214,15 @@ public class KundeSide2Controller {
 
     }
 
-    //Tilbakeknapp for å gå tilbake til forrige side.
-    public void Tilbake(ActionEvent event) throws IOException {
+    public void HjemKnapp(ActionEvent event) throws IOException {
+        Parent kundeSide = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("Kundesidevalg.fxml"));
-        Parent root = loader.load();
-
-        Scene scene = new Scene(root);
+        Scene scene = new Scene(kundeSide);
 
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         window.setScene(scene);
         window.show();
-
     }
-
 }
 

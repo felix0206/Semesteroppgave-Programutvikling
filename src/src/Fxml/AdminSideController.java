@@ -77,12 +77,6 @@ public class AdminSideController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         collection.setTable(tabell);
 
-        try {
-            //TODO: legg inn prefix kunder for admin.
-        }catch (Exceptions exceptions){
-            exceptions.NoSuchFileException("Feil fil eller feil delimiter (;)");
-        }
-
         //tableview rediering
         /*
         *textfieldtablecell gjør at det dukker opp en textbox når man dobbelt klikker

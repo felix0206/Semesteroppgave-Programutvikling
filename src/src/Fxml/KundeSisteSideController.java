@@ -1,22 +1,16 @@
 package Fxml;
 
-import javafx.scene.control.Alert;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
 public class KundeSisteSideController{
 
@@ -27,8 +21,6 @@ public class KundeSisteSideController{
     public ImageView bilde;
 
     String navn;
-
-    StringBuilder sb = new StringBuilder();
 
     //knapp som returnerer deg til hjemsiden
     public void hjemKnapp(ActionEvent event) throws IOException {
@@ -58,10 +50,4 @@ public class KundeSisteSideController{
         this.navn = navn;
 
     }
-
-    //Setter verdier fra kundeside.
-    public void setValuesKunde1(String typebil){
-        this.typebil.setText(typebil);
-    }
-
 }
