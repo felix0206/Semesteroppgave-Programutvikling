@@ -2,14 +2,9 @@
 
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.control.cell.*?>
-<?import javafx.scene.paint.*?>
 <?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 
 <AnchorPane prefHeight="644.0" prefWidth="1078.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Fxml.AdminSideController">
    <children>
