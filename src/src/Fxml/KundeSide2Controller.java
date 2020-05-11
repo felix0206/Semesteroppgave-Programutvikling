@@ -13,7 +13,6 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -22,6 +21,7 @@ import java.util.Optional;
 public class KundeSide2Controller {
     Exceptions exceptions = new Exceptions("");
 
+    //oppretter og instansierer de forskjellige dropboksene.
     ObservableList TypeBillist= FXCollections.observableArrayList("Velg Type bil","Elbil", "Bensin" , "Diesel" );
     ObservableList Hestekrefterlist= FXCollections.observableArrayList("Velg Hestekrefter","150", "200" , "300" );
     ObservableList Fargerlist= FXCollections.observableArrayList("Velg Farge","Svart", "Hvit" , "Rød", "Bronse" );
@@ -46,11 +46,14 @@ public class KundeSide2Controller {
 
    public String hester, interior, farge, felger, typebil, navn, epost;
 
-
+    //initialize metode som kjøres med en gang siden blir lastet inn.
     @FXML
     private void initialize(){
+        //gjør knappen som fører til siste side usynlig.
+        //denne skal senere bli synlig etter at kunde har bestemt seg for komponenter.
         Oppsummering.setVisible(false);
 
+        //setter value og legger inn i observablelisten.
         Hestekrefterbox.setValue("Velg Hestekrefter");
         Hestekrefterbox.setItems(Hestekrefterlist);
 
@@ -120,7 +123,7 @@ public class KundeSide2Controller {
         this.epost = epost;
     }
 
-    //knapp for å gå til oppsummeringssidenm hvor bilen og dens komponenter blir listet opp.
+    //knapp for å gå til oppsummeringssiden hvor bilen og dens komponenter blir listet opp.
     public void Oppsummering(ActionEvent event) throws IOException {
 
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
@@ -186,7 +189,7 @@ public class KundeSide2Controller {
 
     //lagrer valgene til brukeren.
     public void LagreValg(ActionEvent event) throws IOException {
-
+        //tester om kunden har valgt en av alle komponenter.
         if (TypeBilbox.getValue().equals("Velg Type bil") || Hestekrefterbox.getValue().equals("Velg Hestekrefter") ||
                 Fargebox.getValue().equals("Velg Farge") || Interiørbox.getValue().equals("Velg Interiør") ||
                 Felgerbox.getValue().equals("Velg Felger")){
@@ -209,10 +212,9 @@ public class KundeSide2Controller {
             LagreValg.setVisible(false);
         }
 
-
-        //TODO: ta bort denne før vi leverer.
-        System.out.println(hester + " " + farge + " " + felger + " " + interior + " " + typebil );
     }
+
+    //Tilbakeknapp for å gå tilbake til forrige side.
     public void Tilbake(ActionEvent event) throws IOException {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Kundesidevalg.fxml"));
