@@ -88,7 +88,7 @@ public class AdminSideController implements Initializable {
         *textfieldtablecell gjør at det dukker opp en textbox når man dobbelt klikker
         * må legge til (new integerstringconverter) for at det skal funke med int verdier
          */
-        tabell.setEditable(true);
+        tabell.setEditable(true); //gjør det mulig å redigere
         Navn.setCellFactory(TextFieldTableCell.forTableColumn());
         Email.setCellFactory(TextFieldTableCell.forTableColumn());
         TypeBil.setCellFactory(TextFieldTableCell.forTableColumn());
@@ -207,7 +207,7 @@ public class AdminSideController implements Initializable {
                 if(newValue.isEmpty() || newValue == null){
                     return true;
                 }
-                //String input = newValue.toLowerCase();
+                //if setningen som tester om tableviet inneholder "newValue" altså verdien skrevet inn i textboxen filtrer
                 if(adm.getNavn().toLowerCase().contains(newValue)){
                     return true;
                 }
@@ -267,6 +267,7 @@ public class AdminSideController implements Initializable {
         fileWriter.close();
     }
 
+    //metode som henter fil som er lest fra metoden read
     public void LoadFile(ActionEvent event) throws InterruptedException {
 
         try{
@@ -345,7 +346,7 @@ public class AdminSideController implements Initializable {
         pris.setText("");
     }
 
-
+    //metode som leser filen eksempelDataForSensor, bruker bufferreader for å lese filen
     private void readCSV() throws Exception {
 
         String FieldDelimiter = ";";
@@ -376,6 +377,7 @@ public class AdminSideController implements Initializable {
         }
     }
 
+    //metode som lagrer tableview i gjeldene tilstand til en string
     private String save(TableView tabellen){
 
         String ut = "";

@@ -30,7 +30,7 @@ public class KundeSisteSideController{
 
     StringBuilder sb = new StringBuilder();
 
-
+    //knapp som returnerer deg til hjemsiden
     public void hjemKnapp(ActionEvent event) throws IOException {
 
         Parent kundeSide = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
